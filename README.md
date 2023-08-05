@@ -1,12 +1,18 @@
-## Stack
+## Preface
 
->Intro: This project leverages a comprehensive technology stack to deliver a robust and efficient web application
+Welcome to Vernacular, your all-in-one destination for seamless organization and exploration of your favorite movies, TV shows, books, and games. With Vernacular, you're not just cataloging media – you're crafting a personalized universe of entertainment.
+
+Create an account to unlock a world of possibilities: design playlists that reflect your unique tastes, leave your mark with reviews and ratings, and delve into the curated collections of fellow enthusiasts. Whether you're a cinephile, a bookworm, a gamer, or all of the above, Vencular is your gateway to cultivating a digital haven for media discovery and appreciation. 
+
+>This project leverages a comprehensive technology stack to deliver a robust and efficient web application. 
 
 ## Figma Prototype Preview (to be added)
 
 Explore a sneak peek of the interactive prototype for my upcoming project.
 
-![Figma Prototype](https://www.figma.com/)
+![Prototype](https://github.com/RuiQiHuang1832/vernacular/assets/70245384/3c618cf7-83e9-4046-a4d7-da34d359ceb4)
+
+
 
 Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
 
