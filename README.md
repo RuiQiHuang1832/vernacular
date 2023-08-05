@@ -20,10 +20,6 @@ Click [here](https://www.figma.com/) to learn more about Figma and its powerful 
 - **Lodash**: Lodash simplifies complex operations and provides utility functions for enhanced code maintainability.
 - **React Query**: React Query facilitates data fetching and caching, optimizing application performance.
 - **classNames Library**: classNames simplifies the management of dynamic CSS class names.
-- **Custom Components**: Custom components ensure a tailored and consistent user experience.
-- **Helper Functions**: Helper functions encapsulate reusable logic, promoting cleaner and more maintainable code.
-- **Custom Hooks**: Custom hooks encapsulate logic for better code organization and reuse.
-- **Separation of Concerns**: Adhering to the principle of separation of concerns enhances code maintainability by isolating distinct functionalities.
 - **Frontend Hosting: Vercel**: The front-end of the application is hosted on Vercel, providing rapid deployment and high availability.
 
 ## Back-End
