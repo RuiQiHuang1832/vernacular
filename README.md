@@ -1,4 +1,4 @@
-## Preface
+## Overview
 
 Welcome to **Vernacular**, your all-in-one destination for seamless organization and exploration of your favorite movies, TV shows, books, and games. With **Vernacular**, you're not just cataloging media – you're crafting a personalized universe of entertainment.
 
@@ -14,7 +14,7 @@ Explore a sneak peek of the interactive prototype for my upcoming project.
 
 
 
-Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
+>Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
 
 ## Front-End
 
@@ -40,9 +40,7 @@ This application is hosted on [Render.com](https://render.com), a cloud platform
 
 - **Content Placeholder**: The text and images you currently see on the website are placeholders used for illustrative purposes. They do not reflect the final content of the application and are included solely to provide an example structure.
 
-I appreciate your patience during the spin-up time and encourage you to explore the website's functionality once it has fully loaded. For any inquiries or feedback, please don't hesitate to reach out.
-
-Thank you for understanding!
+>For any inquiries or feedback, please don't hesitate to reach out.
 
 ## Key Features
 
