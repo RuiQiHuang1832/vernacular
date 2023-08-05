@@ -1,8 +1,8 @@
 ## Preface
 
-Welcome to Vernacular, your all-in-one destination for seamless organization and exploration of your favorite movies, TV shows, books, and games. With Vernacular, you're not just cataloging media – you're crafting a personalized universe of entertainment.
+Welcome to **Vernacular**, your all-in-one destination for seamless organization and exploration of your favorite movies, TV shows, books, and games. With **Vernacular**, you're not just cataloging media – you're crafting a personalized universe of entertainment.
 
-Create an account to unlock a world of possibilities: design playlists that reflect your unique tastes, leave your mark with reviews and ratings, and delve into the curated collections of fellow enthusiasts. Whether you're a cinephile, a bookworm, a gamer, or all of the above, Vencular is your gateway to cultivating a digital haven for media discovery and appreciation. 
+Create an account to unlock a world of possibilities: 🎨 design playlists that reflect your unique tastes, ⭐ leave your mark with reviews and ratings, and 📝 delve into the curated collections of fellow enthusiasts. Whether you're a cinephile, a bookworm, a gamer, or all of the above, **Vernacular** is your gateway to cultivating a digital haven for media discovery and appreciation. 
 
 >This project leverages a comprehensive technology stack to deliver a robust and efficient web application. 
 
