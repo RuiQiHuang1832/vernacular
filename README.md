@@ -16,5 +16,12 @@ This project leverages a comprehensive technology stack to deliver a robust and 
 - **Helper Functions**: Helper functions encapsulate reusable logic, promoting cleaner and more maintainable code.
 - **Custom Hooks**: Custom hooks encapsulate logic for better code organization and reuse.
 - **Separation of Concerns**: Adhering to the principle of separation of concerns enhances code maintainability by isolating distinct functionalities.
+- **Frontend Hosting: Vercel**: The front-end of the application is hosted on Vercel, providing rapid deployment and high availability.
+
+## Back-End
+- **Server Hosting: Render.com**: The back-end of the application is hosted on Render.com, ensuring scalability and seamless server management.
+- **Database Hosting: PlanetScale (MySQL)**: The database is hosted on PlanetScale using MySQL, offering a powerful and scalable data storage solution.
+- **JWT (JSON Web Tokens)**: JWT authentication ensures secure and stateless user authentication.
+
 
 The synergy of these technologies empowers the application to deliver a seamless user experience while maintaining clean and maintainable code.
