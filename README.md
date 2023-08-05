@@ -2,6 +2,14 @@
 
 This project leverages a comprehensive technology stack to deliver a robust and efficient web application:
 
+## Figma Prototype Preview (to be added)
+
+Explore a sneak peek of the interactive prototype for my upcoming project.
+
+![Figma Prototype](https://www.figma.com/)
+
+Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
+
 ## Front-End
 
 - **Next.js (with Server-Side Rendering)**: Next.js provides server-side rendering (SSR) capabilities, enhancing performance and search engine optimization (SEO).
