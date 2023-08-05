@@ -1,6 +1,6 @@
 ## Technology Stack
 
-This project leverages a comprehensive technology stack to deliver a robust and efficient web application:
+>Intro: This project leverages a comprehensive technology stack to deliver a robust and efficient web application
 
 ## Figma Prototype Preview (to be added)
 
@@ -42,4 +42,15 @@ The synergy of these technologies empowers the application to deliver a seamless
 
 ## Key Features
 
-- Users can..
+### User Management
+
+1. **User Registration:** Users can securely register accounts to access personalized features.
+
+### Playlist Management
+
+1. **Create Playlists:** Authenticated users can create customized playlists to organize media items.
+2. **Delete Playlists:** Users retain the ability to delete their own playlists for content management.
+3. **View Playlists:** Authenticated users have the privilege to view and interact with their playlists.
+4. **Explore Playlists:** Users can explore and engage with playlists shared by other community members.
+
+
