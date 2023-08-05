@@ -38,8 +38,6 @@ I appreciate your patience during the spin-up time and encourage you to explore 
 
 Thank you for understanding!
 
-The synergy of these technologies empowers the application to deliver a seamless user experience while maintaining clean and maintainable code.
-
 ## Key Features
 
 ### User Management
