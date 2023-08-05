@@ -2,7 +2,7 @@
 
 This project leverages a comprehensive technology stack to deliver a robust and efficient web application:
 
-### Front-End
+## Front-End
 
 - **Next.js (with Server-Side Rendering)**: Next.js provides server-side rendering (SSR) capabilities, enhancing performance and search engine optimization (SEO).
 - **TypeScript (TS)**: TypeScript ensures type safety and enhances code readability, making development more efficient.
