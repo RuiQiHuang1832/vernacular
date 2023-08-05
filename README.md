@@ -1,4 +1,4 @@
-## Technology Stack
+## Stack
 
 >Intro: This project leverages a comprehensive technology stack to deliver a robust and efficient web application
 
