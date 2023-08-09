@@ -16,10 +16,10 @@ Explore a sneak peek of the interactive prototype for my upcoming project.
 
 ## Front-End
 
-- **Next.js (with Server-Side Rendering)**: Next.js provides server-side rendering (SSR) capabilities, enhancing performance and search engine optimization (SEO).
-- **TypeScript (TS)**: TypeScript ensures type safety and enhances code readability, making development more efficient.
+- **Next.js**: Next.js provides server-side rendering (SSR) capabilities, enhancing performance and search engine optimization (SEO).
+- **TypeScript**: TypeScript ensures type safety and enhances code readability, making development more efficient.
 - **CSS Modules**: CSS Modules allow for modular and scoped styling, reducing potential naming conflicts.
-- **Bootstrap 5 (BS5)**: Bootstrap streamlines responsive and visually appealing UI design with its extensive component library.
+- **Bootstrap 5**: Bootstrap streamlines responsive and visually appealing UI design with its extensive component library.
 - **React**: The core library for building interactive and dynamic user interfaces.
 - **Lodash**: Lodash simplifies complex operations and provides utility functions for enhanced code maintainability.
 - **React Query**: React Query facilitates data fetching and caching, optimizing application performance.
