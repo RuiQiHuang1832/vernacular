@@ -10,7 +10,7 @@ Create an account to unlock a world of possibilities: 🎨 design playlists that
 
 Explore a sneak peek of the interactive prototype for my upcoming project.
 
-!![Prototype](https://github.com/RuiQiHuang1832/vernacular/assets/70245384/f422e30f-7762-452f-bbe6-4835ea1a01c3)
+![Prototype](https://github.com/RuiQiHuang1832/vernacular/assets/70245384/f422e30f-7762-452f-bbe6-4835ea1a01c3)
 
 
 > Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
