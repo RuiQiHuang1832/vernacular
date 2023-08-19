@@ -6,7 +6,7 @@ Create an account to unlock a world of possibilities: 🎨 design playlists that
 
 > This project leverages a comprehensive technology stack to deliver a robust and efficient web application.
 
-## Figma Prototype Preview (to be added)
+## Figma Prototype Preview 
 
 Explore a sneak peek of the interactive prototype for my upcoming project.
 
