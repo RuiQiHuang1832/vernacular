@@ -9,7 +9,7 @@ type HeaderProps = {
   imageSrc: string;
   imageWidth: number;
   imageHeight: number;
-  direction: 'flex-row' | 'flex-row-reverse';
+  direction: "flex-row" | "flex-row-reverse";
   learnMore: string;
   id: string
 };

@@ -14,6 +14,12 @@ const navLinks = [
   { text: "LOGIN", href: "/login" },
 ];
 
+const playlistLinks = [
+  { text: "View Playlists", href: "/playlist/view" },
+  { text: "Create Playlists", href: "/playlist/create" },
+  { text: "Community Playlists", href: "/playlist/community" },
+]
+
 export default function Navigation() {
   const navItem: string = classNames("me-5", styles["nav-shake"], "fs-5");
   const pathname: string = usePathname();
@@ -35,21 +41,13 @@ export default function Navigation() {
                 PLAYLIST
               </a>
               <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" href="/playlist/view">
-                    View Playlists
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/playlist/create">
-                    Create Playlists
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/playlist/community">
-                    Community Playlists
-                  </Link>
-                </li>
+               {playlistLinks.map((link, index): React.ReactNode => (
+              <li  key={index}>
+                <Link className={`dropdown-item`} href={link.href}>
+                  {link.text}
+                </Link>
+              </li>
+            ))}
               </ul>
             </li>
             {navLinks.map((link, index): React.ReactNode => (

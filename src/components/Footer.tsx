@@ -24,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="text-white container pt-5">
+    <footer className="text-white container pt-5 pb-3 mt-5">
       <section>
         <div className="d-flex justify-content-center">
           {socialIcons.map((Icon, index) => (
