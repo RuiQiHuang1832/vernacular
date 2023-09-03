@@ -6,11 +6,12 @@ Create an account to unlock a world of possibilities: 🎨 design playlists that
 
 > This project leverages a comprehensive technology stack to deliver a robust and efficient web application.
 
-## Figma Prototype Preview (to be added)
+## Figma Prototype Preview 
 
 Explore a sneak peek of the interactive prototype for my upcoming project.
 
-![Prototype](https://github.com/RuiQiHuang1832/vernacular/assets/70245384/3c618cf7-83e9-4046-a4d7-da34d359ceb4)
+![Prototype](https://github.com/RuiQiHuang1832/vernacular/assets/70245384/f422e30f-7762-452f-bbe6-4835ea1a01c3)
+
 
 > Click [here](https://www.figma.com/) to learn more about Figma and its powerful design and prototyping capabilities.
 
