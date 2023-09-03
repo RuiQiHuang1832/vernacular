@@ -1,0 +1,61 @@
+.scroll-progress-bar {
+  width: 5px;
+  background-color: #86C232; /* Change to your desired color */
+}
+
+.scroll-container {
+  position: sticky;
+  top: 3px;
+  height: 0;
+  overflow: visible;
+}
+
+.scroll-wrapper {
+  width: 5px;
+  height: 405px;
+  background: #DAD9D8;
+  margin-left:53px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly space items vertically */
+  border-radius: 10px; /* Rounded corners for all sides */
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 35px;
+}
+
+.item-counter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255)
+}
+
+.item-container:nth-child(2) {
+  top: 0px; /* Adjust as needed */
+}
+
+.item-container:nth-child(3) {
+  top: 100px; /* Adjust as needed */
+}
+
+.item-container:nth-child(4) {
+  top: 200px; /* Adjust as needed */
+}
+
+.item-container:nth-child(5) {
+  top: 300px; /* Adjust as needed */
+}
+
+.item-container:nth-child(6) {
+  top: 400px; /* Adjust as needed */
+}

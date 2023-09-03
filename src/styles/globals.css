@@ -1,0 +1,54 @@
+:root {
+  --nav-item-color: #86C232;
+  --nav-brand-color:#EDF5E1;
+  --page-background-color:#222629;
+}
+
+.default-bg-color {
+  background-color: var(--page-background-color)
+}
+
+.navbar-expand-lg .navbar-nav a.nav-link {
+    padding: 15px 0px 0px 0px;
+    line-height: 1.2em;
+}
+
+.nav-item {
+  .nav-link {
+    color: var(--nav-item-color);
+    font-weight: 300;
+    display:inline-block;
+
+    &:hover {
+      color: var(--nav-brand-color)
+    }
+    &.show,
+    &:focus {
+      color:var(--nav-item-color) !important;
+    }
+  }
+}
+
+
+a.navbar-brand {
+  color: var(--nav-brand-color);
+
+  &:hover {
+    color: var(--nav-brand-color); /* Set the color for both normal and hover states */
+  }
+}
+
+
+.navbar-nav .dropdown-menu {
+  background:#474B4F;
+  
+  & .dropdown-item {
+    color: var(--nav-item-color);
+    font-weight:300
+  }
+}
+
+.dropdown .dropdown-menu {
+  --bs-dropdown-link-hover-bg: #6B6E70;
+}
+
