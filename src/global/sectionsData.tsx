@@ -13,13 +13,13 @@ interface Section {
     direction: 'flex-row' | 'flex-row-reverse';
     learnMore: string;
   }
-
+const highlightColor: string = "text-success";
 export const sections: Section[] = [
     {
       id: "anchor-1",
       header: (
         <>
-          Discover <span className="text-success">Seamless</span> Multimedia Management
+          Discover <span className={highlightColor}>Seamless</span> Multimedia Management
         </>
       ),
       paragraph: (
@@ -37,7 +37,7 @@ export const sections: Section[] = [
       id: "anchor-2",
       header: (
         <>
-          <span className="text-success">Simplify</span> Your Multimedia Lifestyle
+          <span className={highlightColor}>Simplify</span> Your Multimedia Lifestyle
         </>
       ),
       paragraph: (
@@ -55,7 +55,7 @@ export const sections: Section[] = [
       id: "anchor-3",
       header: (
         <>
-          Elevate Your <span className="text-success">Media Collection</span> 
+          Elevate Your <span className={highlightColor}>Media Collection</span> 
         </>
       ),
       paragraph: (
@@ -73,7 +73,7 @@ export const sections: Section[] = [
       id: "anchor-4",
       header: (
         <>
-          Ready to upgrade your <span className="text-success">multimedia management?</span>
+          Ready to upgrade your <span className={highlightColor}>multimedia management?</span>
         </>
       ),
       paragraph: (

@@ -8,6 +8,7 @@ import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill } from "react-icons/bs";
 import { IconType } from "react-icons";
 import { sections } from "@/global/sectionsData";
+import Arrows, { ScrollableArrow } from "@/components/Arrows";
 
 export const metadata: Metadata = {
   title: "Home - Vernacular",
@@ -20,11 +21,11 @@ export default function Home() {
   return (
     <div className="text-white">
       <div className="container mt-5 mb-5">
-        <div className={`row gx-0 pb-5`}>
+        <div className={`row gx-0 mb-5`}>
           <div className={`col-6 d-flex align-items-center `}>
-            <div className="text col-9">
+            <div className="text col-10">
               <h1 className={`${styles["header"]}`}>
-                Elevate <span className="text-success"> Entertainment:</span> <br /> Your <span className="text-success">Playlist</span> Playground
+                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:</span> <br /> Your <span className="text-success">Playlist</span> Playground
               </h1>
               <hr />
               <p>
@@ -39,6 +40,7 @@ export default function Home() {
               <Image src={image_4.src} alt="Logo" width={704} height={499} quality={100} />
             </div>
           </div>
+          <ScrollableArrow></ScrollableArrow>
         </div>
       </div>
       <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24} icons={icons}></ScrollProgressBar>
