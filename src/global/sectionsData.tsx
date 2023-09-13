@@ -2,6 +2,7 @@ import image_1 from "@/assets/images/illustration-data-1.png";
 import image_2 from "@/assets/images/illustration-data-2.png";
 import image_3 from "@/assets/images/illustration-data-3.png";
 import image_avocado from "@/assets/images/illustration-avocado.png";
+import Button from "@/components/Button";
 
 interface Section {
     id: string;
@@ -10,7 +11,7 @@ interface Section {
     imageSrc: string;
     imageWidth: number;
     imageHeight: number;
-    direction: 'flex-row' | 'flex-row-reverse';
+    direction: 'flex-md-row' | 'flex-md-row-reverse';
     learnMore: string;
   }
 const highlightColor: string = "text-success";
@@ -29,8 +30,8 @@ export const sections: Section[] = [
       ),
       imageSrc: image_1.src,
       imageWidth: 400,
-      imageHeight: 250,
-      direction: "flex-row-reverse" as const,
+      imageHeight: 280,
+      direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about seamless multimedia management",
     },
     {
@@ -48,7 +49,7 @@ export const sections: Section[] = [
       imageSrc: image_2.src,
       imageWidth: 350,
       imageHeight: 350,
-      direction: "flex-row" as const,
+      direction: "flex-md-row" as const,
       learnMore: "Learn more about our customizable playlist",
     },
     {
@@ -64,9 +65,9 @@ export const sections: Section[] = [
         </>
       ),
       imageSrc: image_3.src,
-      imageWidth: 463,
-      imageHeight: 265,
-      direction: "flex-row-reverse" as const,
+      imageWidth: 400,
+      imageHeight: 250,
+      direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about Vernacular's solutions",
     },
     {
@@ -78,14 +79,17 @@ export const sections: Section[] = [
       ),
       paragraph: (
         <>
-          <button className={"btn btn-success"}>Get Started</button>
-          <button className={"btn btn-success"}>Learn More</button>
+                       
+                        <Button color="btn-success" href="/login" text="SIGN UP FOR FREE" width={"16em"}></Button>
+                        <Button color="btn-outline-success" href="/login" text="LEARN MORE" width={"16em"}></Button>
+                     
+
         </>
       ),
       imageSrc: image_avocado.src,
       imageWidth: 403,
       imageHeight: 380,
-      direction: "flex-row" as const,
+      direction: "flex-md-row" as const,
       learnMore: "",
     },
   ];

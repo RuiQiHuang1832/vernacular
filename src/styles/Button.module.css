@@ -1,0 +1,19 @@
+.default-button-size {
+    --bs-btn-padding-y: 1.25rem;
+    --bs-btn-padding-x: 1.5rem;
+    border-radius:10px;
+    letter-spacing:2px;
+}
+
+@media (max-width: 1199px) {
+    .default-button-size {
+        font-size: 12px; /* Set font size to 12px when screen width is less than 992px */
+    }
+}
+
+.button {
+    transform:translateY(20px);
+    display:inline-block;
+    margin-right:15px
+}
+

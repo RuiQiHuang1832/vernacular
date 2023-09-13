@@ -1,0 +1,21 @@
+.header {
+    font-size: 3em;
+    white-space: nowrap;
+    font-weight: bolder;
+}
+
+@media (max-width: 992px) {
+    .header {
+        white-space: wrap;
+    }
+}
+
+
+  
+  @media screen and (max-width: 1199px) {
+    .objectFit {
+      max-width:100%;
+      height:auto;
+    }
+  }
+

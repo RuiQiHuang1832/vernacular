@@ -22,9 +22,10 @@ export default function Footer() {
   const property: Property = {
     size: "0.75em",
   };
+  const footerContainer: string = classNames("text-white container pt-5 pb-3 mt-5")
 
   return (
-    <footer className="text-white container pt-5 pb-3 mt-5">
+    <footer className={footerContainer}>
       <section>
         <div className="d-flex justify-content-center">
           {socialIcons.map((Icon, index) => (

@@ -16,10 +16,11 @@ const arrowIcons: ArrowIcon[] = [
   { direction: "center", Icon: ImArrowDown2, animation: "bounce-up-down" },
   { direction: "left", Icon: ImArrowDownLeft2, animation: "bounce-diagonal-left" },
 ];
-
+//triple arrows
 export default function Arrows() {
+  const visibility = classNames("d-none d-xxl-flex")
   return (
-    <div className={`${styles["arrow-container"]}`}>
+    <div className={`${styles["arrow-container"]} ${visibility}`}>
       {arrowIcons.map(
         (arrow, index): React.ReactNode => (
           <span key={index} className={`${styles["arrow"]} ${styles[arrow.animation]}  ${styles[arrow.direction]}`}>
@@ -30,7 +31,7 @@ export default function Arrows() {
     </div>
   );
 }
-
+// bottom scroll
 export function ScrollableArrow() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const arrowClasses: string = classNames("text-center", styles["bounce"], {
