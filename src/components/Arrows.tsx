@@ -18,9 +18,9 @@ const arrowIcons: ArrowIcon[] = [
 ];
 //triple arrows
 export default function Arrows() {
-  const visibility = classNames("d-none d-xxl-flex")
+  const visibility = classNames("d-none d-xxl-flex", styles["arrow-container"])
   return (
-    <div className={`${styles["arrow-container"]} ${visibility}`}>
+    <div className={visibility}>
       {arrowIcons.map(
         (arrow, index): React.ReactNode => (
           <span key={index} className={`${styles["arrow"]} ${styles[arrow.animation]}  ${styles[arrow.direction]}`}>
@@ -31,7 +31,7 @@ export default function Arrows() {
     </div>
   );
 }
-// bottom scroll
+// bottom scroll indicator
 export function ScrollableArrow() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const arrowClasses: string = classNames("text-center", styles["bounce"], {
@@ -41,11 +41,7 @@ export function ScrollableArrow() {
     // Function to handle scroll event
     const handleScroll = (): void => {
       // Check if the user has scrolled beyond a certain threshold (e.g., 100 pixels)
-      if (window.scrollY !== 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY !== 0);
     };
 
     // Attach the scroll event listener when the component mounts

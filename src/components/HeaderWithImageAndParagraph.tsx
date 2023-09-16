@@ -3,17 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/HeaderWithImageAndParagraph.module.css";
 import Link from "next/link";
 import classNames from "classnames";
-
-type HeaderProps = {
-  header: React.ReactNode;
-  paragraph: React.ReactNode;
-  imageSrc: string;
-  imageWidth: number;
-  imageHeight: number;
-  direction: "flex-md-row" | "flex-md-row-reverse";
-  learnMore: string;
-  id: string;
-};
+import { SectionType as HeaderProps }  from "@/global/sectionsData";
 
 export default function HeaderWithImageAndParagraph({ header, paragraph, imageSrc, imageWidth, imageHeight, direction, learnMore, id }: HeaderProps) {
   

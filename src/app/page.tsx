@@ -10,6 +10,7 @@ import { IconType } from "react-icons";
 import { sections } from "@/global/sectionsData";
 import Arrows, { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
+import classNames from "classnames";
 
 export const metadata: Metadata = {
   title: "Home - Vernacular",
@@ -19,44 +20,45 @@ export const metadata: Metadata = {
 const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 
 export default function Home() {
+  const mainClass = classNames("col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center");
+  const imageClass = classNames("col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1");
+  const approachSection = classNames("text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8");
   return (
     <div className="text-white">
       <div className="container-lg mt-5 mb-5">
         <div className={`row gx-0 mb-5`}>
-          <div className={`col-xxl-6 col-xl-7 col-lg-12 col-md-12 d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center`}>
-            <div className="text col-10 col-lg-12 col-xl-10 col-md-10">
+          <div className={mainClass}>
+            <div className="text col-10 col-lg-12 col-xl-10">
               <h1 className={`${styles["header"]} `}>
-                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:</span>   
-                <span className="d-none d-xl-inline"><br/></span> Your <span className="text-success">Playlist</span> Playground
+                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:</span>
+                <span className="d-none d-xl-inline">
+                  <br />
+                </span>{" "}
+                Your <span className="text-success">Playlist</span> Playground
               </h1>
               <hr />
               <p>
                 Craft and curate your ultimate media collection.&nbsp;
-                <span className="d-none d-xl-inline"><br/></span>
+                <span className="d-none d-xl-inline">
+                  <br />
+                </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
               <Button color="btn-success" href="/login" text="GET STARTED" width={"auto"}></Button>
             </div>
           </div>
-          <div className={`col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1`}>
+          <div className={imageClass}>
             <div className="image">
-        <Image
-          src={image_4.src}
-          alt="Home page logo"
-          width={704}
-          height={500}
-          className={styles['objectFit']}
-          quality={100}
-        />
+              <Image src={image_4.src} alt="Home page logo" width={704} height={500} className={styles["objectFit"]} quality={100} />
             </div>
           </div>
         </div>
         <ScrollableArrow></ScrollableArrow>
       </div>
       <span className="d-none d-xxl-inline">
-      <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24} icons={icons}></ScrollProgressBar>
+        <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24} icons={icons}></ScrollProgressBar>
       </span>
-      <section className="text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8" >
+      <section className={approachSection}>
         <h1 className="fw-bolder">
           Our <span className="text-success">Approach</span>
         </h1>

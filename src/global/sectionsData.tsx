@@ -4,7 +4,7 @@ import image_3 from "@/assets/images/illustration-data-3.png";
 import image_avocado from "@/assets/images/illustration-avocado.png";
 import Button from "@/components/Button";
 
-interface Section {
+export interface SectionType {
     id: string;
     header: React.ReactNode;
     paragraph: React.ReactNode;
@@ -14,8 +14,9 @@ interface Section {
     direction: 'flex-md-row' | 'flex-md-row-reverse';
     learnMore: string;
   }
+
 const highlightColor: string = "text-success";
-export const sections: Section[] = [
+export const sections: SectionType[] = [
     {
       id: "anchor-1",
       header: (

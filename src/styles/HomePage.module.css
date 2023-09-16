@@ -10,9 +10,7 @@
     }
 }
 
-
-  
-  @media screen and (max-width: 1199px) {
+@media screen and (max-width: 1199px) {
     .objectFit {
       max-width:100%;
       height:auto;

@@ -67,3 +67,10 @@ a.navbar-brand {
 .container-lg {
   --bs-gutter-x:1rem !important;
 }
+
+.globalObjectFit {
+    max-width:100%;
+    height:auto;
+}
+
+
