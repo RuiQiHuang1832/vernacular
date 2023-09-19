@@ -17,7 +17,7 @@ export default function HeaderWithImageAndParagraph({ header, paragraph, imageSr
       <div className={`${direction} flex-column align-content-center row gx-0`}>
         <div className={textContainer}>
           <div className={`text col-11`}>
-            <h1 className={headerText}>{header}</h1>
+            <h1 className={`${headerText} responsiveHeader`}>{header}</h1>
             <hr />
             <span>{paragraph}</span>
             <Link className={learnMoreLink} href="#">

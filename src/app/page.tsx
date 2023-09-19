@@ -11,6 +11,7 @@ import { sections } from "@/global/sectionsData";
 import Arrows, { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
 import classNames from "classnames";
+import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
 
 export const metadata: Metadata = {
   title: "Home - Vernacular",
@@ -20,16 +21,16 @@ export const metadata: Metadata = {
 const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 
 export default function Home() {
-  const mainClass = classNames("col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center");
-  const imageClass = classNames("col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1");
-  const approachSection = classNames("text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8");
+  const mainClass:string = classNames("col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center");
+  const imageClass:string = classNames("col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1");
+  const approachSection:string = classNames("text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8");
   return (
     <div className="text-white">
       <div className="container-lg mt-5 mb-5">
         <div className={`row gx-0 mb-5`}>
           <div className={mainClass}>
             <div className="text col-10 col-lg-12 col-xl-10">
-              <h1 className={`${styles["header"]} `}>
+              <h1 className={`${styles["header"]} responsiveHeader`}>
                 <Arrows></Arrows>Elevate <span className="text-success">Entertainment:</span>
                 <span className="d-none d-xl-inline">
                   <br />
@@ -65,10 +66,7 @@ export default function Home() {
         <hr></hr>
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-
-      {sections.map((section, index) => (
-        <HeaderWithImageAndParagraph key={index} {...section} />
-      ))}
+        {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
     </div>
   );
 }

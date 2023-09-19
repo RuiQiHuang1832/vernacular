@@ -52,18 +52,6 @@ a.navbar-brand {
   --bs-dropdown-link-hover-bg: #6B6E70;
 }
 
-@media (max-width: 1199px) {
-  h1 {
-    font-size: 2.5em !important;
-  }
-}
-
-@media (max-width: 992px) {
-  h1 {
-    font-size: 1.8em !important;
-  }
-}
-
 .container-lg {
   --bs-gutter-x:1rem !important;
 }
@@ -74,3 +62,18 @@ a.navbar-brand {
 }
 
 
+@media (max-width: 1199px) {
+  .responsiveHeader {
+    font-size: 2.5em !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .responsiveHeader {
+    font-size: 1.8em !important;
+  }
+}
+
+.defaultGreen {
+  color:#86C232;
+}
