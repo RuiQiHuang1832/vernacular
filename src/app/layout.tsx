@@ -3,14 +3,14 @@ import Footer from "@/components/Footer";
 import "@/styles/globals.css"
 import "bootstrap/dist/css/bootstrap.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend_Deca } from "next/font/google";
 
 //allows painless use of bootstrap without worrying about client/server components
 //doesn't require useEffect/dynamic
 //works with server components, however, if I choose to use 'use client' & useEffect, it would work as well because any componenet inside children tree can be a server component
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"], display:'swap' });
+const lexendDeca = Lexend_Deca({ subsets: ["latin"], display:'swap' });
 //Defaults
 export const metadata: Metadata = {
   title: "Vernacular",
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} default-bg-color`}>
+      <body className={`${lexendDeca.className} default-bg-color`}>
         <Navigation />
         {children}
         <Footer/>

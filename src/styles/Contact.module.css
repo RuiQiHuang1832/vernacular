@@ -1,0 +1,20 @@
+.contactImage {
+    border-radius: 50%;
+     margin-top:-10em;
+}
+@media (max-width: 768px) {
+    .contactImage {
+      margin-top: 0; /* Adjust the margin for smaller screens */
+    }
+  }
+
+
+.responsiveHeader {
+      font-size: 60px !important;
+}
+   @media (max-width: 992px) {
+    .responsiveHeader {
+      font-size: 38px !important;
+      text-wrap: nowrap;
+    }
+  }

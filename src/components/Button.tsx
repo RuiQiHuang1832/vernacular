@@ -13,7 +13,7 @@ type ButtonProps = {
 
 export default function Button({ color, href, text, additionalStyle, width }: ButtonProps) {
   const btnStyles: string = classNames("btn", color, styles["default-button-size"]);
-  const textStyles:string = classNames("text-decoration-none text-white fs-bold fw-medium")
+  const textStyles:string = classNames("text-decoration-none text-white fs-bold fw-medium text-nowrap")
   return (
     <div className={`${styles["button"]} mb-3`}>
       <button type="button" style={{width}} className={`${btnStyles} ${additionalStyle}`}>

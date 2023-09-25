@@ -1,6 +1,6 @@
 .default-button-size {
-    --bs-btn-padding-y: 1.25rem;
-    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-padding-y: 1.15rem;
+    --bs-btn-padding-x: 1.2rem;
     border-radius:10px;
     letter-spacing:2px;
 }
@@ -14,6 +14,15 @@
 .button {
     transform:translateY(20px);
     display:inline-block;
-    margin-right:15px
+    margin-right:15px;
+    transition: transform 0.3s ease;
+   
 }
 
+.button:hover {
+    opacity: 90%;
+    transform: translateY(20px) scale(1.1);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.3);
+    border-radius:10px;
+
+}

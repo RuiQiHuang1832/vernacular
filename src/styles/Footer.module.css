@@ -1,12 +1,12 @@
 .border { 
   border: 2px solid white;
-  margin-right: 10px;
   width: 30px;
   height: 30px; 
   text-align: center;
   border-radius: 50px;
-  line-height: 27px;
+  line-height: 24px;
   transition: transform 0.3s ease;
+  margin:10px 10px;
   
 }
 
@@ -17,4 +17,14 @@
 
 .footer-text {
     font-size: 15px;
+}
+
+.footer hr {
+  margin-bottom:0.5rem;
+  margin-top:0px;
+}
+
+.objectFit {
+  max-width:20%;
+  height:auto;
 }

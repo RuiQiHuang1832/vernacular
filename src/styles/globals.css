@@ -77,3 +77,21 @@ a.navbar-brand {
 .defaultGreen {
   color:#86C232;
 }
+
+.section-heading::after {
+      background: #86C232;
+      bottom: -10px;
+      content: "";
+      display: block;
+      height: 5px;
+      position: relative;
+      width: 50px;
+      left: 50%;
+      margin-left: -25px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  outline:2px solid#00c1d9 !important;
+  border-color: transparent !important
+}
