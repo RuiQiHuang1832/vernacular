@@ -1,8 +1,8 @@
 .form {
-    background: white;
+    background: transparent;
     border-radius: 10px;
     padding:2em;
-    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.927);
+    box-shadow: 0px 5px 100px 5px rgba(0, 0, 0, 0.927);
 }
 
 .input {
@@ -13,3 +13,5 @@
 .input:focus {
     background-color:white !important;
 }
+
+

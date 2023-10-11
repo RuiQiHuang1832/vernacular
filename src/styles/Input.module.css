@@ -1,0 +1,17 @@
+.input-container{
+    border-radius:25px;
+    border: 3px solid white;
+}
+
+
+.input-container:focus-within {
+    outline: 3px solid #00c1d9 ;
+    border-radius:25px;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.placeholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(251, 251, 251);
+    opacity: 1; /* Firefox */
+}

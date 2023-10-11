@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import image_4 from "@/assets/images/illustration-data-4.png";
 import HeaderWithImageAndParagraph from "@/components/HeaderWithImageAndParagraph";
 import Image from "next/image";
@@ -13,10 +12,6 @@ import Button from "@/components/Button";
 import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
 
-export const metadata: Metadata = {
-  title: "Home - Vernacular",
-  description: "Personal Media Catalog & Reviews Hub",
-};
 
 const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 

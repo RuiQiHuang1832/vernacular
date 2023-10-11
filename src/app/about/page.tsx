@@ -3,20 +3,21 @@ import { aboutMetadata } from "@/global/metadata";
 import { Metadata } from "next";
 import { AboutData } from "@/global/aboutData";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
-import classNames from "classnames";
 import Image from "next/image";
 import { presidentList, President } from "@/global/teamData";
 import Button from "@/components/Button";
+import SectionHeading from "@/components/SectionHeading";
+
 
 export const metadata: Metadata = aboutMetadata;
 
 export default function About() {
-  const headingStyle: string = classNames("py-5 mb-5 section-heading");
+
   return (
-    <div className="container text-white text-center">
-      <h1 className={headingStyle}>About Us</h1>
+    <div className="container text-white text-center mt-5">
+      <SectionHeading section={"About"}></SectionHeading>
       {mapObjectToComponent(AboutData, HeaderWithInfo)}
-      <h1 className={headingStyle}>Meet the Team</h1>
+      <SectionHeading section={"Meet the team"}></SectionHeading>
       <div className="row row-cols-3 justify-content-center">
         {presidentList.map((president: President, index: number) => (
           <div className="col-12 col-sm-6 col-md-4 mb-5" key={index}>

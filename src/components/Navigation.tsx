@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import styles from "@/styles/navigation.module.css";
 import classNames from "classnames";
 import Link from "next/link";
@@ -17,7 +16,7 @@ const navLinks = [
 const playlistLinks = [
   { text: "View Playlists", href: "/playlist/view" },
   { text: "Create Playlists", href: "/playlist/create" },
-  { text: "Community Playlists", href: "/playlist/community" },
+  { text: "Community Playlists", href: "/playlist/community/1" },
 ]
 
 export default function Navigation() {
