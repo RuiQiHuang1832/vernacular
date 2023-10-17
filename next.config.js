@@ -1,3 +1,3 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {swcMinify: false}
 module.exports = nextConfig
