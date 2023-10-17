@@ -16,7 +16,6 @@ import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
 const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 
 export default function Home() {
-
   const mainClass:string = classNames("col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center");
   const imageClass:string = classNames("col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1");
   const approachSection:string = classNames("text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8");

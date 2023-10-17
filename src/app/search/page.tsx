@@ -1,7 +1,7 @@
 import { searchMetadata } from "@/global/metadata";
 import { Metadata } from "next";
-import { MdSearch } from "react-icons/Md";
-import { HiArrowLongRight } from "react-icons/Hi2";
+import { MdSearch } from "react-icons/md";
+import { HiArrowLongRight } from "react-icons/hi2";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import Input from "@/components/Input";
 import Button from "@/components/Button";

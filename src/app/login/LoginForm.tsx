@@ -2,7 +2,7 @@
 import Form from "@/components/Form";
 import Link from "next/link";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
-import { MdOutlineCallSplit } from "react-icons/Md";
+import { MdOutlineCallSplit } from "react-icons/md";
 import { LuArrowUpDown } from "react-icons/lu";
 import { useState } from "react";
 import style from "@/styles/LoginPage.module.css";
