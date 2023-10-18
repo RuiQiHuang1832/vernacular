@@ -2,6 +2,7 @@
     font-size: 3em;
     white-space: nowrap;
     font-weight: bolder;
+    overflow:hidden;
 }
 
 @media (max-width: 992px) {
