@@ -6,7 +6,7 @@
 
 @media (max-width: 992px) {
     .header {
-        white-space: wrap;
+        white-space: normal !important;
     }
 }
 
