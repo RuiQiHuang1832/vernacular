@@ -82,7 +82,7 @@ export const sections: SectionType[] = [
         <>
                        
                         <Button color="btn-success" href="/login" text="SIGN UP FOR FREE" width={"16em"}></Button>
-                        <Button color="btn-outline-success" href="/login" text="LEARN MORE" width={"16em"}></Button>
+                        <Button color="btn-outline-success" href="/about" text="LEARN MORE" width={"16em"}></Button>
                      
 
         </>

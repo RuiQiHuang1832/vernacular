@@ -5,10 +5,11 @@ import style from "@/styles/Contact.module.css";
 import classNames from "classnames";
 import SectionHeading from "@/components/SectionHeading";
 import { officeData } from "@/global/officeData";
+import contactUsImage from "@/assets/images/contact-us.png";
 
 export default function Chat() {
-  const informationStyle = classNames("text-white col-md-6 col-12 col-xl-5 p-4");
-  const headerStyle = classNames(style["responsiveHeader"]);
+  const informationStyle = classNames("text-white col-md-6 col-12 col-xl-5 p-4 me-4");
+  const headerStyle = classNames(style["responsiveHeader"] );
   const formContainerStyle = classNames("col-md-6 col col-xl-5 col-xxl-4");
   const officeContainerStyle = classNames("col d-md-flex text-white justify-content-evenly text-center pb-5");
 
@@ -19,6 +20,7 @@ export default function Chat() {
         <div className={informationStyle}>
           <h1 className={headerStyle}>Get in touch</h1>
           <p className="fw-light">Tell us a bit about yourself and what you&apos;d like to chat about. Someone from Ground Control will be in touch shortly.</p>
+          <Image src={contactUsImage} alt="contact us image" className={"globalObjectFit"} quality={100}/>
         </div>
         <div className={formContainerStyle}>
           <Form

@@ -1,7 +1,7 @@
 import  { StaticImageData } from "next/image";
-import toronto from "@/assets/images/Toronto-location.jpeg";
-import vancouver from "@/assets/images/Vancouver-location.jpeg";
-import nyc from "@/assets/images/NYC-location.jpeg";
+import toronto from "@/assets/images/toronto.png";
+import vancouver from "@/assets/images/vancouver.png";
+import nyc from "@/assets/images/nyc.png";
 import style from "@/styles/Contact.module.css";
 
  interface officeData {
@@ -12,13 +12,15 @@ import style from "@/styles/Contact.module.css";
     email: string;
     additionalClass?: string;
   }
-export  const officeData: officeData[] = [
+export const officeData: officeData[] = [
+  
     {
       src: vancouver,
       number: "+1 (212) 603-9667",
       alt: "vancouver image",
       name: "Vancouver Office",
       email: "van@vernacular.com",
+      
     },
     {
       src: toronto,

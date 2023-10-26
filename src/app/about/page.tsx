@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 
 
+
 export const metadata: Metadata = aboutMetadata;
 
 export default function About() {

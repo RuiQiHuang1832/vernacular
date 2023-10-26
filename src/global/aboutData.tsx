@@ -1,15 +1,18 @@
 import { PiArrowsLeftRightFill } from "react-icons/pi";
 import classNames from "classnames";
+import Image from "next/image"
+import aboutImage1 from "@/assets/images/about_image1.jpg"
+import aboutImage2 from "@/assets/images/about_image2.jpg"
 
 
 export type aboutType = {
     header: React.ReactNode;
     information: React.ReactNode;
-    headerSide: 'right' | 'left',
+    headerSide: 'right' | 'left' | 'top',
 }
 
 const iconStyle = classNames("d-none d-lg-inline")
-const importantWord = classNames("text-info")
+const importantWord = classNames("text-success")
 const doubleArrowIconColor = 'white'
 
 export const AboutData: aboutType[] = [
@@ -19,7 +22,10 @@ export const AboutData: aboutType[] = [
       </>),
       headerSide: 'right',
    },
-   { header: <><PiArrowsLeftRightFill className={iconStyle} color={doubleArrowIconColor}></PiArrowsLeftRightFill> What We Do</>, 
+   { header: <figure className="figure"><Image src={aboutImage1} alt="Former U.S. Presidents George Washington, Abraham Lincoln, and Chester Arthur image" width={600} height={100} style={{borderRadius:"10px"}} className={"globalObjectFit figure-img"} quality={100} />  
+   <figcaption style={{fontSize:'12px'}} className="figure-caption text-white fw-light">(L-R) Former U.S. Presidents George Washington, Abraham Lincoln, and Chester Arthur</figcaption>
+   </figure>
+   , 
       information: (
          <><p>At our <span className={importantWord}>core</span>, we&apos;re all about transforming chaos into clarity.</p> <p>Our web app provides a sleek and intuitive platform that empowers you to catalog your media collection in an organized and personalized manner.</p> Whether you&apos;re a devoted film buff or a casual viewer, our tools make it easy to curate playlists, rate your favorites, and discover new content tailored to your unique preferences.</>),
       headerSide: 'left',
@@ -28,12 +34,14 @@ export const AboutData: aboutType[] = [
       information: (<>Our mission is to <span className={importantWord}>revolutionize</span> the way you interact with your media library. We&apos;re committed to bringing order to the vast landscape of entertainment options. With a focus on simplicity, customization, and user experience, we aim to <span className={importantWord}>redefine</span> how you engage with your multimedia treasures.</>),
       headerSide: 'right',
    },
-   { header: <><PiArrowsLeftRightFill className={iconStyle} color={doubleArrowIconColor}></PiArrowsLeftRightFill> Our Impact</>, 
+   { header:  <figure className="figure"><Image src={aboutImage2} alt="President Franklin Roosevelt signing the banking reform bill in 1933. image" width={600} height={100} style={{borderRadius:"10px"}} className={"globalObjectFit figure-img"} quality={100} />  
+   <figcaption style={{fontSize:'12px'}} className="figure-caption text-white fw-light">President Franklin Roosevelt signing the banking reform bill in 1933.</figcaption>
+   </figure>, 
       information: (<><p>We take <span className={importantWord}>pride</span> in the impact we&apos;re making on the way you manage your media. By offering a seamless platform for media cataloging, we&apos;re helping you reclaim your time and rediscover the joy of entertainment.</p> Our users have reported <span className={importantWord}>increased satisfaction</span> in exploring their collections, finding hidden gems, and enjoying a more personalized entertainment experience.</>),
       headerSide: 'left',
    },
-   { header: <>Join Us On The Journey <PiArrowsLeftRightFill className={iconStyle} color={doubleArrowIconColor}></PiArrowsLeftRightFill></>, 
+   { header: <>Join Us On The Journey</>, 
    information: (<><p>We&apos;re on a journey to <span className={importantWord}>redefine media cataloging</span>, and we invite you to be a part of it. Join our community of media enthusiasts and start curating your digital media haven today. </p>Together, we&apos;re shaping the future of how you connect with your favorite movies and TV shows. The most appealing aspect? It will consistently be available for <span className={importantWord}>FREE</span>!</>),
-   headerSide: 'right',
+   headerSide: 'top',
   },
   ]

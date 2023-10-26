@@ -35,7 +35,7 @@ export default function Playlist() {
     handleCategoryDelete(e, selectedCategory, setSelectedCategory);
   };
 
-  const categoryStyle = classNames(`border rounded-pill border-2 p-1 mb-1 ${style["category"]}`);
+  const categoryStyle = classNames(` rounded-pill ms-1 p-1 mb-1 ${style["category"]} bg-success`);
   const inputStyle = classNames(`form-control ${style["transparent_input"]} border-3`);
 
   return (
@@ -88,7 +88,7 @@ export default function Playlist() {
 
       <div>
         <button className="btn btn-light" type="button" onClick={onReviewAdd}>
-          Add a Review ({reviewCount}/{MAX_REVIEWS})
+          + New Review ({reviewCount}/{MAX_REVIEWS})
         </button>
       </div>
       <Toast />

@@ -39,7 +39,6 @@ export default function Footer() {
           ))}
         </div>
       </section>
-      <hr></hr>
       <section className={`${sectionContainer} justify-content-between`}>
       <Image src={skyrimKnotworkLeft.src} alt="heading left" width={200} height={40} quality={100} className={styles["objectFit"]} ></Image>
         <div className="text-center footer-text">© 2023 Copyright. All Rights Reserved</div>

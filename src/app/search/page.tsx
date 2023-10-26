@@ -44,7 +44,7 @@ export default function Search() {
           <div className="text-center">
             <Button type="submit" color="btn-outline-success" text="Search" width={"auto"}></Button>
           </div>
-          <div>
+          <div className="mt-5">
             <BiSolidQuoteAltLeft size="5em"></BiSolidQuoteAltLeft>
             <p className="fs-3">Associate with men of good quality if you esteem your own reputation; for it is better to be alone than in bad company.</p>
             <p className="text-warning">George Washington</p>

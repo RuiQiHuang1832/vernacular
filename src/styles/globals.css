@@ -5,7 +5,7 @@
 }
 
 .default-bg-color {
-  background-color: var(--page-background-color);
+  background: linear-gradient(var(--page-background-color), rgba(0, 0, 0, 0.984));
 }
 
 .navbar-expand-lg .navbar-nav a.nav-link {
@@ -61,7 +61,7 @@ a.navbar-brand {
 
 @media (max-width: 1199px) {
   .responsiveHeader {
-    font-size: 2.5em !important;
+    font-size: 2.4em !important;
   }
 }
 
