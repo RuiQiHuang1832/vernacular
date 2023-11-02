@@ -2,11 +2,12 @@
 
 type HeadingProps = {
     section: string
+    on?: boolean
 }
 export default function SectionHeading(props: HeadingProps) {
-  return (
-    <h1 className="pt-5">{""}</h1>
+  const { section, on = false } = props; // Set a default value of false for on
 
-    // <h1 className="text-center text-white mb-5 pb-3 section-heading">{props.section}</h1>
+  return (
+    on ? <h1 className="text-center text-white mb-5 pb-3 section-heading">{section}</h1> : ""
   )
 }

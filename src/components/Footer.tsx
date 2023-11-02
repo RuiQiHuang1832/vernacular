@@ -20,8 +20,17 @@ const socialIcons: IconType[] = [
   BsGoogle,
 ];
 
+const socialIconLinks: string[] = [
+  "",
+  "https://github.com/RuiQiHuang1832",
+  "https://www.linkedin.com/in/rui-huang-528a43220/",
+  "",
+  "",
+  "mailto:huangben32@gmail.com"
+]
+
 export default function Footer() {
-  const iconBorder: string = classNames(styles["border"]);
+  const iconBorder: string = classNames(styles["border"], "text-reset");
   const property: Property = {
     size: "0.75em",
   };
@@ -33,15 +42,15 @@ export default function Footer() {
       <section>
         <div className={`${sectionContainer} justify-content-center`}>
           {socialIcons.map((Icon, index) => (
-            <div key={index} className={iconBorder}>
+            <a target="_blank" rel="noopener noreferrer" href={socialIconLinks[index]} key={index} className={iconBorder}>
               <Icon size={property["size"]} />
-            </div>
+            </a>
           ))}
         </div>
       </section>
       <section className={`${sectionContainer} justify-content-between`}>
       <Image src={skyrimKnotworkLeft.src} alt="heading left" width={200} height={40} quality={100} className={styles["objectFit"]} ></Image>
-        <div className="text-center footer-text">© 2023 Copyright. All Rights Reserved</div>
+        <div className="text-center footer-text">© 2023-2024 Vernacular. All Rights Reserved.</div>
         <Image src={skyrimKnotworkRight.src} alt="heading right" width={200} height={40} quality={100} className={styles["objectFit"]} ></Image>
 
       </section>
