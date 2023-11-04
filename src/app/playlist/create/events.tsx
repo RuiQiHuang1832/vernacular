@@ -47,7 +47,7 @@ export const handleReviewAdd = (setReview:React.Dispatch<React.SetStateAction<Re
           <input type="name" className={inputStyle} />
           <div className="d-flex">
             <label className="form-label text-success mt-2">Rating: </label>
-            <div className={style["rate"]}>
+            <div className={`${style["rate"]} my-auto`}>
               {[5, 4, 3, 2, 1].map((value) => (
                 <>
                   <input type="radio" id={`star${value}-${uniqueId}`} name={`rate-${uniqueId}`} value={value} onChange={(e) => handleRatingChange(e, uniqueId)} />

@@ -123,3 +123,18 @@ select option {
     font-size: .75rem;
     line-height: 1.125;
 }
+
+/* REMOVE THIS */
+.leader-divider {
+  border-bottom: 2px solid #56585A;
+  position: absolute;
+  left: 30%;
+  right:30%;
+}  
+
+.box {
+  position: relative;
+  margin-bottom:10px;
+  margin-top:10px;
+
+}

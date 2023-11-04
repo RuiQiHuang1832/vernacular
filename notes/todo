@@ -1,3 +1,8 @@
 -revamp search
 --apptopia we're hiring page copy
 --organize assets folder
+
+
+--make leader-divider a component
+--organize code
+-- remove leader-divier from global css and move it into its own component

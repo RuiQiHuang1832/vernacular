@@ -12,9 +12,16 @@
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 25px;
   color: #ccc;
 }
+
+@media (max-width:576px) {
+  .rate:not(:checked) > label {
+    font-size: 17px;
+  }
+}
+
 .rate:not(:checked) > label:before {
   content: "★ ";
 }
@@ -59,4 +66,13 @@
 
 .transparent_input:focus {
   background-color: transparent;
+}
+
+
+.number-circle {
+  width: 35px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid #666;
 }

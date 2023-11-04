@@ -41,7 +41,7 @@ export default function Playlist() {
   return (
     <form>
       <div className="row">
-        <div className="col-8">
+        <div className="col-lg-8 col-12">
           <h4>Create a New Playlist</h4>
           <div className="mb-3">
             <label className="form-label text-success">Playlist Title</label>
@@ -53,7 +53,7 @@ export default function Playlist() {
           </div>
         </div>
 
-        <div className="col-4">
+        <div className="col-lg-4 col pb-5 pb-lg-0">
           <h5>Categories and Tags</h5>
           <div className="d-flex flex-wrap p-3 border-top border-3">
             {categories.map((item, i) => (
@@ -77,7 +77,7 @@ export default function Playlist() {
       {review.map((reviewItem, i) => (
         <div key={reviewItem.id} className="row">
           <div className="d-flex justify-content-between">
-            <div>{i + 1}.</div>
+            <div  className={`${style["number-circle"]}`}>{i + 1}</div>
             <button type="button" onClick={(e) => onReviewDelete(e, reviewItem.id)} className="btn btn-danger d-flex align-items-center p-2">
               <RiDeleteBinFill/>
             </button>

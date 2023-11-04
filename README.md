@@ -17,20 +17,22 @@ Explore a sneak peek of the interactive prototype for my upcoming project.
 
 ## Front-End
 
-- **Next.js**: Next.js provides server-side rendering (SSR) capabilities, enhancing performance and search engine optimization (SEO).
-- **TypeScript**: TypeScript ensures type safety and enhances code readability, making development more efficient.
-- **CSS Modules**: CSS Modules allow for modular and scoped styling, reducing potential naming conflicts.
-- **Bootstrap 5**: Bootstrap streamlines responsive and visually appealing UI design with its extensive component library.
-- **React**: The core library for building interactive and dynamic user interfaces.
-- **Lodash**: Lodash simplifies complex operations and provides utility functions for enhanced code maintainability.
-- **React Query**: React Query facilitates data fetching and caching, optimizing application performance.
-- **classNames Library**: classNames simplifies the management of dynamic CSS class names.
-- **Frontend Hosting: Vercel**: The front-end of the application is hosted on Vercel, providing rapid deployment and high availability.
+- **Next.js**
+- **TypeScript**
+- **CSS Modules**
+- **Bootstrap 5**
+- **React**
+- **Lodash**
+- **React Query**
+- **classNames Library**
+- **Frontend Hosting: Vercel**
 
 ## Back-End
 
-- **Database Hosting: PlanetScale (MySQL)**: The database is hosted on PlanetScale using MySQL, offering a powerful and scalable data storage solution.
-- **JWT (JSON Web Tokens)**: JWT authentication ensures secure and stateless user authentication.
+- **Database Hosting: PlanetScale (MySQL)**
+- **JWT**
+- **supabase**
+
 
 ## Server Information
 
