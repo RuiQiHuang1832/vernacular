@@ -1,3 +1,4 @@
+
 import HeaderWithInfo from "@/components/HeaderWithInfo";
 import { aboutMetadata } from "@/global/metadata";
 import { Metadata } from "next";
@@ -10,6 +11,7 @@ import SectionHeading from "@/components/SectionHeading";
 import headerAboutImage from "@/assets/images/headerAboutImage.png";
 import styles from "@/styles/About.module.css";
 import classNames from "classnames";
+import BorderDivider from "@/components/BorderDivider";
 
 export const metadata: Metadata = aboutMetadata;
 
@@ -53,9 +55,7 @@ export default function About() {
               <Image style={{ borderRadius: "50%" }} src={president.src} alt={president.alt} width={200} height={200}></Image>
               <h5 className="pt-3">{president.name}</h5>
               <p className="text-secondary">{president.title}</p>
-              <div className={styles["box"]}>
-                <div className={styles["leader-divider"]}></div>
-              </div>
+                <BorderDivider marginBottom="3rem" marginTop="0"></BorderDivider>
               <p className={"text-start fw-light col-10 mx-auto"}>{president.description}</p>
             </div>
           ))}

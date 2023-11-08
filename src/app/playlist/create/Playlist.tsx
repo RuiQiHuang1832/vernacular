@@ -54,7 +54,7 @@ export default function Playlist() {
         </div>
 
         <div className="col-lg-4 col pb-5 pb-lg-0">
-          <h5>Categories and Tags</h5>
+          <h5>Categories & Tags</h5>
           <div className="d-flex flex-wrap p-3 border-top border-3">
             {categories.map((item, i) => (
               <div key={i} onClick={onCategoryAdd} className={`${categoryStyle} ${selectedCategory.includes(item) ? style["strikethrough-text"] : ""}`}>
