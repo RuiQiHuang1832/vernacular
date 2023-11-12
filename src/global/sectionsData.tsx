@@ -1,7 +1,7 @@
-import image_1 from "@/assets/images/illustration-data-1.png";
-import image_2 from "@/assets/images/illustration-data-2.png";
-import image_3 from "@/assets/images/illustration-data-3.png";
-import image_avocado from "@/assets/images/illustration-avocado.png";
+import image_1 from "@/assets/images/home/illustration-data-1.png";
+import image_2 from "@/assets/images/home/illustration-data-2.png";
+import image_3 from "@/assets/images/home/illustration-data-3.png";
+import image_avocado from "@/assets/images/home/illustration-avocado.png";
 import Button from "@/components/Button";
 
 export interface SectionType {

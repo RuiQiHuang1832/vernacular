@@ -1,9 +1,9 @@
 import { PiArrowsLeftRightFill } from "react-icons/pi";
 import classNames from "classnames";
 import Image from "next/image";
-import aboutImage1 from "@/assets/images/about_image1.jpg";
-import aboutImage2 from "@/assets/images/about_image2.jpg";
-import aboutImage3 from "@/assets/images/about_image3.jpg";
+import aboutImage1 from "@/assets/images/about/about_image1.jpg";
+import aboutImage2 from "@/assets/images/about/about_image2.jpg";
+import aboutImage3 from "@/assets/images/about/about_image3.jpg";
 
 export type aboutType = {
   header: React.ReactNode;

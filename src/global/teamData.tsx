@@ -5,12 +5,12 @@ import theodoreRoosevelt from "@/assets/images/team/roosevelt.jpg";
 import georgeWashington from "@/assets/images/team/washington.jpg";
 import johnKennedy from "@/assets/images/team/jfk.jpg";
 
-import absCapital from "@/assets/images/absCapital.png"
-import telegraphHill from "@/assets/images/telegraphHill.png"
-import newfundLogo from "@/assets/images/newfundLogo.png"
-import blossomLogo from "@/assets/images/blossomLogo.png"
-import soundImage from "@/assets/images/soundImage.png"
-import markCubanLogo from "@/assets/images/markCubanLogo.png"
+import absCapital from "@/assets/images/investors/absCapital.png"
+import telegraphHill from "@/assets/images/investors/telegraphHill.png"
+import newfundLogo from "@/assets/images/investors/newfundLogo.png"
+import blossomLogo from "@/assets/images/investors/blossomLogo.png"
+import soundImage from "@/assets/images/investors/soundImage.png"
+import markCubanLogo from "@/assets/images/investors/markCubanLogo.png"
 
 import { StaticImageData } from "next/image"
 

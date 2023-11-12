@@ -1,7 +1,7 @@
 import  { StaticImageData } from "next/image";
-import toronto from "@/assets/images/toronto.png";
-import vancouver from "@/assets/images/vancouver.png";
-import nyc from "@/assets/images/nyc.png";
+import toronto from "@/assets/images/offices/toronto.png";
+import vancouver from "@/assets/images/offices/vancouver.png";
+import nyc from "@/assets/images/offices/nyc.png";
 import style from "@/styles/Contact.module.css";
 
  interface officeData {

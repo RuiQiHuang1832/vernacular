@@ -3,8 +3,8 @@ import { BsFacebook, BsGithub, BsGoogle, BsInstagram, BsLinkedin, BsTwitter } fr
 import styles from "@/styles/Footer.module.css";
 import classNames from "classnames";
 import { IconType } from "react-icons";
-import skyrimKnotworkRight from "@/assets/images/skyrim-knotwork-right.png"
-import skyrimKnotworkLeft from "@/assets/images/skyrim-knotwork-left.png"
+import skyrimKnotworkRight from "@/assets/images/footer/skyrim-knotwork-right.png"
+import skyrimKnotworkLeft from "@/assets/images/footer/skyrim-knotwork-left.png"
 import Image from "next/image";
 
 type Property = {

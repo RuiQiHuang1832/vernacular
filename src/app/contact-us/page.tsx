@@ -5,7 +5,7 @@ import style from "@/styles/Contact.module.css";
 import classNames from "classnames";
 import SectionHeading from "@/components/SectionHeading";
 import { officeData } from "@/global/officeData";
-import contactUsImage from "@/assets/images/contact-us.png";
+import contactUsImage from "@/assets/images/contact/contact-us.png";
 
 export default function Chat() {
   const informationStyle = classNames("text-white col-md-6 col-12 col-xl-5 p-4 me-4");

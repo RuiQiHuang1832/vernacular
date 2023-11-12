@@ -8,7 +8,7 @@ import Image from "next/image";
 import { presidentList, President, investorsList, Investors } from "@/global/teamData";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
-import headerAboutImage from "@/assets/images/headerAboutImage.png";
+import headerAboutImage from "@/assets/images/about/headerAboutImage.png";
 import styles from "@/styles/About.module.css";
 import classNames from "classnames";
 import BorderDivider from "@/components/BorderDivider";

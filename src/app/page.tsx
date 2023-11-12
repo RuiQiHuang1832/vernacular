@@ -1,5 +1,5 @@
 "use client";
-import image_4 from "@/assets/images/illustration-data-4.png";
+import image_4 from "@/assets/images/home/illustration-data-4.png";
 import HeaderWithImageAndParagraph from "@/components/HeaderWithImageAndParagraph";
 import Image from "next/image";
 import styles from "@/styles/HomePage.module.css";

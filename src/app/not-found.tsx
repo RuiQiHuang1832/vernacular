@@ -1,4 +1,4 @@
-import errorImage from "@/assets/images/illustration-data-5.png";
+import errorImage from "@/assets/images/home/illustration-data-5.png";
 import Image from "next/image";
 import Button from "@/components/Button";
 
