@@ -24,7 +24,7 @@ export default function Navigation() {
   const pathname: string = usePathname();
   const activeLinkClass: string = styles["link-active"];
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className={`navbar navbar-expand-lg bg-dark ${styles["responsive-sticky-top"]}`}>
       <div className="container-fluid">
         <a className={`navbar-brand fs-2 fw-bold ms-5`} href="/">
           <Image src={logo} alt="Logo" width={50} height={50} />

@@ -14,3 +14,12 @@
   a.link-active {
     border-bottom: 2px solid #86C232
   }
+
+  @media screen and (max-width: 576px) {
+    .responsive-sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+  }
+ 
