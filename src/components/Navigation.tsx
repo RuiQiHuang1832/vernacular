@@ -28,7 +28,7 @@ export default function Navigation() {
       <div className="container-fluid">
         <a className={`navbar-brand fs-2 fw-bold ms-5`} href="/">
           <Image src={logo} alt="Logo" width={50} height={50} />
-          &nbsp;vernacular&nbsp;
+          &nbsp;vernacular
         </a>
         <button className="navbar-toggler navbar-dark order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <FaBars color={"#ffffff"} size={"1.3em"} />

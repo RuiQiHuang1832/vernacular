@@ -27,7 +27,7 @@ export default function HeaderWithImageAndParagraph({ header, paragraph, imageSr
         </div>
         <div className={imageContainer}>
           <div className="image">
-            <Image src={imageSrc} alt="Logo" width={imageWidth} height={imageHeight} quality={100} />
+            <Image src={imageSrc} alt="Logo" width={imageWidth} height={imageHeight} quality={100} className="globalObjectFit" />
           </div>
         </div>
       </div>

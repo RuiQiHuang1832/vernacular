@@ -8,6 +8,10 @@
   background: linear-gradient(var(--page-background-color), rgba(0, 0, 0, 0.984));
 }
 
+body {
+  background: linear-gradient(var(--page-background-color), rgba(0, 0, 0, 0.984));
+}
+
 .navbar-expand-lg .navbar-nav a.nav-link {
   padding: 15px 0px 0px 0px;
   line-height: 1.2em;
