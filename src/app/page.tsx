@@ -52,7 +52,7 @@ export default function Home() {
         <ScrollableArrow></ScrollableArrow>
       </div>
       <span className="d-none d-xxl-inline">
-        <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24} icons={icons}></ScrollProgressBar>
+        <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24.99} icons={icons}></ScrollProgressBar>
       </span>
       <section className={approachSection}>
         <h1 className="fw-bolder">

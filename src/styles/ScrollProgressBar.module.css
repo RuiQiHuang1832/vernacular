@@ -5,7 +5,7 @@
 
 .scroll-container {
   position: sticky;
-  top: 3px;
+  top: 10px;
   height: 0;
   overflow: visible;
 }
@@ -41,21 +41,21 @@
 }
 
 .item-container:nth-child(2) {
-  top: 0px; /* Adjust as needed */
+  top: -10px; /* Adjust as needed */
 }
 
 .item-container:nth-child(3) {
-  top: 100px; /* Adjust as needed */
+  top: 90px; /* Adjust as needed */
 }
 
 .item-container:nth-child(4) {
-  top: 200px; /* Adjust as needed */
+  top: 190px; /* Adjust as needed */
 }
 
 .item-container:nth-child(5) {
-  top: 300px; /* Adjust as needed */
+  top: 290px; /* Adjust as needed */
 }
 
 .item-container:nth-child(6) {
-  top: 400px; /* Adjust as needed */
+  top: 390px; /* Adjust as needed */
 }

@@ -50,7 +50,7 @@ export default function Footer() {
       </section>
       <section className={`${sectionContainer} justify-content-between`}>
       <Image src={skyrimKnotworkLeft.src} alt="heading left" width={200} height={40} quality={100} className={styles["objectFit"]} ></Image>
-        <div className={`text-center lead ${styles["rfs"]}`}><small>© 2023-2024</small> Vernacular. All Rights Reserved.</div>
+        <div className={`text-center lead ${styles["rfs"]}`}><small>© 2023-2024 Vernacular. All Rights Reserved.</small></div>
         <Image src={skyrimKnotworkRight.src} alt="heading right" width={200} height={40} quality={100} className={styles["objectFit"]} ></Image>
 
       </section>
