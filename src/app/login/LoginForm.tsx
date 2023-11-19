@@ -41,7 +41,7 @@ export default function LoginForm() {
         <Form
           title="NEW USER"
           buttonText="Register"
-          btnColor="defaultGreenBg"
+          btnColor="btn-success"
           checkbox={[
             <span key={1}>
               Accept <Link href="/tos">terms & conditions</Link>
@@ -64,7 +64,7 @@ export default function LoginForm() {
         <Form
           title="EXISTING USER"
           buttonText="Sign In"
-          btnColor="defaultGreenBg"
+          btnColor="btn-success"
           info="Already have an account? Sign in to retrieve your account settings."
           additionalLink={
             <div>
@@ -84,7 +84,7 @@ export default function LoginForm() {
         <p className={style["quote"]}>
           By using <span className="text-success">Vernacular</span>, my team saves a lot of time by working on the right content and in a more data-driven way.
         </p>
-        <p className="text-info">Theodore Roosevelt</p>
+        <p className="text-success">Theodore Roosevelt</p>
         <p>VP, Sales & Marketing</p>
       </div>
     </div>

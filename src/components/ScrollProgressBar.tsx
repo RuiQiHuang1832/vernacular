@@ -29,7 +29,6 @@ export default function ScrollProgressBar({ size = "2em", startHeight, startColo
 
   const getIconColor = (iconIndex: number): string => {
     if (scrollProgress >= iconIndex * distance) {
-      console.log(scrollProgress)
       // 25 but -1 to offset. so 24.
       return fillColor;
     }

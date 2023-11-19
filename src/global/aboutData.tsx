@@ -96,14 +96,14 @@ export const AboutData: aboutType[] = [
    information: (
      <>
        <ul>
-         <li>
-           <span className={importantWord}>Organized Bliss:</span> Our web app&apos;s sleek and intuitive platform has redefined the way media enthusiasts catalog their collections. We&apos;ve brought clarity to the previously chaotic world of media management.  Our impact is felt in the peace of mind that comes from knowing that your media is neatly cataloged and readily accessible.
+         <li className="pb-3">
+           <span className={importantWord}>Organized Bliss:</span> Our web app&apos;s sleek and intuitive platform has redefined the way media enthusiasts catalog their collections. We&apos;ve brought clarity to the previously chaotic world of media management.  
+         </li>
+         <li className="pb-3">
+           <span className={importantWord}>Personalized Discovery:</span> We are not just about organization; we are about personalization. Our app empowers users to curate playlists, rate their favorites, and discover new content that aligns perfectly with their tastes. 
          </li>
          <li>
-           <span className={importantWord}>Personalized Discovery:</span> We are not just about organization; we are about personalization. Our app empowers users to curate playlists, rate their favorites, and discover new content that aligns perfectly with their tastes. Our impact can be seen in the joy of users as they stumble upon hidden gems that resonate with them, thanks to our tailored recommendations.
-         </li>
-         <li>
-           <span className={importantWord}>Guiding Light:</span> Our impact is in being the guiding light through the exciting realm of digital entertainment. We&apos;ve become the trusted companion for devoted film buffs and casual viewers alike. We lead users to uncharted territories of entertainment they might not have discovered otherwise. Our app is not just a platform; it&apos;s a bridge to a world of endless possibilities.
+           <span className={importantWord}>Guiding Light:</span> Our impact is in being the guiding light through the exciting realm of digital entertainment. We&apos;ve become the trusted companion for devoted film buffs and casual viewers alike. Our app is not just a platform; it&apos;s a bridge to a world of endless possibilities.
          </li>
        </ul>
      </>

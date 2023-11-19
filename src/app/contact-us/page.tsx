@@ -26,7 +26,7 @@ export default function Chat() {
           <Form
             title="Let's Chat"
             buttonText="Let's Connect!"
-            btnColor="defaultGreenBg"
+            btnColor="btn-success"
             input={[
               { color: "#ffefef", text: "Business Email*", type: "email" },
               { color: "white", text: "First Name*", type: "firstName" },

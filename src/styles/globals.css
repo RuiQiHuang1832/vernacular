@@ -1,6 +1,6 @@
 :root {
   --nav-item-color: #86c232;
-  --nav-brand-color: #edf5e1;
+  --nav-brand-color: #ffffff;
   --page-background-color: #222629;
 }
 
@@ -22,10 +22,7 @@ body {
     color: var(--nav-item-color);
     font-weight: 300;
     display: inline-block;
-
-    &:hover {
-      color: var(--nav-brand-color);
-    }
+ 
     &.show,
     &:focus {
       color: var(--nav-item-color) !important;

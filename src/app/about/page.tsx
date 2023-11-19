@@ -43,7 +43,7 @@ export default function About() {
         </div>
       </section>
       <div className={`${styles["hiring-button"]} text-center`} >
-        <Button color="btn btn-info" href="/careers" text="We're Hiring!" width={"auto"}></Button>
+        <Button color="btn btn-success" href="/careers" text="We're Hiring!" width={"auto"}></Button>
       </div>
       <section className={sectionStyles}>
         <SectionHeading section={"About"}></SectionHeading>
@@ -70,7 +70,7 @@ export default function About() {
             </div>
           ))}
         </div>
-        <Button color="btn btn-info" href="/contact-us" text="Let's chat!" width={"auto"}></Button>
+        <Button color="btn btn-success" href="/contact-us" text="Let's chat!" width={"auto"}></Button>
       </section>
     </>
   );

@@ -1,6 +1,3 @@
-.nav-shake:hover {
-    animation: tilt-shaking 0.15s ease-in-out;
-}
 
 
 @keyframes tilt-shaking {
@@ -11,8 +8,8 @@
     100% { transform: rotate(0deg); }
   }
 
-  a.link-active {
-    border-bottom: 2px solid #86C232
+  div.link-active {
+    border-bottom: 2px solid #86C232;
   }
 
   @media screen and (max-width: 576px) {
@@ -23,3 +20,37 @@
     }
   }
  
+@media screen and (max-width:991.9px) {
+  .nav-dropdown-menu {
+    border-bottom: 1px solid #444a4d;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .hover-dropdown:hover {
+    background: rgba(121,135,161,0.15);
+    border-radius:10px;
+    transition: background 300ms;
+
+  }
+}
+
+ @media screen and (min-width:992px) {
+  .nav-shake:hover {
+    animation: tilt-shaking 0.15s ease-in-out !important;
+ }
+}
+
+.highlight-nav:hover {
+    color: var(--nav-brand-color);
+
+}
+
+
+.playlist-icon  {
+  transition: transform 200ms ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  
+}
