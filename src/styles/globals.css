@@ -39,7 +39,7 @@ a.navbar-brand {
 }
 
 .navbar-nav .dropdown-menu {
-  background: #474b4f;
+  background: #171717;
 
   & .dropdown-item {
     color: var(--nav-item-color);
@@ -47,7 +47,7 @@ a.navbar-brand {
   }
 }
 
-.dropdown .dropdown-menu {
+.dropdown-menu {
   --bs-dropdown-link-hover-bg: #6b6e70;
 }
 
@@ -117,7 +117,7 @@ select option {
 }
 
 .figure-caption .credit {
-  margin: 0;
+    margin: 0;
     padding: 0;
     color: gray;
     font-family: open sans,sans-serif;
