@@ -45,7 +45,7 @@ export default function Home() {
           </div>
           <div className={imageClass}>
             <div className="image">
-              <Image src={image_4.src} alt="Home page logo" width={704} height={500} className={styles["objectFit"]} quality={100} />
+              <Image src={image_4.src} alt="Home page logo"  width={660} height={460} priority={true} className={styles["objectFit"]} quality={100} />
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
       </span>
       <section className={approachSection}>
         <h1 className="fw-bolder">
-          Our <span className="text-success">Approach</span>
+          Our <span className="text-warning">Approach</span>
         </h1>
         <hr></hr>
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
