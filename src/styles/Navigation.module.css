@@ -51,3 +51,12 @@
 .rotate {
   transform: rotate(180deg);
 }
+
+.search-close-btn {
+  z-index: 2001;
+  top:0;
+  right:0;
+  position:absolute;
+  float:right;
+  cursor:pointer;
+}
