@@ -49,12 +49,12 @@ export default function Navigation() {
     document.body.classList.toggle("overflow-hidden");
   };
 
-  useEffect(() => {
-    const windowSize: boolean = typeof window !== "undefined" && window.innerWidth <= 991.9;
-    const handleResize = (): void => {
-      setIsMobile(windowSize);
-    };
-    setIsMobile(windowSize);
+  const handleResize = (): void => {
+    setIsMobile(typeof window !== "undefined" && window.innerWidth <= 991.9);
+  };
+
+  useEffect(() => { 
+    setIsMobile(typeof window !== "undefined" && window.innerWidth <= 991.9);
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -78,7 +78,7 @@ export default function Navigation() {
             </div>
           </div>
         </div>
-        <a className={`navbar-brand fs-2 fw-bold ms-5`} href="/">
+        <a className={`navbar-brand fs-2 fw-bold ms-sm-5`} href="/">
           <Image src={logo} alt="Logo" width={50} height={50} />
           &nbsp;vernacular
         </a>
