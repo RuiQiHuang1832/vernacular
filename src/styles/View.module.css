@@ -17,3 +17,13 @@
 .show-more:hover {
     color:white;
 }
+
+.profile-container {
+    box-shadow: 0px 5px 100px 5px rgba(0, 0, 0, 0.927);
+    margin-top:5em;
+}
+
+.carrot {
+    position:absolute;
+    top:10.5em
+}

@@ -9,7 +9,7 @@ type ButtonProps = {
   text: string;
   additionalStyle?: string
   width: string;
-  type?: "button" | "submit"
+  type?: "button" | "submit";
 };
 
 export default function Button({ color, href="/", text, additionalStyle, width, type="button" }: ButtonProps) {

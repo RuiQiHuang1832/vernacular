@@ -56,6 +56,7 @@ export default function LoginForm() {
           ]}
         />
       </div>
+      
       <div onClick={() => handleClick("default")} className={iconStyleContainerStyle}>
         <MdOutlineCallSplit className={`text-white ${style["hide-on-mobile"]}`} size="2em"></MdOutlineCallSplit>
         <LuArrowUpDown className={`text-white ${style["show-on-mobile"]} my-3`} size="2em"></LuArrowUpDown>
