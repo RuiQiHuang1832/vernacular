@@ -8,6 +8,8 @@ import Integration from "./Integration";
 import Members from "./Members";
 import Appearance from "./Appearance";
 import classNames from "classnames";
+import { FaGear, FaReceipt,FaPaintbrush,FaDatabase,FaPersonRays, FaCodeBranch  } from "react-icons/fa6";
+
 
 import { useState } from "react";
 
@@ -36,43 +38,31 @@ export default function Settings() {
     }
   };
 
+  const listItems = [
+    {item: "General", icon: <FaGear></FaGear>},
+    {item: "Billing", icon: <FaReceipt></FaReceipt>},
+    {item: "Appearance", icon: <FaPaintbrush></FaPaintbrush>},
+    {item: "Data", icon: <FaDatabase></FaDatabase>},
+    {item: "Members", icon: <FaPersonRays></FaPersonRays>},
+    {item: "Integration", icon: <FaCodeBranch></FaCodeBranch>}
+  
+  ]
+  
+
   return (
-    <div className="container">
-      <h3 className="text-white mt-5">Workspace Settings</h3>
-      <section className="mt-5">
-        <ul style={{ width: "35em" }} className={`nav nav-underline  justify-content-center border-bottom border-2 mx-end ${styles["underline"]}`}>
-          <li className={`nav-item`}>
-            <button className={`nav-link ${styles["tab"]} ${classNames({ [activeLinkClass]: activeTab === "General" })}`} aria-current="page" onClick={() => handleTabChange("General")}>
-              General
+    <div style={{ padding: "0 30px 0 80px" }} className={`container-fluid px-5`}>
+            <h3 className="text-white mt-5">Workspace Settings</h3>
+      <section className="mt-5 row">
+        <div  className={`list-group col-xxl-2 col-12 ${styles["list"]} mb-3 mb-xxl-0`}>
+          {listItems.map((e, index) => (
+            <button key={index} className={`text-start list-group-item ${styles["bg-color"]} ${styles["tab"]} ${classNames({ [activeLinkClass]: activeTab === e.item })}`} aria-current="page" onClick={() => handleTabChange(e.item)}>
+            {e.icon}&ensp;<span className="align-middle">{e.item}</span>
             </button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${styles["tab"]} ${classNames({ [activeLinkClass]: activeTab === "Billing" })}`} onClick={() => handleTabChange("Billing")}>
-              Plan & Billing
-            </button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${styles["tab"]} `} onClick={() => handleTabChange("Appearance")}>
-              Appearance
-            </button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${styles["tab"]} `} onClick={() => handleTabChange("Data")}>
-              Data
-            </button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${styles["tab"]} `} onClick={() => handleTabChange("Members")}>
-              Members
-            </button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${styles["tab"]} `} onClick={() => handleTabChange("Integration")}>
-              Integration
-            </button>
-          </li>
-        </ul>
+          ))}
+        </div>
+        <div  className="col-xxl-10 overflow-visible">
         {renderTabContent()}
+        </div>
       </section>
     </div>
   );

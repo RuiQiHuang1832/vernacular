@@ -1,11 +1,8 @@
 
-.underline {
-    border-color:white !important;
-}
 
 .tab:hover {
-    color:rgb(22, 137, 239) !important;
-    border-bottom-color:transparent !important;
+    color:rgb(155, 250, 195) !important;
+
 
 }
 
@@ -15,12 +12,38 @@
 }
 
 .tab-active {
-    color:rgb(255, 255, 255) !important;
+    color:rgb(155, 250, 195) !important;
+    background-color:#2f3439 !important;
 }
 
 .form {
     background: transparent;
     border-radius: 10px;
     padding:2em;
-    box-shadow: 0px 5px 100px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 1);
 }
+
+
+
+.list {
+    border-radius: 10px;
+    box-shadow: 0px 5px 100px 5px rgba(0, 0, 0, 1);
+    padding:1em;
+}
+
+.bg-color {
+    background-color:transparent ;
+    color:white;
+    border-color:transparent !important;
+    border-radius:9999px !important;
+}
+
+.bg-color:hover {
+    background-color:#2f3439!important;
+}
+
+.form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  }
+
+
