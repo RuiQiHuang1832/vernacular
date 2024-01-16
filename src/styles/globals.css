@@ -17,6 +17,16 @@ body {
   line-height: 1.2em;
 }
 
+.table {
+  --bs-table-bg:transparent;
+  --bs-table-color:white;
+}
+
+.table > :not(caption) > * > * {
+  border-color:#6c757d;
+  padding: 1rem 0.5rem;
+}
+
 .nav-item {
   .nav-link {
     color: var(--nav-item-color);
@@ -100,8 +110,8 @@ a.navbar-brand {
 /* Will not apply to .special-form-control class */
 .form-control:not(.special-form-control):focus { 
   box-shadow: none !important;
-  outline: 3px solid#00c1d9 !important;
-  border-color: transparent !important;
+  outline: 3px solid#00c1d9;
+  border-color: transparent;
 }
 
 .special-form-control {
@@ -139,4 +149,26 @@ select.break option {
   --bs-btn-padding-x: 1.2rem;
   border-radius:10px;
   letter-spacing:2px;
+}
+
+.text-bright-green {
+  color:#3DD1BF !important
+}
+
+
+.react-tel-input .form-control, .react-tel-input .flag-dropdown {
+ border: 1px solid hsla(0,0%,25%,1) !important
+}
+
+.react-tel-input .flag-dropdown.open .selected-flag, .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+  background:black !important
+}
+
+.react-tel-input .country-list .country.highlight {
+  background:hsla(0,0%,25%,1) !important
+}
+
+.react-tel-input .country-list .country:hover {
+  background:hsla(0,0%,25%,1) !important
+
 }
