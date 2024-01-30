@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {ReactNode} from "react";
 import styles from "@/styles/Settings.module.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -7,11 +7,11 @@ import { useState } from "react";
 import Image from "next/image";
 import pfp from "@/assets/images/pfp.jpg"
 
-const SectionComponent = ({ children }) => {
+const SectionComponent = ({ children }: {children:ReactNode}) => {
   return <section style={{ border: "1px solid hsla(0,0%,25%,1)", borderRadius: "10px" }}>{children}</section>;
 };
 
-const FooterComponent = ({ smallText, buttonText }) => {
+const FooterComponent = ({ smallText, buttonText } : {smallText:string, buttonText:string}) => {
   return (
     <footer style={{ border: "1px solid hsla(0,0%,25%,1)", padding:"12px 12px" }} className="d-flex justify-content-between align-items-center px-4 border-bottom-0 border-start-0 border-end-0">
       <small style={{ color: "hsla( 0,0%,63% ,1)" }}>{smallText}</small>
@@ -22,7 +22,7 @@ const FooterComponent = ({ smallText, buttonText }) => {
   );
 };
 
-const InnerContentComponent = ({ title, description, showInput, specialInput }) => {
+const InnerContentComponent = ({ title, description, showInput, specialInput } : {title :string, description:string, showInput:boolean, specialInput:ReactNode}) => {
   return (
     <div className="p-4">
       <h5>{title}</h5>
@@ -35,7 +35,7 @@ const InnerContentComponent = ({ title, description, showInput, specialInput }) 
 };
 
 export default function General() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState<string | undefined>();
   const generalOptions = [
     { title: "Avatar", description: "Click on the avatar to upload a custom one from your files.", smallText: "An avatar is optional but strongly recommended.", buttonText: "Save", showInput: false, specialInput: <div className="position-relative"><Image style={{borderRadius:"9999px", bottom:"0", right:"0"}} src={pfp}  alt="contact us image" height={80} width={80} className={"globalObjectFit position-absolute"} quality={100}/></div>
   },
