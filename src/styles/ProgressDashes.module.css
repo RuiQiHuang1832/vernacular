@@ -1,0 +1,15 @@
+.dash {
+    width: 50px;
+    height: 10px;
+    background-color: #e9ebea4b;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.completed {
+    background-color:darkgreen !important
+  }
+
+.current {
+    background-color:lightgreen !important
+  }

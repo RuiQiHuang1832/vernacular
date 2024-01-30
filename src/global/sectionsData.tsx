@@ -3,7 +3,7 @@ import image_2 from "@/assets/images/home/illustration-data-2.png";
 import image_3 from "@/assets/images/home/illustration-data-3.png";
 import image_avocado from "@/assets/images/home/illustration-avocado.png";
 import Button from "@/components/Button";
-
+import styles from "@/styles/HeaderWithImageAndParagraph.module.css"
 export interface SectionType {
     id: string;
     header: React.ReactNode;
@@ -13,6 +13,7 @@ export interface SectionType {
     imageHeight: number;
     direction: 'flex-md-row' | 'flex-md-row-reverse';
     learnMore: string;
+    sectionContainerClass?:string;
   }
 
 const highlightColor: string = "text-success";
@@ -21,7 +22,7 @@ export const sections: SectionType[] = [
       id: "anchor-1",
       header: (
         <>
-          Discover <span className={highlightColor}>Seamless</span> Multimedia Management
+          Discover <span className={"text-success"}>Seamless</span> Multimedia Management
         </>
       ),
       paragraph: (
@@ -34,6 +35,7 @@ export const sections: SectionType[] = [
       imageHeight: 280,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about seamless multimedia management",
+      sectionContainerClass:styles["section-container-style-red"]
     },
     {
       id: "anchor-2",
@@ -52,12 +54,13 @@ export const sections: SectionType[] = [
       imageHeight: 350,
       direction: "flex-md-row" as const,
       learnMore: "Learn more about our customizable playlist",
+      sectionContainerClass:styles["section-container-style-black"]
     },
     {
       id: "anchor-3",
       header: (
         <>
-          Elevate Your <span className={highlightColor}>Media Collection</span> 
+          Elevate Your <span className={"text-success"}>Media Collection</span> 
         </>
       ),
       paragraph: (
@@ -70,6 +73,7 @@ export const sections: SectionType[] = [
       imageHeight: 250,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about Vernacular's solutions",
+      sectionContainerClass:styles["section-container-style-red"]
     },
     {
       id: "anchor-4",
@@ -82,7 +86,7 @@ export const sections: SectionType[] = [
         <>
                        
                         <Button color="btn-success" href="/login" text="SIGN UP FOR FREE" width={"16em"}></Button>
-                        <Button color="btn-outline-success" href="/about" text="LEARN MORE" width={"16em"}></Button>
+                        <Button color="btn-outline-success" href="/login" text="LEARN MORE" width={"16em"}></Button>
                      
 
         </>
@@ -92,5 +96,6 @@ export const sections: SectionType[] = [
       imageHeight: 380,
       direction: "flex-md-row" as const,
       learnMore: "",
+      sectionContainerClass:styles["section-container-style-black"]
     },
   ];

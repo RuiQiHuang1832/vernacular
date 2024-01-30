@@ -1,5 +1,5 @@
 /* source: https://codepen.io/hesguru/pen/BaybqXv */
-.rate {
+/* .rate {
   padding: 0 10px;
 }
 .rate:not(:checked) > input {
@@ -38,41 +38,86 @@
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
-}
+} */
 
 /*end*/
 
-.category {
-  cursor:pointer;
-}
-.category:hover {
-  opacity: 50%;
-}
-
-.strikethrough-text {
-  text-decoration: line-through;
+.option {
+  padding: 10em 0;
+  border-radius: 50px;
+  background-color:rgb(28,31,34);
 }
 
-.transparent_input,
-.transparent_input:focus {
-  background: transparent;
-  color: white;
+.option:hover {
+  background:rgba(28, 31, 34, 0.373);
+  cursor:pointer
 }
 
-.transparent_input::placeholder {
-  color: white;
-  opacity: 50%;
+.highlight-media {
+  background:rgb(189, 255, 197) !important;
+  color:black;
 }
 
-.transparent_input:focus {
-  background-color: transparent;
+.checkmark {
+ border:1px solid rgb(82, 186, 90);
+ border-radius: 10px;
+ position:absolute;
+ padding:7px 10px;
+ background:rgb(82, 186, 90);
+ top:25px;
+ right:25px;
+ 
+}
+
+.bullet-color {
+  background-color:white 
 }
 
 
-.number-circle {
-  width: 35px;
-  line-height: 30px;
-  border-radius: 50%;
-  text-align: center;
-  border: 2px solid #666;
+
+.mySwiper {
+  background-color:#3a4045;
+  border-radius: 50px !important;
+}
+
+.nav-next {
+  background-color:rgb(59, 141, 66) ;
+  color:white;
+  border-radius:50px;
+  padding: 10px 20px;
+  border: 1px solid transparent !important;
+}
+
+.nav-next:hover {
+  background-color:rgba(59, 141, 66, 0.751) ;
+}
+
+.nav-next:active {
+  background-color:rgba(59, 141, 66, 0.751) !important ;
+}
+
+.nav-back {
+  background-color:rgb(16,17,19);
+  color:white;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius:50px;
+  padding: 10px 20px
+}
+
+.nav-back:hover {
+  background-color:rgba(16, 17, 19, 0.641);
+  border: 1px solid rgba(255, 255, 255, 0.552);
+
+}
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+.cannot-continue {
+  animation: tilt-shaking 0.15s ease-in-out !important;
+  background-color:red !important;
+  border-color:red !important;
 }

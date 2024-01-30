@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
 import styles from "@/styles/Navigation.module.css";
@@ -13,16 +14,19 @@ import { MdSearch } from "react-icons/md";
 import Search from "./Search";
 
 const navLinks = [
-  { text: "CAREER", href: "/careers" },
-  { text: "ABOUT", href: "/about" },
+  // { text: "CAREER", href: "/careers" },
+  // { text: "ABOUT", href: "/about" },
+  { text: "VIEW", href: "/playlist/view" },
+  { text: "CREATE", href: "/playlist/create" },
+  { text: "COMMUNITY", href: "/playlist/community/1" },
   { text: "LOGIN", href: "/login" },
 ];
 
-const playlistLinks = [
-  { text: "View", href: "/playlist/view" },
-  { text: "Create", href: "/playlist/create" },
-  { text: "Community", href: "/playlist/community/1" },
-];
+// const playlistLinks = [
+//   { text: "View", href: "/playlist/view" },
+//   { text: "Create", href: "/playlist/create" },
+//   { text: "Community", href: "/playlist/community/1" },
+// ];
 
 export default function Navigation() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -87,7 +91,7 @@ export default function Navigation() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-lg-0 ms-auto">
-            <li role={isMobile ? "button" : undefined} onClick={isMobile ? toggleDropdown : undefined} className={`d-flex align-items-center justify-content-between ${navItemContainer}`}>
+            {/* <li role={isMobile ? "button" : undefined} onClick={isMobile ? toggleDropdown : undefined} className={`d-flex align-items-center justify-content-between ${navItemContainer}`}>
               <div className={`nav-link ${navItem}`} aria-expanded={isDropdownOpen}>
                 <div
                   role={!isMobile ? "button" : undefined}
@@ -99,9 +103,9 @@ export default function Navigation() {
                 </div>
               </div>
               <IoIosArrowDown size="1.5em" className={dropdownIcon}></IoIosArrowDown>
-            </li>
+            </li> */}
 
-            {isDropdownOpen && (
+            {/* {isDropdownOpen && (
               <ul style={{ top: "60px" }} className="dropdown-menu d-block">
                 {playlistLinks.map(
                   (link, index): React.ReactNode => (
@@ -113,7 +117,7 @@ export default function Navigation() {
                   )
                 )}
               </ul>
-            )}
+            )} */}
             {navLinks.map(
               (link, index): React.ReactNode => (
                 <React.Fragment key={index}>

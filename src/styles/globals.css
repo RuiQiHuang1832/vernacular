@@ -172,3 +172,45 @@ select.break option {
   background:hsla(0,0%,25%,1) !important
 
 }
+
+textarea {
+  resize: none;
+}
+
+.ph-color-white::placeholder {
+  color:rgba(106, 106, 106, 0.489);
+}
+
+.mySwiper {
+  text-align:center;
+}
+
+/* Helpful answer, however it would be nice if you explained what is happening here instead of just showing a bunch of code. The only things required to hide slides that aren't completely visible are to set watchSlidesVisibility: true, .swiper-slide opacity to 0 and .swiper-slide-visible  opacity to 1 */
+/* enable if i want to disable partials on left and right sides */
+/* .swiper-slide {
+  opacity: 0;
+}
+
+.swiper-slide-visible {
+  opacity: 1;
+} */
+
+.disabled_swiper_button {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  content:"" !important;
+}
+.swiper-button-prev, .swiper-button-next {
+  width:auto !important
+}
+.swiper-button-prev {
+  left:17px !important
+}
+.swiper-button-next {
+  right:17px !important
+}
+

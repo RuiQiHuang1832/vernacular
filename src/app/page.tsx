@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import image_4 from "@/assets/images/home/illustration-data-4.png";
 import HeaderWithImageAndParagraph from "@/components/HeaderWithImageAndParagraph";
@@ -51,12 +52,12 @@ export default function Home() {
         </div>
         <ScrollableArrow></ScrollableArrow>
       </div>
-      <span className="d-none d-xxl-inline">
+      {/* <span className="d-none d-xxl-inline">
         <ScrollProgressBar startHeight={40} startColor="#172B4D" distance={24.99} icons={icons}></ScrollProgressBar>
-      </span>
-      <section className={approachSection}>
+      </span> */}
+      <section className={`${approachSection} `}>
         <h1 className="fw-bolder">
-          Our <span className="text-warning">Approach</span>
+          Our <span className="text-success">Approach</span>
         </h1>
         <hr></hr>
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
