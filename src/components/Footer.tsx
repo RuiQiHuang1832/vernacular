@@ -46,7 +46,7 @@ export default function Footer() {
           ))}
         </div>
       </section>
-        <div className={`text-center lead mx-auto ${styles["rfs"]}`}><small>© 2023-2024 Vernacular. All Rights Reserved.</small></div>
+        <div className={`text-center lead mx-auto ${styles["rfs"]}`}><div>© 2023-2024 Vernacular. All Rights Reserved.</div></div>
     </footer>
   );
 }
