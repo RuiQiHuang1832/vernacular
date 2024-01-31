@@ -81,10 +81,10 @@ export default function TypeOfMedia(props:TypeOfMedia) {
           </SwiperSlide>
         ))}
         <div className="swiper-button-next">
-          <IoIosArrowDroprightCircle color="white" size="5em" />
+          <IoIosArrowDroprightCircle color="white" size="3em" />
         </div>
         <div className="swiper-button-prev">
-          <IoIosArrowDropleftCircle color="white" />
+          <IoIosArrowDropleftCircle color="white" size="3em"/>
         </div>
       </Swiper>
     </>
