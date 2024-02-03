@@ -37,8 +37,7 @@ const InnerContentComponent = ({ title, description, showInput, specialInput } :
 export default function General() {
   const [value, setValue] = useState<string | undefined>();
   const generalOptions = [
-    { title: "Avatar", description: "Click on the avatar to upload a custom one from your files.", smallText: "An avatar is optional but strongly recommended.", buttonText: "Save", showInput: false, specialInput: <div className="position-relative"><Image style={{borderRadius:"9999px", bottom:"0", right:"0"}} src={pfp}  alt="contact us image" height={80} width={80} className={"globalObjectFit position-absolute"} quality={100}/></div>
-  },
+    { title: "Avatar", description: "Click on the avatar to upload a custom one from your files.", smallText: "An avatar is optional but strongly recommended.", buttonText: "Save", showInput: false, specialInput: <div className="position-relative"><Image style={{borderRadius:"9999px", bottom:"0", right:"0"}} src={pfp}  alt="contact us image" height={80} width={80} className={"globalObjectFit position-absolute"} quality={100}/></div>},
     { title: "Display Name", description: "Please enter your full name, or a display name you are comfortable with.", smallText: "Please use 32 characters at maximum.", buttonText: "Save", showInput: true },
     { title: "Email", description: "Please enter the email address you want to use to log in with Vernacular.", smallText: "Please enter the email address you want to use to log in with Vernacular.", buttonText: "Save", showInput: true },
     { title: "Your Phone Number", description: "Enter a phone number to receive important service updates by SMS.", smallText: "A code will be sent to verify", buttonText: "Save", showInput: false, specialInput: <PhoneInput country={"us"} value={value} countryCodeEditable={false} buttonClass={styles["button-class"]} dropdownClass={styles["phone-dropdown"]} onChange={setValue} searchClass={styles["search-class"]} inputClass={`form-control ${styles["light-border-input"]}`} /> },
@@ -51,7 +50,7 @@ export default function General() {
       showInput: false,
       specialInput: (
         <div>
-          <input placeholder="Old Password" className={`form-control ph-color-white  ${styles["light-border-input"]} mb-3`}></input>
+          <input placeholder="Old Password" className={`form-control ph-color-white ${styles["light-border-input"]} mb-3`}></input>
           <input placeholder="New Password" className={`form-control ph-color-white ${styles["light-border-input"]} mb-3`}></input>
           <input placeholder="Confirm New Password" className={`form-control ph-color-white ${styles["light-border-input"]}`}></input>
         </div>

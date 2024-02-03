@@ -24,6 +24,7 @@
     "lodash": "^4.17.21",
     "next": "^13.5.4",
     "react": "^18.2.0",
+    "react-datepicker": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-loading-skeleton": "^3.3.1",
@@ -33,5 +34,8 @@
     "sharp": "^0.32.6",
     "swiper": "^11.0.5",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/react-datepicker": "^4.19.5"
   }
 }

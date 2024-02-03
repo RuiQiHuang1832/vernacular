@@ -119,5 +119,35 @@
 .cannot-continue {
   animation: tilt-shaking 0.15s ease-in-out !important;
   background-color:red !important;
-  border-color:red !important;
 }
+
+.light-border-input {
+  background-color:black !important;
+  color:white !important;
+   border-color:#333333 ;
+   outline: none !important
+}
+.light-border-input:focus {
+  border-color:rgb(119 116 116) !important
+}
+
+.form-control-without-rounded-borders {
+  border-radius: 0;
+}
+
+.movie-input {
+  border-top-right-radius:0 !important;
+  border-bottom-right-radius:0 !important;
+}
+
+.add-transition {
+ transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.grid {
+  display:grid;
+  gap: 2rem;
+  grid-template-columns:repeat(auto-fit, minmax(15em, 1fr))
+}
+
+

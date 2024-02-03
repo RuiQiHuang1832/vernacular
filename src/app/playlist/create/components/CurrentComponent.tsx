@@ -18,12 +18,15 @@ export default function CurrentComponent() {
     switch (currentComponent) {
       case 1:
         currentView = <>
-        <h2 className="my-4">What type of media are you reviewing for?</h2>
+        <h2 className="my-4 fw-light">What type of media are you reviewing for?</h2>
         <TypeOfMedia selectedMedia={selectedMedia} onMediaSelect={handleMediaSelect}></TypeOfMedia> </>
         break;
       case 2:
-        currentView = <MediaSelection selectedMedia={selectedMedia}></MediaSelection>
+       currentView= <><h2 className="my-4 fw-light">Choose up to 10 {selectedMedia?.toLowerCase()} to review.</h2>
+         <MediaSelection selectedMedia={selectedMedia}></MediaSelection>
+        </>
         break;
+
     }
   
    const handleContinue = () => {

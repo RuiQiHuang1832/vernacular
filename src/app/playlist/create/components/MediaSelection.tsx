@@ -1,92 +1,126 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import Image from "next/image";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import styles from "@/styles/Playlist.module.css";
+import { FaSearch } from "react-icons/fa";
+
 interface MediaSelectionProps {
-    selectedMedia:string | null;
+  selectedMedia: string | null;
+}
+
+interface SearchData {
+  mediaName: string;
+}
+interface MediaData {
+  mediaName: null | string;
+  mediaPoster: null | string;
+  mediaYear:  number | undefined | null;
 }
 
 const options = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzZmNzgyOWIwM2U3OTNlMDBlOWIwMWE0YmMwOGFiMSIsInN1YiI6IjY1YjQyNTQ5NTc1MzBlMDE4M2Q5ZjU0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bDOJuoqg6i8xBBnyd9TuYflebJcnaNzG44ntIwqAaMw'
-  }
+    accept: "application/json",
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzZmNzgyOWIwM2U3OTNlMDBlOWIwMWE0YmMwOGFiMSIsInN1YiI6IjY1YjQyNTQ5NTc1MzBlMDE4M2Q5ZjU0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bDOJuoqg6i8xBBnyd9TuYflebJcnaNzG44ntIwqAaMw",
+  },
 };
 
+export default function MediaSelection(props: MediaSelectionProps) {
+ 
 
-export default function MediaSelection(props:MediaSelectionProps) {
-  interface SearchData {
-    mediaName: string;
-    mediaYear: string;
-  }
   const [searchData, setSearchData] = useState<SearchData>({
-    mediaName:'',
-    mediaYear:'',
-  })
+    mediaName: "",
+  });
 
-  const [addedData, setAddedData] = useState([{
-    mediaName:'',
-    mediaPoster: '',
-    mediaYear:''
-  }])
+  
 
-  const [poster, setPoster] = useState("/wigZBAmNrIhxp2FNGOROUAeHvdh.jpg")
+  const [addedData, setAddedData] = useState<MediaData[]>([
+    {
+      mediaName: null,
+      mediaPoster: null,
+      mediaYear: null,
+    },
+  ]);
 
-  const inputFields = [
-    { name: 'mediaName' },
-    { name: 'mediaYear' },
-    // Add more fields as needed
-  ];
+  const [poster, setPoster] = useState<string | null>(null);
 
-  const handleSearch  = () => {
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${searchData["mediaYear"]}`, options)
-    .then(response => response.json())
-    .then(response => {
-      console.log(response)
-      setPoster(response.results[0].poster_path)
-    })
-    .catch(err => console.error(err));
-  }
-
-  const handleAdd = () => {
-    const newData= {
-      mediaName: searchData.mediaName,
-      mediaPoster:poster,
-      mediaYear:searchData.mediaYear
-    }
-    setAddedData([...addedData,newData])
-  }
-
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement>, fieldName:string) => {
-    setSearchData({ ...searchData, [fieldName]: e.target.value });
+  const handleSearch = () => {
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${year}`, options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setPoster(response.results[0].poster_path);
+      })
+      .catch((err) => console.error(err));
   };
 
+  const handleAdd = () => {
+    if (addedData.length <= 10 && searchData.mediaName !== "") {
+      const newData = {
+        mediaName: searchData.mediaName,
+        mediaPoster: poster,
+        mediaYear: year,
+      };
+      setAddedData([...addedData, newData]);
+    } else {
+      alert("Cannot add more than 10 medias")
+    }
+
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchData({ ...searchData, mediaName: e.target.value });
+  };
+
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [year, setYear] = useState<number | undefined>(2024)
   return (
     <>
-          <h1>Choose up to 10 {props.selectedMedia?.toLowerCase()} to review.</h1>
-          <div className="input-group mb-3">
-  <span className="input-group-text" id="basic-addon1">Search</span>
-  {inputFields.map((field) => (
-          <input
-            key={field.name}
-            onChange={(e) => handleChange(e, field.name)}
-            value={searchData[field.name as keyof SearchData]}
-            type="text"
-            className="form-control"
-          />
-        ))}
-  <button onClick={handleSearch} className="btn btn-success">Search</button>
-</div>
-<button onClick={handleAdd} className="btn btn-success">Add</button>
-{addedData.map((e, i) => (
-  <>
-  <h5>{e.mediaName} released on {e.mediaYear}</h5>
-  <Image key={i} alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original${e.mediaPoster}`}></Image>
-  </>
-))}
-  <Image alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original${poster}`}></Image>
-
-
-
+      <div className="input-group mb-3">
+             <span className={`input-group-text  ${styles["light-border-input"]} ${styles["add-transition"]} bg-transparent pe-0`}>
+          <FaSearch></FaSearch>
+        </span>
+      <input onChange={handleChange} placeholder="Enter the movie name..." value={searchData.mediaName} type="text" className={`form-control border-start-0 ${styles["light-border-input"]} ph-color-white movieTitleInput`} />
+   
+      
+        <div style={{ flex: "0 0 15%" }}>
+          <DatePicker selected={startDate} onChange={(date) => {
+            setStartDate(date); 
+            setYear(date?.getFullYear())}} 
+            showYearPicker 
+            className={`form-control   ${styles["light-border-input"]} ${styles["form-control-special-width"]} ${styles["form-control-without-rounded-borders"]} col-5`} 
+            dateFormat="yyyy" 
+            onFocus={(e) => e.target.blur()} />
+        </div>
+        <button onClick={handleSearch} className="btn btn-success">
+          Search
+        </button>
+      </div>
+      <button onClick={handleAdd} className="btn btn-success">
+        Add
+      </button>
+      <div className="text-center mb-5">
+      {poster == null ? "" : <Image alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${poster}`}></Image>}
+      </div>
+      <div className={`${styles["grid"]} text-center`}>
+        {/* to make grid work properly leave these divs in place */}
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      {addedData.map((e, i) =>
+        e.mediaPoster === null ? null : (
+          <div key={i} className="">
+            <Image key={i} alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${e.mediaPoster}`}></Image>
+            <h5 className="mb-5">
+              {e.mediaName} released in {e.mediaYear}
+            </h5>
+          </div>
+        )
+      )}
+      </div>
     </>
-  )
+  );
 }
