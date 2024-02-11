@@ -52,19 +52,25 @@ const breakpoints = {
 };
 
 interface TypeOfMedia {
-  onMediaSelect:(selected:string) => void;
+  onMediaSelect:(selected:string|null) => void;
   selectedMedia:string|null
 }
 
 export default function TypeOfMedia(props:TypeOfMedia) {
   const [activeMedia, setActiveMedia] = useState<string | null>(props.selectedMedia);
   const handleClick = (media: string) => {
-    setActiveMedia(media);
-    props.onMediaSelect(media)
+    if (media == activeMedia) {
+      setActiveMedia(null)
+      props.onMediaSelect(null)
+    } else  {
+      setActiveMedia(media);
+      props.onMediaSelect(media)
+    }
+   
   };
   return (
     <>
-      <Swiper navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev", disabledClass: "disabled_swiper_button" }} breakpoints={breakpoints} pagination={{ dynamicBullets: true, clickable: true, bulletClass: `${styles["bullet-color"]} swiper-pagination-bullet` }} modules={[Navigation, Pagination]} style={{ borderRadius: "10px", padding: "3em 3em" }} watchSlidesProgress={true} className={`${styles["mySwiper"]} mySwiper`} slidesPerView={4} spaceBetween={30}>
+      <Swiper navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev", disabledClass: "disabled_swiper_button" }} breakpoints={breakpoints} pagination={{ dynamicBullets: true, clickable: true, bulletClass: `${styles["bullet-color"]} swiper-pagination-bullet` }} modules={[Navigation, Pagination]} style={{ borderRadius: "10px", padding: "3em 3em" }} watchSlidesProgress={true} className={`${styles["mySwiper"]} mySwiper `} slidesPerView={4} spaceBetween={30}>
         {media.map((media, index) => (
           <SwiperSlide  key={index}>
             {activeMedia == media.type ? (

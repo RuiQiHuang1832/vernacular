@@ -63,6 +63,7 @@ export default function Home() {
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
         {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
+  
     </div>
   );
 }

@@ -14,5 +14,8 @@ otherwise, mobile responsive + code clean up
 
 workspace settings copy what vercel has for the title
 
+currently only checks name and if name is same it won't add. i need to also add year....to that checker
 
-carousel it's not exactly centered. need to fix this..
+
+ code cleanup, hide back button/continue buttons towards end
+

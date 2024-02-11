@@ -116,10 +116,6 @@
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
 }
-.cannot-continue {
-  animation: tilt-shaking 0.15s ease-in-out !important;
-  background-color:red !important;
-}
 
 .light-border-input {
   background-color:black !important;
@@ -129,6 +125,7 @@
 }
 .light-border-input:focus {
   border-color:rgb(119 116 116) !important
+  
 }
 
 .form-control-without-rounded-borders {
@@ -147,7 +144,43 @@
 .grid {
   display:grid;
   gap: 2rem;
-  grid-template-columns:repeat(auto-fit, minmax(15em, 1fr))
+  grid-template-columns:repeat(auto-fill, minmax(15em, 1fr))
+}
+
+.poster-button {
+  position:absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+  display:none; 
+
+}
+
+.poster-container:hover .poster-button {
+  display:inline-block !important;
+
+}
+
+.poster-container:hover .poster-image {
+  opacity: 0.4;
+}
+
+.nav-search {
+  background-color:rgb(59, 141, 66) ;
+  color:white;
+  border-radius:50px;
+  border: 1px solid transparent !important;
+}
+.nav-search:active {
+  background-color:rgba(59, 141, 66, 0.751) !important ;
+}
+.nav-search:hover {
+  background-color:rgba(59, 141, 66, 0.751) ;
 }
 
 
+.disabled_swiper_button  {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+} 

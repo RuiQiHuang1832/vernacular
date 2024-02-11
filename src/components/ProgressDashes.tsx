@@ -4,6 +4,7 @@ import classNames from "classnames";
 interface ProgressDashesProps {
   length: number;
   current: number;
+  progressContainerClassName: string;
 }
 
 export default function ProgressDashes(props: ProgressDashesProps) {
@@ -18,11 +19,11 @@ export default function ProgressDashes(props: ProgressDashesProps) {
   ));
 
   return (
-    <>
-      <div className="d-flex">{dashElements}</div>
-      <div className="mt-2">
+    <section className={`${props.progressContainerClassName}`}>
+      <div className={`d-flex `}>{dashElements}</div>
+      <div className={`mt-2 `}>
         {props.current} of {props.length}
       </div>
-    </>
+    </section>
   );
 }
