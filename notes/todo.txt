@@ -14,8 +14,11 @@ otherwise, mobile responsive + code clean up
 
 workspace settings copy what vercel has for the title
 
-currently only checks name and if name is same it won't add. i need to also add year....to that checker
 
+Code clean up + AI Help to cleanup
 
- code cleanup, hide back button/continue buttons towards end
+organize playlist.module css if i dont want to code
+
+also i want to clean up the whole create folder once i am done
+
 

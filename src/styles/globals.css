@@ -50,7 +50,7 @@ a.navbar-brand {
 }
 
 .navbar-nav .dropdown-menu {
-  background: #171717;
+  background: #222629;
 
   & .dropdown-item {
     color: var(--nav-item-color);

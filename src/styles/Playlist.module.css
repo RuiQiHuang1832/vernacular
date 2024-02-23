@@ -147,7 +147,7 @@
   grid-template-columns:repeat(auto-fill, minmax(15em, 1fr))
 }
 
-.poster-button {
+.poster-delete {
   position:absolute;
   left: 50%;
   top: 50%; 
@@ -156,7 +156,7 @@
 
 }
 
-.poster-container:hover .poster-button {
+.poster-container:hover .poster-delete {
   display:inline-block !important;
 
 }
@@ -184,3 +184,11 @@
   cursor: auto;
   pointer-events: none;
 } 
+
+
+.disabled-media-selection {
+  cursor: none;
+  pointer-events: none;
+  opacity:0.5;
+  color:grey;
+}

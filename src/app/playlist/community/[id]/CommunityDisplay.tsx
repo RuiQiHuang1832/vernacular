@@ -9,13 +9,6 @@ type DataItem = {
   body: string;
 };
 
-export default function CommunityDisplay(props: { params: { id: number } }) {
-  return <PaginatedItems<DataItem> 
-  url={"https://jsonplaceholder.typicode.com/posts"} 
-  itemsPerPage={20} 
-  currentPage={props.params.id} 
-  displayFunction={displayData}></PaginatedItems>;
-}
 function displayData(data: DataItem[]) {
   return (
     <section className={style["grid"]}>
@@ -33,3 +26,12 @@ function displayData(data: DataItem[]) {
     </section>
   );
 }
+
+export default function CommunityDisplay(props: { params: { id: number } }) {
+  return <PaginatedItems<DataItem> 
+  url={"https://jsonplaceholder.typicode.com/posts"} 
+  itemsPerPage={20} 
+  currentPage={props.params.id} 
+  displayFunction={displayData}></PaginatedItems>;
+}
+

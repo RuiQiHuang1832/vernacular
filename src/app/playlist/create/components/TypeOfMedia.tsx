@@ -21,18 +21,19 @@ import { IconType } from "react-icons";
 interface Media {
   type:string;
   icon: IconType;
+  active: boolean
 }
 
 const media: Media[] = [
-  { type: "Anime", icon: SiMyanimelist },
-  { type: "Movies", icon: MdLocalMovies },
-  { type: "Shows", icon: RiSlideshow3Fill },
-  { type: "Songs", icon: BsFillMusicPlayerFill },
-  { type: "Games", icon: IoLogoGameControllerB },
-  { type: "Podcasts", icon: PiApplePodcastsLogo },
-  { type: "Books", icon: FaBook },
-  { type: "Board Games", icon: GiTabletopPlayers },
-  { type: "Apps", icon: IoIosAppstore },
+  { type: "Anime", icon: SiMyanimelist, active:false },
+  { type: "Movies", icon: MdLocalMovies,active:true },
+  { type: "Shows", icon: RiSlideshow3Fill,active:false },
+  { type: "Songs", icon: BsFillMusicPlayerFill,active:false },
+  { type: "Games", icon: IoLogoGameControllerB,active:false },
+  { type: "Podcasts", icon: PiApplePodcastsLogo,active:false },
+  { type: "Books", icon: FaBook,active:false },
+  { type: "Board Games", icon: GiTabletopPlayers,active:false },
+  { type: "Apps", icon: IoIosAppstore,active:false },
 ];
 
 const breakpoints = {
@@ -80,7 +81,7 @@ export default function TypeOfMedia(props:TypeOfMedia) {
             ) : (
               <></>
             )}
-            <div  onClick={() => handleClick(media.type)} className={`${styles["option"]} ${activeMedia == media.type ? styles["highlight-media"] : ""}`}>
+            <div  onClick={() => handleClick(media.type)} className={`${media.active === false ? styles["disabled-media-selection"] : ""} ${styles["option"]} ${activeMedia == media.type ? styles["highlight-media"] : ""}`}>
               <media.icon size="3em" color={`${activeMedia == media.type ? "black" : "#95CD4D"}`} />
               <div className="mt-3">{media.type}</div>
             </div>

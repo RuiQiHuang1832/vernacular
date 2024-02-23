@@ -35,7 +35,7 @@ export const sections: SectionType[] = [
       imageHeight: 280,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about seamless multimedia management",
-      sectionContainerClass:styles["section-container-style-red"]
+      sectionContainerClass:styles["section-container-style-lighter"]
     },
     {
       id: "anchor-2",
@@ -73,7 +73,7 @@ export const sections: SectionType[] = [
       imageHeight: 250,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about Vernacular's solutions",
-      sectionContainerClass:styles["section-container-style-red"]
+      sectionContainerClass:styles["section-container-style-lighter"]
     },
     {
       id: "anchor-4",
