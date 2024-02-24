@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
 import classNames from "classnames";
 
+
 //allows painless use of bootstrap without worrying about client/server components
 //doesn't require useEffect/dynamic
 //works with server components, however, if I choose to use 'use client' & useEffect, it would work as well because any componenet inside children tree can be a server component

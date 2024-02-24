@@ -39,7 +39,9 @@ export default function MediaReview(props: MediaReviewProps) {
                 </div>
               </div>
               <div>
-                <h6><a target="_blank" href={`https://www.imdb.com/title/${title.imdb}/`}>View IMBD Trailer</a></h6>
+                <h6><a target="_blank" href={`https://www.imdb.com/title/${title.imdb}/`}>More Info</a></h6>
+                <h6><a target="_blank" href={`https://www.youtube.com/watch?v=${title.trailer}/`}>View the trailer here</a></h6>
+
                 </div>
             </div>
           </div>

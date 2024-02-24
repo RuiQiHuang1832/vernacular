@@ -8,6 +8,10 @@ import { FaSearch } from "react-icons/fa";
 import classNames from "classnames";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { MediaData } from "./CurrentComponent";
+import dotenv from 'dotenv'
+
+dotenv.config();
+
 interface MediaSelectionProps {
   selectedMedia: string | null;
   selectedTitles: MediaData[];
@@ -23,57 +27,75 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYzZmNzgyOWIwM2U3OTNlMDBlOWIwMWE0YmMwOGFiMSIsInN1YiI6IjY1YjQyNTQ5NTc1MzBlMDE4M2Q5ZjU0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bDOJuoqg6i8xBBnyd9TuYflebJcnaNzG44ntIwqAaMw",
+    Authorization: process.env.NEXT_PUBLIC_TMDB_AUTH_KEY as string,
   },
 };
 
 const MAX_LIMIT : number = 10
 
 export default function MediaSelection(props: MediaSelectionProps) {
-
   const [searchData, setSearchData] = useState<SearchData>({mediaName: ""});
   const [feedback, setFeedback] = useState({ message: "", positive: false });
   const [loader, setLoader] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [titleData, setTitleData] = useState<MediaData>(props.selectedTitles[0])
-
   const handleSearch = () => {
     if (searchData.mediaName.trim() !== "") {
       setLoader(true);
     }
     const uniqueId = Date.now();
+    const fullYear = startDate?.getFullYear();
+  
+    //(IIFE)
+    (async () => {
+      try {
 
-    const fullYear = startDate?.getFullYear()
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${fullYear}`, options)
-      .then((response) => response.json())
-      .then((searchResponse) => {
+        // 1. Search for the movie ID:
+        const searchResponse = await fetch(
+          `https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${fullYear}`,
+          options
+        ).then((response) => response.json());
+  
         const movieId = searchResponse.results[0]?.id;
-        if (movieId == undefined) {
-        setLoader(false);
-        setFeedback({ message: `Movie not found`, positive: false });
-        return Promise.reject('Movie not found');
-        }
-        return fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options);
-      }).then((secondResponse) => secondResponse.json())
-      .then((response) => {
-        console.log(response);
+  
+        if (movieId === undefined) {
           setLoader(false);
-          setFeedback({ message: ``, positive: false });
-          setTitleData({
-            id: uniqueId,
-            mediaName: response.original_title,
-            mediaPoster: response.poster_path,
-            mediaYear: fullYear,
-            overview: response.overview,
-            voteAverage:response.vote_average.toFixed(1),
-            voteCount: response.vote_count,
-            genres: response.genres.map((genre: {id:number, name:string}) => genre.name),
-            imdb:response.imdb_id
-          })
-
-      })
-      .catch((err) => console.error(err));
+          setFeedback({ message: `Movie not found`, positive: false });
+          return; // Early exit if movie not found
+        }
+  
+        // 2. Fetch movie details and videos concurrently:
+        const [movieDetailsResponse, videosResponse] = await Promise.all([
+          fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options).then((response) => response.json()),
+          fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos`, options).then((response) => response.json()),
+        ]);
+  
+        const movieDetails = movieDetailsResponse;
+        const videos = videosResponse.results; // Access the videos array
+        const trailers = videos.filter((e: { type: string; }) => e.type == "Trailer")
+        // 3. Combine movie details and videos into setTitleData:
+        const titleData = {
+          id: uniqueId,
+          mediaName: movieDetails.original_title,
+          mediaPoster: movieDetails.poster_path,
+          mediaYear: fullYear,
+          overview: movieDetails.overview,
+          voteAverage: movieDetails.vote_average.toFixed(1),
+          voteCount: movieDetails.vote_count,
+          genres: movieDetails.genres.map((genre:{id:number, name:string}) => genre.name),
+          imdb: movieDetails.imdb_id,
+          trailer: trailers[0].key
+        };
+  
+        setLoader(false);
+        setFeedback({ message: ``, positive: false });
+        setTitleData(titleData);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
   };
+  
 
   const handleAdd = () => {
     if (props.selectedTitles.length < MAX_LIMIT && searchData.mediaName !== "") {
@@ -88,7 +110,9 @@ export default function MediaSelection(props: MediaSelectionProps) {
           voteCount: titleData.voteCount,
           voteAverage: titleData.voteAverage,
           genres:titleData.genres,
-          imdb: titleData.imdb
+          imdb: titleData.imdb,
+          trailer: titleData.trailer
+
         };
 
         props.onTitleAdd([...props.selectedTitles, newData]);

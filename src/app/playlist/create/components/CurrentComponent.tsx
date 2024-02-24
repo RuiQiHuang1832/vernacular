@@ -12,14 +12,15 @@ import { Navigation } from "swiper/modules";
 import MediaReview from './MediaReview';
 export interface MediaData {
   id: number;
-  mediaName: null | string;
-  mediaPoster: null | string;
-  mediaYear: number | undefined | null;
-  overview: null | string
+  mediaName: string;
+  mediaPoster: string;
+  mediaYear: number | undefined;
+  overview: string;
   voteAverage: number;
   voteCount: number;
-  genres: number[],
-  imdb:string
+  genres: number[];
+  imdb:string;
+  trailer:string;
 }
 
 
