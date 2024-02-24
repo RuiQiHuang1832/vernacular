@@ -17,7 +17,6 @@
     "@typescript-eslint/parser": "^6.3.0",
     "bootstrap": "^5.3.1",
     "classnames": "^2.3.2",
-    "dotenv": "^16.4.5",
     "eslint": "8.46.0",
     "eslint-config-next": "^13.5.4",
     "eslint-config-recommended": "^4.1.0",

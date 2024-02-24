@@ -8,9 +8,6 @@ import { FaSearch } from "react-icons/fa";
 import classNames from "classnames";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { MediaData } from "./CurrentComponent";
-import dotenv from 'dotenv'
-
-dotenv.config();
 
 interface MediaSelectionProps {
   selectedMedia: string | null;
