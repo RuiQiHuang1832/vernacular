@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "@/styles/Playlist.module.css";
+import styles from "@/styles/playlist-styles/Playlist-TypeOfMedia.module.css";
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -41,13 +41,13 @@ const breakpoints = {
   320: {
     slidesPerView: 1,
   },
-  480: {
+  650: {
     slidesPerView: 2,
   },
-  768: {
+  900: {
     slidesPerView: 3,
   },
-  1024: {
+  1100: {
     slidesPerView: 4,
   },
 };
@@ -71,7 +71,7 @@ export default function TypeOfMedia(props:TypeOfMedia) {
   };
   return (
     <>
-      <Swiper navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev", disabledClass: "disabled_swiper_button" }} breakpoints={breakpoints} pagination={{ dynamicBullets: true, clickable: true, bulletClass: `${styles["bullet-color"]} swiper-pagination-bullet` }} modules={[Navigation, Pagination]} style={{ borderRadius: "10px", padding: "3em 3em" }} watchSlidesProgress={true} className={`${styles["mySwiper"]} mySwiper `} slidesPerView={4} spaceBetween={30}>
+      <Swiper navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev", disabledClass: "disabled_swiper_button" }} breakpoints={breakpoints} breakpointsBase="container" pagination={{ dynamicBullets: true, clickable: true, bulletClass: `${styles["bullet-color"]} swiper-pagination-bullet` }} modules={[Navigation, Pagination]} watchSlidesProgress={true} className={`${styles["mySwiper"]} mySwiper `} spaceBetween={30}>
         {media.map((media, index) => (
           <SwiperSlide  key={index}>
             {activeMedia == media.type ? (

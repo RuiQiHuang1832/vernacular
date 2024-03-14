@@ -3,11 +3,12 @@ import { useState } from "react";
 import Image from "next/image";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import styles from "@/styles/Playlist.module.css";
+import styles from "@/styles/playlist-styles/Playlist-MediaSelection.module.css";
 import { FaSearch } from "react-icons/fa";
 import classNames from "classnames";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { MediaData } from "./CurrentComponent";
+import _ from "lodash";
 
 interface MediaSelectionProps {
   selectedMedia: string | null;
@@ -37,11 +38,11 @@ export default function MediaSelection(props: MediaSelectionProps) {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [titleData, setTitleData] = useState<MediaData>(props.selectedTitles[0])
   const handleSearch = () => {
+    
     if (searchData.mediaName.trim() !== "") {
       setLoader(true);
     }
     const uniqueId = Date.now();
-    const fullYear = startDate?.getFullYear();
   
     //(IIFE)
     (async () => {
@@ -49,13 +50,14 @@ export default function MediaSelection(props: MediaSelectionProps) {
 
         // 1. Search for the movie ID:
         const searchResponse = await fetch(
-          `https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${fullYear}`,
+          `https://api.themoviedb.org/3/search/movie?query=${searchData["mediaName"]}&include_adult=false&language=en-US&page=1&year=${startDate?.getFullYear()}`,
           options
         ).then((response) => response.json());
-  
+          
         const movieId = searchResponse.results[0]?.id;
-  
+          console.log(movieId)
         if (movieId === undefined) {
+          console.log("undefined movie")
           setLoader(false);
           setFeedback({ message: `Movie not found`, positive: false });
           return; // Early exit if movie not found
@@ -66,7 +68,7 @@ export default function MediaSelection(props: MediaSelectionProps) {
           fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options).then((response) => response.json()),
           fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos`, options).then((response) => response.json()),
         ]);
-  
+        console.log(movieDetailsResponse)
         const movieDetails = movieDetailsResponse;
         const videos = videosResponse.results; // Access the videos array
         const trailers = videos.filter((e: { type: string; }) => e.type == "Trailer")
@@ -75,17 +77,19 @@ export default function MediaSelection(props: MediaSelectionProps) {
           id: uniqueId,
           mediaName: movieDetails.original_title,
           mediaPoster: movieDetails.poster_path,
-          mediaYear: fullYear,
+          mediaYear: new Date(movieDetails.release_date).getFullYear(),
           overview: movieDetails.overview,
           voteAverage: movieDetails.vote_average.toFixed(1),
           voteCount: movieDetails.vote_count,
           genres: movieDetails.genres.map((genre:{id:number, name:string}) => genre.name),
           imdb: movieDetails.imdb_id,
-          trailer: trailers[0].key
+          trailer: trailers[0]?.key,
+          tagline:movieDetails.tagline,
+          cast:_.random(4,9)
         };
   
         setLoader(false);
-        setFeedback({ message: ``, positive: false });
+        setFeedback({ message: "Movie Found: ", positive: true });
         setTitleData(titleData);
       } catch (error) {
         console.error(error);
@@ -108,7 +112,9 @@ export default function MediaSelection(props: MediaSelectionProps) {
           voteAverage: titleData.voteAverage,
           genres:titleData.genres,
           imdb: titleData.imdb,
-          trailer: titleData.trailer
+          trailer: titleData.trailer,
+          tagline: titleData.tagline,
+          cast:titleData.cast
 
         };
 
@@ -145,44 +151,43 @@ export default function MediaSelection(props: MediaSelectionProps) {
         <span className={`input-group-text ${styles["light-border-input"]} border-end-0 ${styles["add-transition"]} bg-transparent pe-0`}>
           <FaSearch></FaSearch>
         </span>
-        <input onChange={handleChange} placeholder="Enter the title name..." value={searchData.mediaName} type="text" className={`form-control border-start-0 ${styles["light-border-input"]} ph-color-white movieTitleInput`} />
+        <input onChange={handleChange} placeholder="Enter the title name..." value={searchData.mediaName} type="text" className={`fw-light form-control border-start-0 ${styles["light-border-input"]} ph-color-white movieTitleInput`} />
 
-        <div style={{ flex: "0 0 15%" }}>
+        <div className={`${styles["date-picker"]}`}>
           <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showYearPicker
-            className={`form-control   ${styles["light-border-input"]} ${styles["form-control-special-width"]} ${styles["form-control-without-rounded-borders"]} col-5`}
+            className={`form-control fw-light  ${styles["light-border-input"]} ${styles["form-control-without-rounded-borders"]} col-5`}
             dateFormat="yyyy"
             onFocus={(e) => e.target.blur()}
           />
         </div>
           <button onClick={handleSearch} className={`${styles["nav-search"]} btn`}>Search</button>
       </div>
-      <div className="d-flex align-items-baseline">
+      <div className="d-flex align-items-baseline mb-5">
       <button onClick={handleAdd} className={`${styles["nav-next"]} btn`}>Add</button>
-        <h5 className={`ms-3 fw-light ${feedback.positive ? "text-success" : "text-danger"}`}>
-          {feedback.message}{" "}
-          {feedback.positive && props.selectedTitles.length !== 0 ? (
-            <>
-              <span style={{backgroundColor:"yellow",color:"black"}}>&nbsp;{props.selectedTitles[props.selectedTitles.length - 1].mediaName} ({props.selectedTitles[props.selectedTitles.length - 1].mediaYear!})&nbsp;</span>
-            </>
-          ) : (
-            ""
-          )}
-        </h5>
+      
       </div>
-      {titleData?.mediaPoster === null ? (
-        <h6 style={{ width: "250px", height: "350px" }} className="fw-light d-flex justify-content-center mx-auto text-center" role="status">
+      {feedback.message === "" ? (
+        <h6 className="fw-light d-flex justify-content-center" role="status">
           Search for movies, add them and they will show up here!
         </h6>
       ) : (
         ""
       )}
 
+<h5 className={`ms-3 p-0 fw-light text-center ${feedback.positive ? "text-success" : "text-danger"}`}>
+          {feedback.message}{" "}
+          {feedback.positive  ? (
+            <>
+              <span>{titleData.mediaName} ({titleData.mediaYear!})</span>
+            </>
+          ) : <>&nbsp;</>}
+        </h5>
       <div className="text-center mb-5 mt-4">
-        {titleData?.mediaPoster == null ? "" : loader ? (
-          <div style={{ width: "250px", height: "350px" }} className="d-flex justify-content-center align-items-center mx-auto" role="status">
+        {titleData?.mediaPoster == undefined ? "" : loader ? (
+          <div  className={`d-flex justify-content-center align-items-center mx-auto ${styles["loader-container"]}`} role="status">
             <span className="spinner-border" aria-hidden="true"></span>
             <span className="visually-hidden">Loading...</span>
           </div>
@@ -197,7 +202,7 @@ export default function MediaSelection(props: MediaSelectionProps) {
       </div>
       <div className={`${styles["grid"]} text-center`}>
         {props.selectedTitles.map((media, i) =>
-          media.mediaPoster === null ? null : (
+          media.mediaPoster === undefined ? <></> : (
             <div key={i}>
               <div className={`${styles["poster-container"]} position-relative d-inline-block`} >
                 <Image className={`${styles["poster-image"]} rounded`} key={i} alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${media.mediaPoster}`}></Image>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import TypeOfMedia from './TypeOfMedia';
 import MediaSelection from './MediaSelection';
 import ProgressDashes from '@/components/ProgressDashes';
-import styles from "@/styles/Playlist.module.css"
+import styles from "@/styles/playlist-styles/Playlist.module.css"
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,7 +20,9 @@ export interface MediaData {
   voteCount: number;
   genres: number[];
   imdb:string;
-  trailer:string;
+  trailer:string | undefined;
+  tagline:string;
+  cast:number;
 }
 
 
@@ -75,7 +77,7 @@ export default function CurrentComponent() {
        //MediaSelection reset
        setSelectedTitles([]);
        //handles reset for states managed by child
-       setResetKey((prevKey) => prevKey + 1);
+       setResetKey(() => Date.now());
      }
 
      //<- back
@@ -93,7 +95,7 @@ export default function CurrentComponent() {
     <>
   <ProgressDashes progressContainerClassName={"container"} length={3} current={currentComponent}></ProgressDashes>
   
-  <Swiper navigation={{ nextEl: ".continue", prevEl: ".back" }}  modules={[Navigation]} speed={1000} allowTouchMove={false} draggable={false}  simulateTouch={false}  watchSlidesProgress={true} className={``} slidesPerView={1} spaceBetween={100}>
+  <Swiper navigation={{ nextEl: ".continue", prevEl: ".back" }}  modules={[Navigation]} speed={1000} allowTouchMove={false} draggable={false}  simulateTouch={false}  watchSlidesProgress={true} slidesPerView={1} spaceBetween={100}>
     {components.map((c,index) => (
         <SwiperSlide key={index}>
     <div key={resetKey} className="container">
@@ -107,7 +109,7 @@ export default function CurrentComponent() {
     <button type="button" onClick={handleBack} className={`${styles["nav-back"]} btn me-3 fw-semibold back`}>Back</button> 
     {
     currentComponent === components.length 
-    ? <button type="submit" className={`fw-semibold btn ${styles["nav-next"]}`}>Submit</button> 
+    ? <button type="submit" className={`fw-semibold ${styles["nav-next"]}`}>Submit</button> 
     : <button type="button"  onClick={handleContinue} className={`${styles["nav-next"]} ${selectedMedia == null ? styles["disabled_swiper_button"] : ""} ${currentComponent == 2 && selectedTitles.length == 0 ? styles["disabled_swiper_button"] : ""}  fw-semibold btn continue`}>Continue</button>
     }
     

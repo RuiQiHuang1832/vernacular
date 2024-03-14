@@ -1,0 +1,156 @@
+/* source: https://codepen.io/hesguru/pen/BaybqXv */
+
+.rate {
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  display: none;
+}
+
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+@media (max-width:576px) {
+  .rate:not(:checked) > label {
+    font-size: 17px;
+  }
+}
+
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+} 
+
+.multiline-ellipsis {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.multiline-ellipsis-tagline {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.multiline-ellipsis-tagline::before {
+  content: '\201C';
+
+}
+
+.end-quote {
+  align-self: flex-end;
+  margin-right:5px
+}
+
+.end-quote::before {
+  content: '\201D';
+}
+
+.imbd-link {
+    color:white;
+    text-decoration: none;
+}
+
+.imbd-link:hover {
+    opacity: 0.7;
+}
+
+.review-container {
+    height: 30em;
+     background: #13161F;
+     border-radius: 10px 10px 0 0;
+    }
+
+
+.review-container-accordion {
+   background: #13161F;
+}
+
+.poster-container { 
+   transform: translate(24px, -20px);
+}
+@media screen and (max-width: 767px) {
+  .poster-container { 
+    transform: translateY(-20px);
+ }
+}
+
+
+
+.content-container {
+  width: 60em;
+}
+
+.genres {
+    color:rgb(114 168 255)
+}
+
+
+.dropdown-review-arrow {
+    float: right;
+    transition: transform 0.5s ease; /* Adjust the duration and timing function as needed */
+    cursor: pointer;
+  }
+
+  .rotate {
+    transform: rotate(-180deg);
+  }
+
+
+  .box-shadow {
+    box-shadow:0px 15px 20px 5px rgba(0,0,0,0.75)
+  }
+
+.accordion-content {
+    height:10px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.accordion-content.active {
+    height: 400px; /* Adjust the max height as needed */
+
+}
+
+.numbered-circle {
+  position: absolute;
+  right:30px;
+  top:20px;
+  width: 35px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid #666;
+}
+
+@media screen and (max-width: 576px) {
+  .breakpoint-width { 
+    width:360px
+ }
+}

@@ -73,7 +73,7 @@ export default function Navigation() {
       <Search />
     </>
   ) : (
-    <nav className={`navbar navbar-expand-lg ${styles["responsive-sticky-top"]}`}>
+    <nav className={`navbar navbar-expand-lg bg-dark ${styles["responsive-sticky-top"]}`}>
       <div className="container-fluid">
         <div className={`nav-item order-lg-1 me-auto ms-3`}>
           <div className={`nav-link ${navItem}`}>

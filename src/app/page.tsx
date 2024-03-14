@@ -12,7 +12,9 @@ import Arrows, { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
 import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
-
+import howtoStep1 from "@/assets/images/home/howitworks-step1.png"
+import howtoStep2 from "@/assets/images/home/howitworks-step2.png"
+import howtoStep3 from "@/assets/images/home/howitworks-step3.png"
 
 const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 
@@ -63,7 +65,21 @@ export default function Home() {
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
         {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
-  
+        <section>
+          <div className={`${approachSection}`}>
+        <h1 className="fw-bolder">
+          How it works
+        </h1>
+        <hr></hr>
+        </div>
+        <div className="d-flex flex-column align-items-center ">
+        <Image src={howtoStep1.src}  width="0" height="0" sizes="100vw" className="w-75 h-auto" alt="Home page logo" priority={true} quality={100} />
+      
+        <Image src={howtoStep2.src} alt="Home page logo"   width="0" height="0" sizes="100vw" className="w-75 h-auto" priority={true} quality={100} /> 
+     
+        <Image src={howtoStep3.src} alt="Home page logo"  width="0" height="0" sizes="100vw" className="w-75 h-auto" priority={true} quality={100} />
+        </div>
+      </section>
     </div>
   );
 }

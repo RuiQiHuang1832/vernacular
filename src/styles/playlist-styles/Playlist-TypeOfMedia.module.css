@@ -1,0 +1,49 @@
+.checkmark {
+    border:1px solid rgb(82, 186, 90);
+    border-radius: 10px;
+    position:absolute;
+    padding:7px 10px;
+    background:rgb(82, 186, 90);
+    top:25px;
+    right:25px;
+    
+   }
+   
+   .bullet-color {
+     background-color:white 
+   }
+   
+   
+   
+   .mySwiper {
+     background-color:#3a4045;
+     border-radius: 50px !important;
+     padding: 3em 3em;
+   }
+  
+   
+  
+  .disabled-media-selection {
+    cursor: none;
+    pointer-events: none;
+    opacity:0.5;
+    color:grey;
+  }
+
+
+  .option {
+    padding: 10em 0;
+    border-radius: 50px;
+    background-color:rgb(28,31,34);
+  }
+  
+  .option:hover {
+    background:rgba(28, 31, 34, 0.373);
+    cursor:pointer
+  }
+  
+  .highlight-media {
+    background:rgb(189, 255, 197) !important;
+    color:black;
+  }
+  
