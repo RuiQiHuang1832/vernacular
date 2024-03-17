@@ -16,12 +16,12 @@
   font-size: 30px;
   color: #ccc;
 }
-
+/* 
 @media (max-width:576px) {
   .rate:not(:checked) > label {
     font-size: 17px;
   }
-}
+} */
 
 .rate:not(:checked) > label:before {
   content: "★ ";
@@ -57,19 +57,7 @@
   text-overflow: ellipsis
 }
 
-.multiline-ellipsis-tagline::before {
-  content: '\201C';
 
-}
-
-.end-quote {
-  align-self: flex-end;
-  margin-right:5px
-}
-
-.end-quote::before {
-  content: '\201D';
-}
 
 .imbd-link {
     color:white;
@@ -149,8 +137,8 @@
   border: 2px solid #666;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 767px) {
   .breakpoint-width { 
-    width:360px
+    width:400px
  }
 }
