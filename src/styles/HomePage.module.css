@@ -46,3 +46,9 @@
   background-color:#1d2426;
   border-radius:0
 }
+
+/* instead of using minHeight:100vh which causes shaking. solution for 100vh and accordions */
+.view-height-alternative {
+  padding-top: calc((100vh - 460px) / 2); /* Calculate top padding */
+  padding-bottom: calc((100vh - 460px) / 2); /* Calculate bottom padding */
+}

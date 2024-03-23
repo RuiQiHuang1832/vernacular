@@ -4,23 +4,40 @@ import Link from "next/link";
 import classNames from "classnames";
 
 type ButtonProps = {
-  color: string;
+  buttonColor: buttonColorProps;
   href?: string;
   text: string;
-  additionalStyle?: string
   width: string;
-  type?: "button" | "submit";
+  type: "button" | "submit" | "reset";
+  radius: string;
+  padding: string;
 };
 
-export default function Button({ color, href="/", text, additionalStyle, width, type="button" }: ButtonProps) {
-  const btnStyles: string = classNames("btn", color, styles["default-button-size"]);
-  const textStyles:string = classNames("text-decoration-none text-white fw-light text-nowrap")
-  const typeOfButton: JSX.Element | string = type === "button" ? <Link href={href} className={textStyles}>{text}</Link> : text
+type buttonColorProps =
+  | {
+      cssColor: string;
+      bootstrapColor?: never; // Ensuring only one color type is provided
+    }
+  | {
+      cssColor?: never;
+      bootstrapColor: string;
+    };
+
+export default function Button({ buttonColor = { cssColor: "", bootstrapColor: undefined }, text, href, type, width, radius, padding }: ButtonProps) {
+  // If href prop is provided, render an anchor element
+  const { cssColor = "", bootstrapColor = "" } = buttonColor;
+  const btnClass = classNames(`${styles["button"]} text-nowrap ${bootstrapColor}`)
+  if (href) {
+    return (
+      <Link href={href} className={btnClass} style={{ backgroundColor: cssColor, width, borderRadius: radius, padding }} type={type}>
+        {text}
+      </Link>
+    );
+  }
+  // Otherwise, render a button element
   return (
-    <div className={`${styles["button"]} mb-3`}>
-      <button type={type} style={{width}} className={`${btnStyles} ${additionalStyle} text-white`}>
-       {typeOfButton}
-      </button>
-    </div>
+    <button className={btnClass} type={type} style={{ backgroundColor: cssColor, width, borderRadius: radius, padding }}>
+      {text}
+    </button>
   );
 }

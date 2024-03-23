@@ -75,27 +75,27 @@ export const sections: SectionType[] = [
       learnMore: "Learn more about Vernacular's solutions",
       sectionContainerClass:styles["section-container-style-lighter"]
     },
-    // {
-    //   id: "anchor-4",
-    //   header: (
-    //     <>
-    //       Ready to upgrade your <span className={highlightColor}>multimedia management?</span>
-    //     </>
-    //   ),
-    //   paragraph: (
-    //     <>
-                       
-    //                     <Button color="btn-success" href="/login" text="SIGN UP FOR FREE" width={"16em"}></Button>
-    //                     <Button color="btn-outline-success" href="/login" text="LEARN MORE" width={"16em"}></Button>
+    {
+      id: "anchor-4",
+      header: (
+        <>
+          Ready to upgrade your <span className={highlightColor}>multimedia management?</span>
+        </>
+      ),
+      paragraph: (
+        <>
+
+                        <Button buttonColor={{cssColor:"green"}} href="/login" text="SIGN UP FOR FREE" width={"16em"} radius="10px" padding="20px"  type="button"></Button>
+                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}}  href="/login" text="LEARN MORE" width={"16em"} radius="10px" padding="20px" type="button"></Button>
                      
 
-    //     </>
-    //   ),
-    //   imageSrc: image_avocado.src,
-    //   imageWidth: 403,
-    //   imageHeight: 380,
-    //   direction: "flex-md-row" as const,
-    //   learnMore: "",
-    //   sectionContainerClass:styles["section-container-style-black"]
-    // },
+        </>
+      ),
+      imageSrc: image_avocado.src,
+      imageWidth: 403,
+      imageHeight: 380,
+      direction: "flex-md-row" as const,
+      learnMore: "",
+      sectionContainerClass:styles["section-container-style-black"]
+    },
   ];

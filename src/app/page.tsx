@@ -12,12 +12,11 @@ import Arrows, { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
 import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
-import step1 from "@/assets/images/home/step_1.png";
-import step2 from "@/assets/images/home/step_2.png";
-import step3 from "@/assets/images/home/step_3.png";
 import { accordionData } from '../global/accordionData';
+import { stepData } from "@/global/stepData";
 
-const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
+// used for scrollProgressBar
+// const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 
 export default function Home() {
   const mainClass: string = classNames("col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center");
@@ -44,7 +43,7 @@ export default function Home() {
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
-              <Button color="btn-success" href="/login" text="GET STARTED" width={"auto"}></Button>
+              <Button buttonColor={{cssColor:"#4f76fb"}} href="/login" text="GET STARTED" radius="10px" padding="20px" width="auto" type="button"></Button>
             </div>
           </div>
           <div className={imageClass}>
@@ -65,29 +64,21 @@ export default function Home() {
         <hr></hr>
         <p>Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-      {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
-      <section className="d-flex flex-column justify-content-center p-5 p-xl-0" style={{ minHeight:"100vh"}}>
-        <div  className={`text-center mx-auto col-10`}>
+      {mapObjectToComponent(sections.slice(0,-1), HeaderWithImageAndParagraph)}
+      <section className="d-flex flex-column justify-content-center p-5 p-xl-0" style={{minHeight:"100vh"}}>
+        <div  className={`text-center mx-auto col-10 mb-5`}>
           <p>HOW VERNACULAR WORKS</p>
           <h1 className="fw-bolder">Three steps to better media management</h1>
           <hr></hr>
         </div>
         <div className={`${styles["step-grid"]} text-center col-10 mx-auto`}>
-          <div className="mt-3 col-10">
-            <Image src={step1.src} width={50} height={80} alt="step 1" className={`mb-4`}></Image>
-            <h4>Select Media Type</h4>
-            <p className="fw-light">Users choose the type of media they want to review, such as movies, TV shows, or music.</p>
-          </div>
-          <div className="mt-3 col-10">
-            <Image src={step2.src} width={50} height={80} alt="step 2" className={`mb-4`}></Image>
-            <h4>Choose Specific Title</h4>
-            <p className="fw-light">After selecting the media type, users pick a specific title (up to 10) within that category.</p>
-          </div>
-          <div className="mt-3 col-10">
-            <Image src={step3.src} width={50} height={80} alt="step 3" className={`mb-4`}></Image>
-            <h4>Review and Rate</h4>
-            <p className="fw-light">Users review the selected media, providing a star rating (1-5) and written feedback.</p>
-          </div>
+          {stepData.map((data)=> (
+             <div key={data.id} className="mt-3 col-10">
+             <Image src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4`}></Image>
+             <h4>{data.title}</h4>
+             <p className="fw-light">{data.description}</p>
+           </div>
+          ))}
         </div>
         <div style={{position:"relative"}} className="arrows d-none d-xl-block ">
           <div style={{left:"29%"}} className={`${styles["arrow"]}`}>
@@ -102,17 +93,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section style={{ minHeight:"100vh"}} className={`d-flex flex-column justify-content-center p-5 ${styles["section-container-style-lighter"]}`}>
+      <section  className={`d-flex flex-column justify-content-center px-5 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
         <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4">
         <h1>Want to learn more?</h1>
         <p className="fw-light">We&apos;ve Compiled Answers to Frequently Asked Questions!</p>
         </div>
-        <div className="home-page-accordion accordion col-lg-7 col  col-md-9 mx-auto" id="accordionExample">
+        <div className="home-page-accordion accordion col-lg-7 col  col-md-9 mx-auto">
           {accordionData.map((accordion,i) => (
               <div key={accordion.id} className={`accordion-item py-4 ${styles["accordion-item-home"]} ${classNames({["border-bottom"]: i != accordionData.length - 1})}`}>
               <h2 className="accordion-header">
-                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${accordion.id}`} aria-expanded="true" aria-controls={accordion.id}>
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${accordion.id}`} aria-expanded="true" aria-controls={accordion.id}>
                 {accordion.question}
                 </button>
               </h2>
@@ -125,6 +115,8 @@ export default function Home() {
           ))}
        </div>
       </section>
+      {mapObjectToComponent([sections[sections.length - 1]], HeaderWithImageAndParagraph)}
+
     </div>
   );
 }

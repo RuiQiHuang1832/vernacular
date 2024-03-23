@@ -1,28 +1,16 @@
-.default-button-size {
-    --bs-btn-padding-y: 1.15rem;
-    --bs-btn-padding-x: 1.2rem;
-    border-radius:10px;
-    letter-spacing:2px;
-}
-
-@media (max-width: 1199px) {
-    .default-button-size {
-        font-size: 12px; /* Set font size to 12px when screen width is less than 992px */
-    }
-}
-
 .button {
-    transform:translateY(20px);
-    display:inline-block;
-    margin-right:15px;
-    transition: transform 0.3s ease;
-   
+    color: white; 
+    cursor: pointer; 
+    text-decoration: none;
+    text-align:center;
+    letter-spacing:2px;
 }
 
 .button:hover {
     opacity: 90%;
-    transform: translateY(20px) scale(1.1);
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.3);
-    border-radius:10px;
-
+}
+@media (max-width: 1199px) {
+    .button {
+        font-size: 12px; /* Set font size to 12px when screen width is less than 992px */
+    }
 }
