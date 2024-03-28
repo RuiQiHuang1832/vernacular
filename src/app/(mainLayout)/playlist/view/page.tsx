@@ -3,7 +3,7 @@
 // import { Metadata } from "next";
 import pfp from "@/assets/images/pfp.jpg";
 import Image from "next/image";
-import Button from "@/components/Button";
+// import Button from "@/components/Button";
 import styles from "@/styles/View.module.css";
 import { useEffect, useState } from "react";
 import { FcBusinesswoman  } from "react-icons/fc";
@@ -98,14 +98,14 @@ export default function View() {
             <div>Likes</div>
           </li>
         </ul>
-        <div style={{ right: 0 }} className="d-flex text-center position-absolute mt-5 me-5">
+        {/* <div style={{ right: 0 }} className="d-flex text-center position-absolute mt-5 me-5">
           <div className={`${styles["button"]}`}>
             <Button color="btn-success" href="/" text="Connect" width="auto"></Button>
           </div>
           <div className={`${styles["button"]}`}>
             <Button color="btn-outline-success" href="/" text="Message" width="auto"></Button>
           </div>
-        </div>
+        </div> */}
         <Image style={{ borderRadius: "9999px", transform:"translateY(-50px)" }} src={pfp} alt="pfp" width={200} height={200}></Image>
         <FcBusinesswoman size="3em" className={styles["carrot"]} />
         <div  className="col-8 text-center">
