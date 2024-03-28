@@ -110,14 +110,14 @@ a.navbar-brand {
 /* Will not apply to .special-form-control class */
 .form-control:not(.special-form-control):focus { 
   box-shadow: none !important;
-  outline: 3px solid#00c1d9;
-  border-color: transparent;
+  /* outline: 3px solid#00c1d9; */
+  /* border-color: transparent; */
 }
 
-.special-form-control {
+/* .special-form-control {
   box-shadow: none !important;
   border-color: transparent !important;
-}
+} */
 
 select option {
   background:#222629;

@@ -83,16 +83,13 @@ export const sections: SectionType[] = [
         </>
       ),
       paragraph: (
-        <>
-
-                        <Button buttonColor={{cssColor:"green"}} href="/login" text="SIGN UP FOR FREE" width={"16em"} radius="10px" padding="20px"  type="button"></Button>
-                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}}  href="/login" text="LEARN MORE" width={"16em"} radius="10px" padding="20px" type="button"></Button>
-                     
-
-        </>
+        <div className="d-flex ">
+                        <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login" text="SIGN UP FOR FREE" width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button"></Button>
+                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" text="LEARN MORE" width={"16em"} radius="10px" padding="20px" type="button"></Button>
+        </div>
       ),
       imageSrc: image_avocado.src,
-      imageWidth: 403,
+      imageWidth: 400,
       imageHeight: 380,
       direction: "flex-md-row" as const,
       learnMore: "",

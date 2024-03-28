@@ -12,7 +12,7 @@ import Arrows, { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
 import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
-import { accordionData } from '../global/accordionData';
+import { accordionData } from "@/global/accordionData";
 import { stepData } from "@/global/stepData";
 
 // used for scrollProgressBar
@@ -24,6 +24,7 @@ export default function Home() {
   const approachSection: string = classNames("text-center mx-auto pb-md-5 col-xl-6 col-10 col-lg-8");
   return (
     <div className="text-white">
+
       <div className="container-lg mt-5 mb-5 ">
         <div className={`row gx-0 mb-5`}>
           <div className={mainClass}>
