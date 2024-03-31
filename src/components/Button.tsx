@@ -12,7 +12,6 @@ type ButtonProps = {
   /** Optional. The URL the button should navigate to when clicked. */
   href?: string;
   /** The text displayed on the button. */
-  text: string;
   /** Optional. The width of the button. */
   width?: string;
   /** The type of the button. */
@@ -25,6 +24,9 @@ type ButtonProps = {
   bootstrapStyle?: string;
   /** Optional CSS class for additional styling. */
   styleClass?: string;
+  /** onClick event */
+  eventOnClick?: React.MouseEventHandler<HTMLButtonElement>
+  children: React.ReactNode;
 };
 
 /**
@@ -44,21 +46,22 @@ type buttonColorProps =
       cssColor?: never;
     };
     
-export default function Button({ buttonColor = { cssColor: "", bootstrapColor: undefined }, text, href, type, width = "100%", radius, padding, bootstrapStyle = "", styleClass }: ButtonProps) {
+export default function Button({ buttonColor = { cssColor: "", bootstrapColor: undefined }, children, href, type, width = "100%", radius, padding, bootstrapStyle = "", styleClass, eventOnClick }: ButtonProps) {
   // If href prop is provided, render an anchor element
   const { cssColor = "", bootstrapColor = "" } = buttonColor;
   const btnClass = classNames(`${styles["button"]} ${bootstrapColor} ${bootstrapStyle} ${styleClass}`)
   if (href) {
     return (
       <Link href={href} className={btnClass} style={{ backgroundColor: cssColor, width, borderRadius: radius, padding }} type={type}>
-        {text}
+        {children}
       </Link>
     );
   }
   // Otherwise, render a button element
   return (
-    <button className={btnClass} type={type} style={{ backgroundColor: cssColor, width, borderRadius: radius, padding, border:0 }}>
-      {text}
+    <button className={btnClass} onClick={eventOnClick} type={type} style={{ backgroundColor: cssColor, width, borderRadius: radius, padding, border:0 }}>
+      {children}
     </button>
+  
   );
 }

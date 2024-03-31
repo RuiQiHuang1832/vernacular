@@ -44,7 +44,7 @@ export default function Home() {
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
-              <Button buttonColor={{cssColor:"#4f76fb"}} href="/login" text="GET STARTED" radius="10px" padding="20px" width="auto" type="button"></Button>
+              <Button buttonColor={{cssColor:"#4f76fb"}} href="/login" radius="10px" padding="20px" width="auto" type="button">GET STARTED</Button>
             </div>
           </div>
           <div className={imageClass}>

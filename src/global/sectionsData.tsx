@@ -84,8 +84,8 @@ export const sections: SectionType[] = [
       ),
       paragraph: (
         <div className="d-flex ">
-                        <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login" text="SIGN UP FOR FREE" width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button"></Button>
-                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" text="LEARN MORE" width={"16em"} radius="10px" padding="20px" type="button"></Button>
+                        <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login"width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button">SIGN UP FOR FREE</Button>
+                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" width={"16em"} radius="10px" padding="20px" type="button">LEARN MORE</Button>
         </div>
       ),
       imageSrc: image_avocado.src,

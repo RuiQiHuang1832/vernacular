@@ -28,7 +28,12 @@ const navLinks = [
 //   { text: "Community", href: "/playlist/community/1" },
 // ];
 
-export default function Navigation() {
+type NavigationProps = {
+  /* Optional. Use if you want to hide nav links */
+  hidden?:boolean
+}
+
+export default function Navigation({ hidden = false }:NavigationProps) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
@@ -75,18 +80,19 @@ export default function Navigation() {
   ) : (
     <nav className={`navbar navbar-expand-lg bg-dark ${styles["responsive-sticky-top"]}`}>
       <div className="container-fluid">
-        <div className={`nav-item order-lg-1 me-auto ms-3`}>
+      {!hidden && <div className={`nav-item order-lg-1 me-auto ms-3`}>
           <div className={`nav-link ${navItem}`}>
             <div style={{ cursor: "pointer" }} onClick={searchOverlay}>
               <MdSearch />
             </div>
           </div>
-        </div>
+        </div>}
+    
         <a className={`navbar-brand fs-2 fw-bold ms-sm-5`} href="/">
-          <Image src={logo} alt="Logo" width={50} height={50} />
+        <Image src={logo} alt="Logo" width={50} height={50} />
           &nbsp;vernacular
         </a>
-        <button className="navbar-toggler navbar-dark order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        {!hidden &&  <><button className="navbar-toggler navbar-dark order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <FaBars color={"#86c232"} size={"1.3em"} />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -142,7 +148,8 @@ export default function Navigation() {
               )
             )}
           </ul>
-        </div>
+        </div></>}
+   
       </div>
     </nav>
   );

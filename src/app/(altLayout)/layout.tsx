@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import "@/styles/globals.css"
+import "@/styles/login-styles/login.css"
 import "bootstrap/dist/css/bootstrap.css";
 import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
@@ -25,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) { 
   return (
-    <html lang="en">
-      <body className={`${lexendDeca.className} ${body}`}>
-        <Navigation />
+    <html className="h-100" lang="en">
+      <body  className={`${lexendDeca.className} ${body}`}>
+        <Navigation hidden={true} />
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></Script>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></Script>

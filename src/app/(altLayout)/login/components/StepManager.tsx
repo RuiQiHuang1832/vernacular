@@ -1,29 +1,38 @@
+'use client'
 import StepEmail from "./StepEmail";
 import StepName from "./StepName";
 import StepPassword from "./StepPassword";
+ import { useState } from "react";
 
 export default function StepManager() {
+   const [currentComponent, setCurrentComponent] = useState<number>(1);
+   const [password, setPassword] = useState<string>("");
+
+  const handleContinue = () => {
+    setCurrentComponent((prev) => prev + 1)
+  }
+
   const components = [
     {
       title: `What's your phone number or email?`,
-      component: <StepEmail />,
+      component: <StepEmail handleContinue={handleContinue} />,
     },
     {
-      title: ``,
-      component: <StepPassword />,
+      title: `Create your account password`,
+      component: <StepPassword setPassword={setPassword} password={password} />,
     },
     {
       title: ``,
       component: <StepName />,
     },
-    // Add more steps as needed
+  
   ];
 
   return (
     <div className="d-flex justify-content-center">
       <div style={{maxWidth:'360px'}}>
-        <h4 className="fw-light">{components[0].title}</h4>
-        {components[0].component}
+        <h4 className="mb-3">{components[currentComponent - 1].title}</h4>
+        {components[currentComponent - 1].component}
       </div>
     </div>
   );
