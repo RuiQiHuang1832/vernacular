@@ -9,10 +9,12 @@ import _ from "lodash";
 interface StepPassword {
   password:string;
   setPassword:(password: string) => void;
+  handleBack: () => void;
+  handleContinue:() => void;
 }
 
 export default function StepPassword(props:StepPassword) {
-  const [hiddenStatus, setHiddenStatus ] = useState(true);
+  const [hiddenStatus, setHiddenStatus] = useState(true);
   const handleEyeChange = () => {
     setHiddenStatus(!hiddenStatus)
   }
@@ -30,6 +32,7 @@ export default function StepPassword(props:StepPassword) {
       <p style={{ fontSize: "14px" }} className="fw-light mb-5">
         Your password must be at <span className="text-info">least 8 characters long</span>, and contain at <span className="text-info">least one digit and one non-digit character</span>
       </p>
+      
       <div className="input-group  mb-3">
         <input type={hiddenStatus ? "password" : "text"} onChange={handleOnChange} className={`form-control fw-light ${styles["password-input"]}`} placeholder="Enter your password" />
         <span onClick={handleEyeChange} className={`input-group-text ${styles["password-eye"]}`}>
@@ -37,10 +40,10 @@ export default function StepPassword(props:StepPassword) {
         </span>
       </div>
       <div className="d-flex justify-content-between mt-5">
-        <Button buttonColor={{ cssColor: "black" }} styleClass={`mb-3 ${styles["button"]}`} radius="10px" padding="13px 17px" type="button">
+        <Button buttonColor={{ cssColor: "black" }} eventOnClick={props.handleBack} styleClass={`mb-3 ${styles["button"]}`} radius="10px" padding="13px 17px" type="button">
           <LuArrowLeftToLine></LuArrowLeftToLine>
         </Button>
-        <Button buttonColor={{ cssColor: "black" }} styleClass={`mb-3 ${props.password === "" ? styles["button-continue-disabled"] : styles["button"] } `} radius="10px" padding="12px" type="button">
+        <Button buttonColor={{ cssColor: "black" }} eventOnClick={props.handleContinue} styleClass={`mb-3 ${props.password === "" ? styles["button-continue-disabled"] : styles["button"] } `} radius="10px" padding="12px" type="button">
           Continue&nbsp;<LuArrowRightToLine></LuArrowRightToLine>
         </Button>
       </div>

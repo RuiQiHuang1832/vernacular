@@ -21,7 +21,7 @@ export default function StepEmail(props:StepEmailProps) {
  
   return (
     <div>
-      <input type="email" className={`form-control fw-light mb-3 ${styles["email-input"]}`} placeholder="Enter phone number or email" />
+      <input type="email" className={`form-control fw-light mb-3 step-input`} placeholder="Enter phone number or email" />
       <Button buttonColor={{ cssColor: "black" }} eventOnClick={props.handleContinue} styleClass={`mb-3`} radius="10px" padding="12px" type="button">Continue</Button>
       {altLogin.map((e, i) => {
         if (e.provider === "break") {

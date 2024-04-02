@@ -1,5 +1,5 @@
 import React from "react";
-import { MediaData } from "./CurrentComponent";
+import { MediaData } from "./MediaManager";
 import Image from "next/image";
 import styles from "@/styles/playlist-styles/Playlist-MediaReview.module.css";
 import { FaStar } from "react-icons/fa";

@@ -11,6 +11,9 @@ export default function StepManager() {
   const handleContinue = () => {
     setCurrentComponent((prev) => prev + 1)
   }
+  const handleBack = () => {
+    setCurrentComponent((prev) => prev - 1)
+  }
 
   const components = [
     {
@@ -19,18 +22,18 @@ export default function StepManager() {
     },
     {
       title: `Create your account password`,
-      component: <StepPassword setPassword={setPassword} password={password} />,
+      component: <StepPassword setPassword={setPassword} password={password} handleContinue={handleContinue} handleBack={handleBack} />,
     },
     {
-      title: ``,
-      component: <StepName />,
+      title: `What's your name?`,
+      component: <StepName handleBack={handleBack} />,
     },
   
   ];
 
   return (
     <div className="d-flex justify-content-center">
-      <div style={{maxWidth:'360px'}}>
+      <div style={{width:'360px'}}>
         <h4 className="mb-3">{components[currentComponent - 1].title}</h4>
         {components[currentComponent - 1].component}
       </div>

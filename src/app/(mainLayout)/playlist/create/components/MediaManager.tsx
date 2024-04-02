@@ -26,7 +26,7 @@ export interface MediaData {
 }
 
 
-export default function CurrentComponent() {
+export default function MediaManager() {
     const [resetKey, setResetKey] = useState(0);
 
 

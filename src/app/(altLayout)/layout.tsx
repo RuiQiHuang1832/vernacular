@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import "@/styles/globals.css"
-import "@/styles/login-styles/login.css"
 import "bootstrap/dist/css/bootstrap.css";
 import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";

@@ -7,7 +7,7 @@ import styles from "@/styles/playlist-styles/Playlist-MediaSelection.module.css"
 import { FaSearch } from "react-icons/fa";
 import classNames from "classnames";
 import { RiDeleteBinFill } from "react-icons/ri";
-import { MediaData } from "./CurrentComponent";
+import { MediaData } from "./MediaManager";
 import _ from "lodash";
 
 interface MediaSelectionProps {

@@ -107,17 +107,11 @@ a.navbar-brand {
   text-align:center;
 }
 
-/* Will not apply to .special-form-control class */
-.form-control:not(.special-form-control):focus { 
+.form-control:focus { 
   box-shadow: none !important;
-  /* outline: 3px solid#00c1d9; */
-  /* border-color: transparent; */
+
 }
 
-/* .special-form-control {
-  box-shadow: none !important;
-  border-color: transparent !important;
-} */
 
 select option {
   background:#222629;

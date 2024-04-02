@@ -1,4 +1,4 @@
-import styles from "@/styles/Billings.module.css";
+import styles from "@/styles/settings-styles/Billings.module.css";
 import classNames from "classnames";
 export default function Billing() {
   const invoices = [
