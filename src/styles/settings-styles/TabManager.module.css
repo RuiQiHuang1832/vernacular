@@ -1,0 +1,33 @@
+.tab-active {
+    color:#bafe3b !important;
+    background-color:#2f3439 !important;
+}
+
+.tab-active::after {
+        content: "";
+        height:  1.5rem;
+        left: calc( 0.5rem*-1);
+        position: absolute;
+        top: calc(50% - 12px);
+        width: 0.15rem;
+        background: #a0d147;
+
+}
+
+.bg-color {
+    background-color:transparent;
+    color:var(--nav-item-color);
+    border-color:transparent !important;
+    border-radius:5px !important;
+}
+
+.bg-color:hover {
+    background-color:#2f3439!important;
+}
+
+.extra-padding {
+   padding: 0 30px 0 50px;
+}
+
+
+

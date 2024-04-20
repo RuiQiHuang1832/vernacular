@@ -3,24 +3,10 @@
     border-radius: 10px
 }
 
-.delete-unit {
-    border: 1px solid rgb(151 43 47);
-    border-radius: 10px
-}
-
-.delete-footer {
-    border: 1px solid rgb(151 43 47);
-    background: #2A1314;
-    border-radius: 0 0 10px 10px ;
-    padding: 12px 12px;
-
-}
-
 .default-footer {   
     border: 1px solid hsla(0,0%,25%,1);
     padding: 12px 12px;
 }
-
 .footer {
     display: flex;
     justify-content: space-between;
@@ -36,17 +22,6 @@
     color: hsla( 0,0%,63% ,1)
 }
 
-.description {
-    margin-top: 0.75rem;
-    font-size: 15px;
-}
-
-.small-pfp {
-    border-radius: 9999px; 
-    bottom: 0;
-    right: 0;
-}
-
 .light-border-input {
     background-color:black !important;
     color:white !important;
@@ -59,12 +34,19 @@
     border-color:rgb(119 116 116) !important;
 
 }
-   
-.phone-dropdown {
-    color:white;
-    background-color: black !important;
+
+.description {
+    margin-top: 0.75rem;
+    font-size: 15px;
 }
 
-.button-class {
-    background-color:black !important;
-}
+.input {
+    border-color: #495057 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+  
+  .label {
+    font-size: 1em;
+  
+  }

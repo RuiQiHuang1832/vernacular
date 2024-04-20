@@ -1,0 +1,23 @@
+.divider {
+    border-bottom: 1px solid #7D7D7D;
+}
+
+.container {
+    border: 1px solid hsla(0, 0%, 25%, 1);
+    border-radius: 10px;
+}
+
+.web {
+  padding: 1rem; 
+  padding-left:1.5rem;
+  border-bottom: 1px solid hsla(0, 0%, 25%, 1);
+}
+
+.title {
+ border-bottom:1px solid #7D7D7D
+}
+
+.label {
+  color:#7D7D7D
+}
+

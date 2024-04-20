@@ -1,13 +1,6 @@
-import React from "react";
 import { BsFacebook, BsGithub, BsGoogle, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 import styles from "@/styles/Footer.module.css";
-import classNames from "classnames";
 import { IconType } from "react-icons";
-
-
-type Property = {
-  size: string;
-};
 
 const socialIcons: IconType[] = [
   BsFacebook,
@@ -28,25 +21,19 @@ const socialIconLinks: string[] = [
 ]
 
 export default function Footer() {
-  const iconBorder: string = classNames(styles["border"], "text-reset");
-  const property: Property = {
-    size: "0.75em",
-  };
-  const footerContainer: string = classNames("text-white py-4 mt-5", styles["footer"])
-  const sectionContainer: string = classNames("d-flex align-items-center");
 
   return (
-    <footer className={footerContainer} style={{background:"#1d2426"}}>
+    <footer className={`text-white py-4 mt-5 ${styles["footer"]}`}>
       <section className="container-lg">
-        <div className={`${sectionContainer} justify-content-center`}>
+        <div className={`d-flex align-items-center justify-content-center`}>
           {socialIcons.map((Icon, index) => (
-            <a target="_blank" rel="noopener noreferrer" href={socialIconLinks[index]} key={index} className={iconBorder}>
-              <Icon size={property["size"]} />
+            <a target="_blank" rel="noopener noreferrer" href={socialIconLinks[index]} key={index} className={`${styles["border"]} text-reset`}>
+              <Icon size={"0.75em"} />
             </a>
           ))}
         </div>
       </section>
-        <div className={`text-center lead mx-auto ${styles["rfs"]}`}><div>© 2023-2024 Vernacular. All Rights Reserved.</div></div>
+        <div className={styles["text"]}>© 2023-2024 Vernacular. All Rights Reserved.</div>
     </footer>
   );
 }

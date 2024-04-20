@@ -91,21 +91,12 @@ a.navbar-brand {
   background-color: #86c232 !important;
 }
 
-.section-heading::after {
-  background: #86c232;
-  bottom: -10px;
-  content: "";
-  display: block;
-  height: 5px;
-  position: relative;
-  width: 50px;
-  left: 50%;
-  margin-left: -25px;
+.section-heading {
+  border-bottom: 1px solid #d0d7deb3;
+
 }
 
-.section-heading {
-  text-align:center;
-}
+
 
 .form-control:focus { 
   box-shadow: none !important;
@@ -143,11 +134,23 @@ select.break option {
 
 
 .react-tel-input .form-control, .react-tel-input .flag-dropdown {
- border: 1px solid hsla(0,0%,25%,1) !important
+ border: 1px solid hsla(0,0%,25%,1) !important;
+ transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.react-tel-input .form-control:focus + .flag-dropdown{
+  border-color:rgb(119 116 116) !important;
+}
+
+
+.react-tel-input .form-control + .flag-dropdown.open,
+.react-tel-input .form-control:has(+ .flag-dropdown.open) {
+  border-color:rgb(119 116 116) !important;
 }
 
 .react-tel-input .flag-dropdown.open .selected-flag, .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
-  background:black !important
+  background:black !important;
 }
 
 .react-tel-input .country-list .country.highlight {
@@ -246,3 +249,16 @@ textarea {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
 
+
+/* custom checkbox */
+
+/* #custom-checkbox::before {
+  content: '[    ]' !important;
+  white-space: pre;
+
+}
+
+#custom-checkbox.checked::before {
+  content: '[ X ]' !important;
+  white-space: pre;
+} */

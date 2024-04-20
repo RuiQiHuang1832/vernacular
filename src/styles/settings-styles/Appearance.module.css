@@ -1,0 +1,71 @@
+.theme-container {
+    position:relative; 
+    margin-bottom:1.5rem;
+    border-width:5px;
+    border-style:solid;
+    border-radius:10px
+}
+
+.img-container {
+    overflow: hidden;
+    height: auto;
+    width: 300px;
+    cursor:pointer;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0px;
+}
+
+.theme-input {
+    position:absolute;
+    bottom: 7px;
+     left: 7px;
+     border-color:#495057 !important;
+     box-shadow:none !important;
+    background-color:transparent !important;
+}
+
+.theme-label {
+    font-size: 15px;
+    margin-left:1.8em;
+    font-weight: 300;
+    padding: 0.25rem;
+}
+
+.emoji-input {
+    border-color: #495057 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.emoji-label {
+    font-size: 1em;
+
+}
+
+.accent-section {
+    transform: translate(-5px);
+    display:flex
+}
+
+.circle {
+    width: 25px; /* Adjust the width and height as needed */
+    height: 25px;
+    border-radius: 50%; /* Ensures the shape is a circle */
+    cursor:pointer;  
+
+}
+
+ .circle-border {
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-radius: 50%; 
+    padding:5px
+} 
+
+
+.circle-selected {
+    border-color:#395DE4 !important
+} 
