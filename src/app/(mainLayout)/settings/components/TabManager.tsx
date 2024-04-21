@@ -4,12 +4,13 @@ import Billing from "./Billing";
 import General from "./General";
 import PrivacySecurity from "./PrivacySecurity";
 import Notification from "./Notification";
-import Members from "./Members";
+import Sessions from "./Sessions";
 import Appearance from "./Appearance";
 import classNames from "classnames";
-import { FaGear, FaReceipt, FaPaintbrush, FaPersonRays, FaBell } from "react-icons/fa6";
+import { FaGear, FaReceipt, FaPaintbrush, FaBell } from "react-icons/fa6";
 import { MdPrivacyTip } from "react-icons/md";
 import { useState } from "react";
+import { GiAerialSignal } from "react-icons/gi";
 
 export default function TabManager() {
   const [activeTab, setActiveTab] = useState<string>("General");
@@ -29,8 +30,8 @@ export default function TabManager() {
         return <Appearance />;
       case "Privacy & Security":
         return <PrivacySecurity />;
-      case "Members":
-        return <Members />;
+      case "Sessions":
+        return <Sessions />;
       case "Notification":
         return <Notification />;
     }
@@ -39,7 +40,7 @@ export default function TabManager() {
   const listItems = [
     { item: "General", icon: <FaGear></FaGear> },
     { item: "Billing", icon: <FaReceipt></FaReceipt> },
-    { item: "Members", icon: <FaPersonRays></FaPersonRays> },
+    { item: "Sessions", icon: <GiAerialSignal></GiAerialSignal> },
     { item: "Notification", icon: <FaBell></FaBell> },
     { item: "Appearance", icon: <FaPaintbrush></FaPaintbrush> },
     { item: "Privacy & Security", icon: <MdPrivacyTip></MdPrivacyTip> },

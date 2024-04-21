@@ -14,8 +14,7 @@ export default function Search() {
         <div className="col-9">
           <Input icon={MdSearch} text="Search Vernacular.."></Input>
           <div className="text-center">
-          <Button buttonColor={{cssColor:"#4f76fb"}} text="Search" radius="10px" padding="20px" width="auto" type="button"></Button> 
-          </div>
+          <Button bootstrapStyle="mt-3" buttonColor={{cssColor:"#1D8754"}} href="/login" radius="10px" padding="20px" width="auto" type="button">Search</Button>          </div>
           <div className="mt-5">
             <p className="fs-5 text-center">Find anything about our product, search our documentation, and more. Enter a query in the search input above, and results will be displayed as you type.</p>
           </div>

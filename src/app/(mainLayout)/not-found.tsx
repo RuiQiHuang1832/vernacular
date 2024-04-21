@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="col col-lg-8 col-xl-6 mx-auto text-center">
         <p className="fs-1">We lost this page</p>
         <p className="fs-5">We searched high and low but could not find what you&apos;re looking for. Let&apos;s find a better place for you to go.</p>
-        <Button buttonColor={{bootstrapColor:"btn-success btn"}} href="/" text="Return Home" radius="10px" padding="20px" width="auto" type="button"></Button>
+        <Button bootstrapStyle="mt-3" buttonColor={{cssColor:"#1D8754"}} href="/" radius="10px" padding="20px" width="auto" type="button">Return Home</Button>
         
       </div>
       <div className="text-center" >
