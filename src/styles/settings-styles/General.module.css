@@ -43,9 +43,19 @@
 
 .small-pfp {
     border-radius: 9999px; 
+    position:absolute;
     bottom: 0;
     right: 0;
 }
+@media (max-width: 617px) {
+    .small-pfp {
+        position:relative;
+    }
+    .img-container {
+        text-align: center;
+    }
+}
+
 
 .light-border-input {
     background-color:black !important;

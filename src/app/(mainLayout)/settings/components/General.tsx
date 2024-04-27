@@ -32,11 +32,12 @@ const Unit = ({ children, unitClass }:UnitProps) => {
 
 const Footer = (props: FooterProps ) => {
   return (
-    <footer className={`${styles["footer"]} ${props.footerClass}`}>
-      <small className={`${styles["footer-text"]}`}>{props.footer}</small>
-      <button type="submit" disabled className={props.buttonClass}>
+    <footer className={`${styles["footer"]} ${props.footerClass} flex-column flex-sm-row text-center`}>
+      {props.footer && <small className={`${styles["footer-text"]} mb-sm-0 ${props.buttonText && "mb-2"}`}>{props.footer}</small>}
+      {props.buttonText && <button  type="submit" disabled className={props.buttonClass}>
         {props.buttonText}
-      </button>
+      </button>}
+    
     </footer>
   );
 };
@@ -62,19 +63,19 @@ export default function General() {
       title: "Avatar",
       description: "Click on the avatar to upload a custom one from your files.",
       footer: "An avatar is optional but strongly recommended.",
-      buttonText: "Save",
+      buttonText: "",
       showInput: false,
       buttonClass: "btn btn-sm btn-light",
       footerClass: styles["default-footer"],
       unitClass: styles["default-unit"],
       specialInput: (
-        <div className="position-relative">
+        <div className={`position-relative ${styles["img-container"]}`}>
           <Image
             src={pfp}
-            alt="contact us image"
+            alt="pfp"
             height={80}
             width={80}
-            className={`globalObjectFit position-absolute ${styles["small-pfp"]}`}
+            className={`globalObjectFit ${styles["small-pfp"]}`}
             quality={100}
           />
         </div>
@@ -93,7 +94,7 @@ export default function General() {
     {
       title: "Email",
       description: "Please enter the email address you want to use to log in with Vernacular.",
-      footer: "Please enter the email address you want to use to log in with Vernacular.",
+      footer: "We will email you to verify the change.",
       buttonText: "Save",
       showInput: true,
       footerClass: styles["default-footer"],
@@ -156,7 +157,7 @@ export default function General() {
       footer: "",
       buttonText: "Delete Personal Account",
       showInput: false,
-      buttonClass: "btn btn-danger",
+      buttonClass: "btn btn-danger ms-sm-auto",
       footerClass: styles["delete-footer"],
       unitClass: styles["delete-unit"],
     },
@@ -164,7 +165,7 @@ export default function General() {
   
 
   return (
-    <div className="fw-light container">
+    <div className="fw-light">
    <SectionHeading on={true} section="General Settings"></SectionHeading>
    <p className="subtext">Customize your profile to reflect your identity and preferences. Update your avatar, name, and contact details, or manage account settings such as deletion.</p>
       {generalOptions.map((e, index) => (

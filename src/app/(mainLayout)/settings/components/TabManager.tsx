@@ -48,7 +48,7 @@ export default function TabManager() {
   ];
 
   return (
-    <div className={`${styles["extra-padding"]}`}>
+    <div className="container-fluid" >
       <h3>Workspace Settings</h3>
       <section className="mt-5 row">
         <div className={`list-group col-xxl-2 col-12 mb-3 mb-xxl-0`}>

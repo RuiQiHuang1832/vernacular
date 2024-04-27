@@ -1,43 +1,70 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import { RiComputerLine } from "react-icons/ri";
+import Button from "@/components/Button";
+import styles from "@/styles/settings-styles/Sessions.module.css";
 
 export default function Sessions() {
+  interface InfoItem {
+    [key: string]: string[];
+  }
+  interface seeMoreType {
+    [key: number]: boolean;
+  }
+  const info: InfoItem[] = [
+    {
+      "Device:": ["Chrome on Windows"],
+      "Last Location:": ["Oakland, California, United States"],
+      "Signed in:": ["March 03, 2024", "Oakland, California, United States"],
+    },
+  ];
+
+  const [seeMore, setSeeMore] = useState<seeMoreType>({});
+  const handleOnClick = (i: number) => {
+    setSeeMore((prevState) => ({ ...prevState, [i]: !prevState[i] }));
+  };
+
   return (
     <div>
       <section>
         <SectionHeading on={true} section="Web sessions"></SectionHeading>
         <p className="subtext">This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.</p>
-        <div className="border border-1 mb-3 rounded p-3 ps-0">
-          <div className="d-flex flex-column">
-            <div className="d-flex">
-              <div className=" ms-3" style={{ width: "12px", height: "12px", border: "1px solid green", borderRadius: "10px", background: "green", marginTop: "8px" }}></div>
-              <RiComputerLine className="mx-3" size={"2em"}></RiComputerLine>
-              <div className="mx-2">
-                <strong className="d-block">Oakland 71.198.43.200</strong>
-                <small>Your current session</small>
+        {info.map((e, i) => (
+          <div key={i} className={styles["individual-session-container"]}>
+            <div className="d-flex flex-column">
+              <div className="d-flex">
+                <div className={styles["indicator"]}></div>
+                <RiComputerLine className="mx-3" size={"2em"}></RiComputerLine>
+                <div className="mx-2">
+                  <strong className="d-block">Oakland 71.198.43.200</strong>
+                  <small>Your current session</small>
+                </div>
+                <div className="ms-auto align-self-center">
+                  <Button styleClass={styles["revoke-button"]} eventOnClick={() => handleOnClick(i)} buttonColor={{ cssColor: "grey" }} radius="10px" padding="5px 8px 5px 8px" width="auto" type="button">
+                    See More
+                  </Button>
+                </div>
               </div>
-            </div>
-            <small className="ms-3">Seen in US</small>
-            <div className="mx-3 mt-3">
-              <strong className="d-block ">Device:</strong>
-              <small className="d-block">Chrome on Windows</small>
-            </div>
-            <div className="mx-3 mt-3">
-              <strong className="d-block ">Last Location:</strong>
-              <small className="d-block">Oakland, California, United States</small>
-            </div>
-            <div className="mx-3 mt-3">
-              <strong className="d-block ">Signed in:</strong>
-              <small className="d-block">March 03, 2024</small>
-              <small>Oakland, California, United States</small>
+              <small className="ms-3">Seen in US</small>
+              {seeMore[i] &&
+                Object.keys(e).map((key, j) => (
+                  <div key={j} className="mx-3 mt-3">
+                    <strong className="d-block">{key}</strong>
+                    {info[i][key].map((k, z) => (
+                      <small key={z} className="d-block">
+                        {k}
+                      </small>
+                    ))}
+                  </div>
+                ))}
             </div>
           </div>
-        </div>
+        ))}
       </section>
       <section>
         <SectionHeading on={true} section="Vernacular Mobile sessions"></SectionHeading>
-        <p className="subtext">GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method. Learn more about authentication with GitHub Mobile. To get started, install GitHub Mobile for iOS or Android and sign in to your account.</p>
+        <p className="subtext pb-5">Vernacular Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method. Learn more about authentication with Vernacular Mobile. To get started, install Vernacular Mobile for iOS or Android and sign in to your account.</p>
       </section>
     </div>
   );

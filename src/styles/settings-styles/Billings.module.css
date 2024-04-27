@@ -41,6 +41,7 @@
     border-right: 1px solid;
     padding-right: 2rem;
     align-items: center;
+
 }
 
 .more-options-container {
@@ -48,13 +49,32 @@
     padding-left: 2rem;
 }
 
+
 .options {
     color: #0d6efd;
     list-style: none;
     padding: 0;
-    font-size: 15px;
-    cursor: pointer;
+    font-size: 12px;
 }
+ 
+@media screen and (max-width: 424px) {
+.options {
+    font-size: 11px;
+}}
+
+@media screen and (max-width: 453px) {
+    .summary {
+        font-size:13px;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .more-options-container {
+        font-size:12px;
+    }
+}
+
+
 
 .web-title {
     font-size: 14px;
@@ -69,11 +89,19 @@
 .plan-list {
     list-style: none;
     padding-left: 0; /* Equivalent to ps-0 in Bootstrap */
+    text-wrap: nowrap;
 }
 
 .alt-plan {
     color: #0d6efd;
     padding-bottom: 15px;
+    text-wrap:break-word;
+}
+
+@media screen and (max-width:576px) {
+    .alt-plan {
+        text-wrap: nowrap;
+    }
 }
 
 

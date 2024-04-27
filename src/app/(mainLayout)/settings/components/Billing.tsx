@@ -29,24 +29,24 @@ export default function Billing() {
   ];
 
   return (
-    <div className="fw-light container">
+    <div className="fw-light">
       <section>
       <SectionHeading on={true} section="Billing summary"></SectionHeading>
       <p className="subtext">View and manage your current subscription plan and access details.</p>
       <div className={styles["summary-container"]}>
         <div className={styles["summary"]}>
           <div>Your next payment</div>
-          <p className="fw-medium fs-4">$0.01</p>
+          <div className="fw-medium fs-4 my-2">$0.01</div>
           <div style={{ fontSize: "12px" }}>This amount does not include the spend on usage of metered service. View your usage this month below.</div>
         </div>
         <div className={styles["more-options-container"]}>
           <p>
-            Payment information <IoIosArrowDropright style={{ marginBottom: "2px" }}></IoIosArrowDropright>
+            Payment information <IoIosArrowDropright size={"16px"} style={{ marginBottom: "2px" }}></IoIosArrowDropright>
           </p>
           <ul className={styles["options"]}>
-            <li>Manage spending limit</li>
-            <li>View payment history</li>
-            <li>Switch to yearly billing</li>
+            <li><a className="text-decoration-none" href="#">Manage spending limit</a></li>
+            <li><a className="text-decoration-none" href="#">View payment history</a></li>
+            <li><a className="text-decoration-none"href="#">Switch to yearly billing</a></li>
           </ul>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function Billing() {
             </Button>
           </div>
         </div>
-        <div className="d-flex">
+        <div className="d-flex flex-column flex-sm-row">
           <div className="col-6 ps-3">
             <div className="my-2 text-secondary">Included:</div>
             <ul className={styles["plan-list"]}>
