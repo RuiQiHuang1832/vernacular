@@ -22,3 +22,36 @@
         transform: scale(1);
     }
 }
+
+.light-border-input {
+    background-color:black !important;
+    color:white !important;
+     border-color:#333333 ;
+     outline: none !important;
+     font-weight: 300;
+}
+
+.light-border-input:focus {
+    border-color:rgb(119 116 116) !important;
+
+}
+
+.placeholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(251, 251, 251);
+    opacity: 0.8; /* Firefox */
+    font-weight: 300;
+
+}
+
+
+.icon-container {
+    background-color:black !important;
+    border-color:#333333 ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.icon-container:has(+ .light-border-input:focus) {
+    border-color:rgb(119 116 116) !important;
+}
+

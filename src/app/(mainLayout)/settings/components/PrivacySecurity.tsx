@@ -42,9 +42,9 @@ const Footer = (props: FooterProps) => {
   return (
     <footer className={`${styles["footer"]} ${props.footerClass}`}>
       <small className={`${styles["footer-text"]}`}>{props.footer}</small>
-      <button type="submit" disabled className={props.buttonClass}>
+      {props.buttonText && <button  type="submit" disabled className={props.buttonClass}>
         {props.buttonText}
-      </button>
+      </button>}
     </footer>
   );
 };

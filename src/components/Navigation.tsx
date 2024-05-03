@@ -8,7 +8,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../assets/images/logo.svg";
 import { FaBars } from "react-icons/fa6";
-import { IoIosArrowDown, IoMdCloseCircle } from "react-icons/io";
+import { AiOutlineClose } from "react-icons/ai";
+
 import { useState, useEffect } from "react";
 import { MdSearch } from "react-icons/md";
 import Search from "./Search";
@@ -73,7 +74,7 @@ export default function Navigation({ hidden = false }:NavigationProps) {
   return isSearchOpen ? (
     <>
       <div onClick={searchOverlay} className={`${styles["search-close-btn"]}`}>
-        <IoMdCloseCircle size="3em" color="lightgreen" />
+        <AiOutlineClose size="2.5em" color="white"/>
       </div>
       <Search />
     </>
@@ -90,10 +91,10 @@ export default function Navigation({ hidden = false }:NavigationProps) {
     
         <a className={`navbar-brand fs-2 fw-bold ms-sm-5`} href="/">
         <Image src={logo} alt="Logo" width={50} height={50} />
-          &nbsp;vernacular
+          <span className='d-sm-inline d-none'>&nbsp;vernacular</span>
         </a>
         {!hidden &&  <><button className="navbar-toggler navbar-dark order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <FaBars color={"#86c232"} size={"1.3em"} />
+          <FaBars color="#86c232" size="1.3em" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mb-lg-0 ms-auto">

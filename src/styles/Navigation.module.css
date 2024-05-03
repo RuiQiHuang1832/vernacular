@@ -59,4 +59,9 @@
   position:absolute;
   float:right;
   cursor:pointer;
+  padding:10px;
+}
+
+.search-close-btn:hover {
+  background:red;
 }

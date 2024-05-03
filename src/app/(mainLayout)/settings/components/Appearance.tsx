@@ -18,10 +18,10 @@ export default function Appearance() {
   const themes = [
     { theme: "Light default", svg: lightTheme },
     { theme: "Light high contrast", svg: lightHighContrast },
-    { theme: "Light Protanopia & Deuteranopia", svg: lightColorblind },
+    { theme: "Light Deuteranopia", svg: lightColorblind },
     { theme: "Light Protanopia", svg: lightTritanopia },
     { theme: "Dark default", svg: darkDefault },
-    { theme: "Dark protanopia & Deuteranopia", svg: darkColorblind },
+    { theme: "Dark Deuteranopia", svg: darkColorblind },
     { theme: "Dark dimmed", svg: darkDimmed },
     { theme: "Dark Tritanopia", svg: darkTritanopia },
     { theme: "Dark high contrast", svg: darkHighContrast },
@@ -51,15 +51,15 @@ export default function Appearance() {
       <section>
       <SectionHeading on={true} section="Theme Preferences"></SectionHeading>
       <p className="subtext">Choose how Vernacular looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.</p>
-      <div className="d-flex flex-wrap justify-content-between">
+      <div className={styles["grid"]}>
         {themes.map((e, i) => (
           <div
             key={i}
             className={`${styles["theme-container"]} 
           ${classNames({ ["border-primary"]: theme == e.theme }, { ["border-dark"]: theme != e.theme })} `}
           >
-            <div onClick={() => handleThemeChange(e.theme)} className={`${styles["img-container"]}`}>
-              <Image alt={`theme-${e.theme}`} src={e.svg} width={0} height={0} sizes="100vw" className={`${styles["img"]}`}></Image>
+            <div onClick={() => handleThemeChange(e.theme)}>
+            <Image alt={`theme-${e.theme}`} src={e.svg} width={0} height={0} className={`${styles["img"]}`}></Image> 
             </div>
             <input onChange={() => handleThemeChange(e.theme)} className={`${styles["theme-input"]} form-check-input`} type="radio" checked={theme == e.theme} />
             <div className={styles["theme-label"]}>{e.theme}</div>

@@ -1,19 +1,18 @@
+.grid {
+    display:grid;
+    gap: 1rem;
+    grid-template-columns:repeat(auto-fit, minmax(15em, 1fr))
+}
+
 .theme-container {
     position:relative; 
-    margin-bottom:1.5rem;
     border-width:5px;
     border-style:solid;
     border-radius:10px
 }
 
-.img-container {
-    overflow: hidden;
-    height: auto;
-    width: 300px;
-    cursor:pointer;
-}
-
 .img {
+    cursor:pointer;
     width: 100%;
     height: auto;
     border-radius: 5px 5px 0 0px;
@@ -69,3 +68,5 @@
 .circle-selected {
     border-color:#395DE4 !important
 } 
+
+

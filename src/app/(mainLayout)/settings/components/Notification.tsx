@@ -16,14 +16,14 @@ export default function Notification() {
       <p className="subtext">Manage your personal notification settings.</p>
       <div className={`${styles["container"]}`}>
         <h5 className={`${styles["web"]}`}>Web</h5>
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column ">
           {notifications.map((e, i) => (
             <div className="px-4 py-2" key={i}>
               <div className={`py-2 ${styles["title"]}`}>{e.title}</div>
               {e.preferences.map((preference, j) => (
                 <div className={`py-3 ${j !== e.preferences.length - 1 ? styles["divider"] : ""}`}  key={`${i}-${j}`}>
                   <input className={`form-check-input input-checkbox`} type="checkbox"/>
-                  <label className={`ms-2 form-check-label ${styles["label"]}`}>{preference}</label>
+                  <label className={`d-inline ms-2 form-check-label ${styles["label"]}`}>{preference}</label>
                 </div>
               ))}
             </div>

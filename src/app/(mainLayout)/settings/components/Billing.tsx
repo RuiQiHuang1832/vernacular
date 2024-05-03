@@ -61,7 +61,7 @@ export default function Billing() {
             <h6 className={styles["web-title"]}>Vernacular Free</h6>
             <div className={styles["plan-subtext"]}>The basics for all reviewers</div>
           </div>
-          <div className="ms-auto align-self-center">
+          <div className="ms-auto text-end d-flex flex-sm-row flex-column">
             <Button styleClass={styles["compare-button"]} href="#" buttonColor={{ bootstrapColor: "btn btn-outline-success" }} radius="10px" padding="7px 10px 7px 10px" width="auto" type="button">
               Compare all Plans
             </Button>

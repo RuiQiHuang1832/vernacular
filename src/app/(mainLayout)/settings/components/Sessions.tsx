@@ -36,11 +36,11 @@ export default function Sessions() {
               <div className="d-flex">
                 <div className={styles["indicator"]}></div>
                 <RiComputerLine className="mx-3" size={"2em"}></RiComputerLine>
-                <div className="mx-2">
+                <div style={{flex:"1 0 0"}} className="mx-2">
                   <strong className="d-block">Oakland 71.198.43.200</strong>
-                  <small>Your current session</small>
+                  <small className="text-nowrap">Your current session</small>
                 </div>
-                <div className="ms-auto align-self-center">
+                <div className="ms-auto align-self-center text-nowrap">
                   <Button styleClass={styles["revoke-button"]} eventOnClick={() => handleOnClick(i)} buttonColor={{ cssColor: "grey" }} radius="10px" padding="5px 8px 5px 8px" width="auto" type="button">
                     See More
                   </Button>
