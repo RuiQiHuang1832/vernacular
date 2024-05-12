@@ -23,12 +23,12 @@ const socialIconLinks: string[] = [
 export default function Footer() {
 
   return (
-    <footer className={`text-white py-4 mt-5 ${styles["footer"]}`}>
+    <footer style={{backgroundColor:"#1d2426"}} className={`text-white py-5  ${styles["footer"]}`}>
       <section className="container-lg">
         <div className={`d-flex align-items-center justify-content-center`}>
           {socialIcons.map((Icon, index) => (
             <a target="_blank" rel="noopener noreferrer" href={socialIconLinks[index]} key={index} className={`${styles["border"]} text-reset`}>
-              <Icon size={"0.75em"} />
+              <Icon size={"1.5em"} />
             </a>
           ))}
         </div>

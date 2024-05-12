@@ -1,58 +1,35 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
 import styles from "@/styles/Navigation.module.css";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
-import logo from "../assets/images/logo.svg";
 import { FaBars } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
-
 import { useState, useEffect } from "react";
 import { MdSearch } from "react-icons/md";
 import Search from "./Search";
 
 const navLinks = [
-  // { text: "CAREER", href: "/careers" },
-  // { text: "ABOUT", href: "/about" },
-  { text: "VIEW", href: "/playlist/view" },
+  // { text: "VIEW", href: "/playlist/view" },
   { text: "CREATE", href: "/playlist/create" },
   { text: "COMMUNITY", href: "/playlist/community/1" },
-  { text: "LOGIN", href: "/login" },
+  { text: "CONTACT", href: "https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" },
+  { text: "LOG IN", href: "/login" },
 ];
-
-// const playlistLinks = [
-//   { text: "View", href: "/playlist/view" },
-//   { text: "Create", href: "/playlist/create" },
-//   { text: "Community", href: "/playlist/community/1" },
-// ];
 
 type NavigationProps = {
   /* Optional. Use if you want to hide nav links */
-  hidden?:boolean
-}
+  hidden?: boolean;
+};
+const BREAKPOINT = 1090
 
-export default function Navigation({ hidden = false }:NavigationProps) {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+export default function Navigation({ hidden = false }: NavigationProps) {
   const [isMobile, setIsMobile] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
-
-  const navItem: string = classNames("me-5", "fs-5");
-  const navItemContainer: string = classNames(`nav-item dropdown ${styles["nav-dropdown-menu"]} ${styles["hover-dropdown"]}`);
+  
   const pathname: string = usePathname();
-  const navItemText: string = classNames(`${styles["highlight-nav"]} ms-2 ${styles["nav-shake"]}`);
-  const activeLinkClass: string = styles["link-active"];
-  const dropdownIcon: string = classNames(`d-lg-none me-2 ${styles["playlist-icon"]}`, { [styles["rotate"]]: isDropdownOpen });
 
-  const toggleDropdown = (): void => {
-    setDropdownOpen(!isDropdownOpen);
-  };
-
-  const closeDropdown = (): void => {
-    setDropdownOpen(false);
-  };
 
   const searchOverlay = () => {
     setSearchOpen(!isSearchOpen);
@@ -60,11 +37,11 @@ export default function Navigation({ hidden = false }:NavigationProps) {
   };
 
   const handleResize = (): void => {
-    setIsMobile(typeof window !== "undefined" && window.innerWidth <= 991.9);
+    setIsMobile(typeof window !== "undefined" && window.innerWidth <= BREAKPOINT);
   };
 
-  useEffect(() => { 
-    setIsMobile(typeof window !== "undefined" && window.innerWidth <= 991.9);
+  useEffect(() => {
+    setIsMobile(typeof window !== "undefined" && window.innerWidth <= BREAKPOINT);
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -73,84 +50,70 @@ export default function Navigation({ hidden = false }:NavigationProps) {
 
   return isSearchOpen ? (
     <>
-      <div onClick={searchOverlay} className={`${styles["search-close-btn"]}`}>
-        <AiOutlineClose size="2.5em" color="white"/>
+      <div onClick={searchOverlay} className={styles["search-close-btn"]}>
+        <AiOutlineClose size="2.5em" color="white" />
       </div>
       <Search />
     </>
   ) : (
-    <nav className={`navbar navbar-expand-lg bg-dark ${styles["responsive-sticky-top"]}`}>
-      <div className="container-fluid">
-      {!hidden && <div className={`nav-item order-lg-1 me-auto ms-3`}>
-          <div className={`nav-link ${navItem}`}>
-            <div style={{ cursor: "pointer" }} onClick={searchOverlay}>
-              <MdSearch />
+    <nav className={`navbar navbar-expand-custom ${styles["responsive-sticky-top"]}`}>
+      <div className={` ${styles["custom-column-gap"]} ${styles["custom-row-gap"]} container-fluid mt-3 px-xxl-5 mx-3 ms-xxl-0 `}>
+        {!hidden && (
+          <div className={`nav-item me-auto ${styles["search"]}`}>
+            <div className={`nav-link fs-5 me-xxl-5 pt-2 `}>
+              <div className={styles["circular-border"]} onClick={searchOverlay}>
+                <MdSearch />
+              </div>
             </div>
           </div>
-        </div>}
-    
-        <a className={`navbar-brand fs-2 fw-bold ms-sm-5`} href="/">
-        <Image src={logo} alt="Logo" width={50} height={50} />
-          <span className='d-sm-inline d-none'>&nbsp;vernacular</span>
-        </a>
-        {!hidden &&  <><button className="navbar-toggler navbar-dark order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <FaBars color="#86c232" size="1.3em" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mb-lg-0 ms-auto">
-            {/* <li role={isMobile ? "button" : undefined} onClick={isMobile ? toggleDropdown : undefined} className={`d-flex align-items-center justify-content-between ${navItemContainer}`}>
-              <div className={`nav-link ${navItem}`} aria-expanded={isDropdownOpen}>
-                <div
-                  role={!isMobile ? "button" : undefined}
-                  onClick={!isMobile ? toggleDropdown : undefined}
-                  className={`
-              ${navItemText} ${classNames({ [activeLinkClass]: pathname.includes("/playlist/") })}`}
-                >
-                  PLAYLIST
-                </div>
-              </div>
-              <IoIosArrowDown size="1.5em" className={dropdownIcon}></IoIosArrowDown>
-            </li> */}
+        )}
 
-            {/* {isDropdownOpen && (
-              <ul style={{ top: "60px" }} className="dropdown-menu d-block">
-                {playlistLinks.map(
+        <a className={`navbar-brand fw-bold ms-xxl-3 ps-2 pt-2`} href="/">
+          <span className="brand">vernacular</span>
+        </a>
+        {!hidden && (
+          <>
+          <div className="order-first pt-2">
+            <button className="navbar-toggler navbar-dark py-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <FaBars color="#86c232" size="1.3em" />
+            </button>
+            </div>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className={`navbar-nav mb-lg-0 flex-grow-1 ${styles["custom-column-gap"]}`}>
+                {navLinks.map(
                   (link, index): React.ReactNode => (
-                    <li key={index}>
-                      <Link onClick={toggleDropdown} className={`dropdown-item`} href={link.href}>
-                        {link.text}
-                      </Link>
-                    </li>
+                    <React.Fragment key={index}>
+                      {isMobile ? (
+                        <Link key={index} href={link.href}>
+                          <li className={`nav-item dropdown ${styles["nav-dropdown-menu"]} ${styles["hover-dropdown"]}`}>
+                            <div className={`nav-link fs-5`}>
+                              <div className={`${styles["highlight-nav"]} ${classNames({ [styles["link-active"]]: pathname === link.href })}`}>{link.text}</div>
+                            </div>
+                          </li>
+                        </Link>
+                      ) : (
+                        <li  className={`nav-item ${index == 3 ? "ms-auto" : ""} pt-2`} key={index}>
+                          <div className={`nav-link fs-5`}>
+                            <Link   className="text-decoration-none text-reset text-nowrap" href={link.href}>
+                              <div className={`${styles["highlight-nav"]} ${classNames({ [styles["link-active"]]: pathname === link.href })}`}>{link.text}</div>
+                            </Link>
+                          </div>
+                        </li>
+                      )}
+                    </React.Fragment>
                   )
                 )}
-              </ul>
-            )} */}
-            {navLinks.map(
-              (link, index): React.ReactNode => (
-                <React.Fragment key={index}>
-                  {isMobile ? (
-                    <Link onClick={closeDropdown} key={index} href={link.href}>
-                      <li className={navItemContainer}>
-                        <div className={`nav-link ${navItem}`}>
-                          <div className={`${navItemText} ${classNames({ [activeLinkClass]: pathname === link.href })}`}>{link.text}</div>
-                        </div>
-                      </li>
+                {!isMobile && <li  className="nav-item pt-2">
+                  <div className={`nav-link fs-5 px-3 ${styles["try-button"]}`}>
+                    <Link className="text-decoration-none text-reset text-nowrap" href="/login">
+                      TRY FREE
                     </Link>
-                  ) : (
-                    <li className="nav-item" key={index}>
-                      <div className={`nav-link ${navItem}`}>
-                        <Link onClick={closeDropdown} className="text-decoration-none text-reset" href={link.href}>
-                          <div className={`${navItemText} ${classNames({ [activeLinkClass]: pathname === link.href })}`}>{link.text}</div>
-                        </Link>
-                      </div>
-                    </li>
-                  )}
-                </React.Fragment>
-              )
-            )}
-          </ul>
-        </div></>}
-   
+                  </div>
+                </li>}
+              </ul>
+            </div>
+          </>
+        )}
       </div>
     </nav>
   );

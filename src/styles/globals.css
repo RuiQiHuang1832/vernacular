@@ -262,3 +262,53 @@ textarea {
   content: '[ X ]' !important;
   white-space: pre;
 } */
+
+
+@media (min-width: 1090px){
+  .navbar-expand-custom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+      flex-direction: row;
+  }
+  .navbar-expand-custom .dropdown-menu {
+      position: absolute;
+  }
+  .navbar-expand-custom .nav-link {
+      padding-right: .5rem;
+      padding-left: .5rem;
+  }
+  .navbar-expand-custom > .container {
+      flex-wrap: nowrap;
+  }
+  .navbar-expand-custom .navbar-collapse {
+      display: flex!important;
+      flex-basis: auto;
+  }
+  .navbar-expand-custom .navbar-toggler {
+      display: none;
+  }
+}
+
+/* handles navbar brand so it doesn't wrap */
+
+.navbar {
+  min-width:300px
+}
+
+.navbar-brand {
+  max-width: 58%;
+}
+
+.brand {
+  font-size:30px
+}
+
+@media screen and (max-width: 350px) {  
+  .brand {
+    font-size:25px
+  }
+}
+

@@ -29,6 +29,7 @@
      border-color:#333333 ;
      outline: none !important;
      font-weight: 300;
+     font-size:18px
 }
 
 .light-border-input:focus {
@@ -38,7 +39,7 @@
 
 .placeholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: rgb(251, 251, 251);
-    opacity: 0.8; /* Firefox */
+    opacity:0.9; /* Firefox */
     font-weight: 300;
 
 }

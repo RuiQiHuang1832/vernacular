@@ -9,16 +9,27 @@
   div.link-active {
     border-bottom: 2px solid #86C232;
   }
-
+/* 
   @media screen and (max-width: 576px) {
     .responsive-sticky-top {
       position: sticky;
       top: 0;
       z-index: 1020;
     }
+  } */
+  @media screen and (max-width:390px) {
+    .search {
+      display:none;
+    }
   }
- 
-@media screen and (max-width:991.9px) {
+
+  @media screen and (min-width:1090px) {
+    .search {
+      order:1
+    }
+  }
+
+@media screen and (max-width:1090px) {
   .nav-dropdown-menu {
     border-bottom: 1px solid #444a4d;
     padding-top: 0.5rem !important;
@@ -30,6 +41,20 @@
     transition: background 300ms;
 
   }
+
+}
+
+.custom-row-gap {
+ row-gap:10px;
+}
+
+.custom-column-gap {
+  column-gap: 2em;
+}
+@media screen and (max-width: 435px) {
+  .custom-column-gap {
+    column-gap:1em;
+  }
 }
 
  @media screen and (min-width:992px) {
@@ -38,9 +63,13 @@
  }
 }
 
+.highlight-nav {
+ transition-duration: 200ms;
+}
+
 .highlight-nav:hover {
     color: var(--nav-brand-color);
-
+     
 }
 
 .playlist-icon  {
@@ -64,4 +93,30 @@
 
 .search-close-btn:hover {
   background:red;
+}
+
+.circular-border { 
+  border:2px solid #4B4C53;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50px;
+  line-height: 35px;
+  transition-duration: 200ms;
+ cursor: pointer;
+}
+
+.circular-border:hover {
+  border-color: var(--nav-brand-color);
+}
+
+
+.try-button {
+  background-color: #1D8754; 
+  color: white !important;
+   border-radius: 6px;
+}
+
+.try-button:hover {
+  opacity: 90%;
 }

@@ -21,13 +21,27 @@
     
 }
 
-.upgrade-button {
+.btn-group .upgrade-button {
     letter-spacing: normal;
     font-weight: 300;
     font-size:12px;
     margin-left:10px;
     align-self:flex-end;
 }
+
+.addOn-button {
+    letter-spacing: normal !important;
+    font-weight: 300;
+    font-size:12px;
+}
+
+.btn-group .compare-button {
+    letter-spacing: normal ;
+    font-weight: 300;
+    font-size:12px;
+    text-wrap: nowrap;
+}
+
 
 @media screen and (max-width: 576px) {
     .upgrade-button {
@@ -36,12 +50,7 @@
 }
 
 
-.compare-button {
-    letter-spacing: normal;
-    font-weight: 300;
-    font-size:12px;
-    text-wrap: nowrap;
-}
+
 
 .summary {
     flex: 1;
@@ -140,8 +149,3 @@
     color: #636c76;
 }
 
-.addOn-button {
-    letter-spacing: normal;
-    font-weight: 300;
-    font-size:12px;
-}
