@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import { MdSearch } from "react-icons/md";
 import Button from "@/components/Button";
@@ -40,8 +41,8 @@ export default function Search() {
   const searcher = new FuzzySearch(searchable, ['section', 'link', 'content.opening', 'faq'], {
     caseSensitive: false,
   });
-  const handleSearch = (e) => {
-    setQuery(searcher.search(e.target.value))
+  const handleSearch = () => {
+    // setQuery(searcher.search(e.target.value))
   }
   console.log(query)
   return (
