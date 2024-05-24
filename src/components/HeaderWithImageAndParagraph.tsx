@@ -13,7 +13,7 @@ export default function HeaderWithImageAndParagraph({ header, paragraph, imageSr
   const headerText: string = classNames(styles["default-font-size"], "fw-bold");
 
   return (
-    <section className={`${sectionContainerClass} d-flex`} style={{minHeight:"100vh"}} id={id}>
+    <section className={`${sectionContainerClass} d-flex`} id={id}>
       <div className={`${direction} flex-column align-content-center row gx-0 container-xxl mx-auto`}>
         <div className={`${textContainer}`} >
           <div className={`text col-11 `}>

@@ -7,7 +7,7 @@ export const metadata: Metadata = loginMetadata;
 
 export default function Login() {
   return (
-    <div className="container mt-5 text-white">
+    <div className="container  text-white">
      <StepManager></StepManager>
     </div>
   );

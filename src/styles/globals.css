@@ -11,7 +11,9 @@
 body {
   background-color: #212529 !important;
 }
-
+html {
+  scroll-behavior: smooth;
+} 
 .navbar-expand-lg .navbar-nav a.nav-link {
   padding: 15px 0px 0px 0px;
   line-height: 1.2em;
@@ -231,11 +233,11 @@ textarea {
 }
 
 .home-page-accordion.accordion {
-  --bs-accordion-bg:#1d2426;
+  --bs-accordion-bg:transparent;
   --bs-accordion-btn-color:white;
   --bs-accordion-border-width:0;
   --bs-accordion-color:white;
-  --bs-accordion-active-bg:#1d2426;
+  --bs-accordion-active-bg:transparent;
   --bs-accordion-active-color: rgb(252, 238, 177);
   --bs-accordion-btn-focus-border-color:transparent;
   --bs-accordion-btn-focus-box-shadow:none;

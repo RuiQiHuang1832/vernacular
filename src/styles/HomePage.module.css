@@ -42,7 +42,7 @@
     background:#1d2426
 }
 .accordion-item-home {
-  background-color:#1d2426;
+  background-color:transparent;
   border-radius:0
 }
 
@@ -50,4 +50,58 @@
 .view-height-alternative {
   padding-top: calc((100vh - 460px) / 2); /* Calculate top padding */
   padding-bottom: calc((100vh - 460px) / 2); /* Calculate bottom padding */
+}
+
+.stats {
+  display:flex; 
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width:1000px) {
+  .stats {
+    flex-grow:1;
+    width:40%
+  }
+}
+
+
+.tool-grid {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding-right:8em;
+  padding-left:8em;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .tool-grid {
+  padding-right:0em;
+  padding-left:0em;
+}
+}
+
+@media screen and (max-width: 970px) {
+  .tool-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width:600px
+
+}
+.grid-item {
+  width:100%
+}
+}
+
+
+.creative-process-container {
+  max-width:90%;
+}
+
+@media screen and (max-width: 1200px) {
+  .creative-process-container {
+    max-width:100%;
+  }
 }
