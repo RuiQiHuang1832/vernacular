@@ -103,7 +103,9 @@
   max-width:90%;
 }
 
-
+.img-width {
+  width:90%
+}
 @media screen and (max-width: 1200px) {
   .tool-grid {
   padding-right:0em;
@@ -121,6 +123,7 @@
 .creative-process-container {
   max-width:100%;
 }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -138,12 +141,19 @@
   }
 }
 
+@media screen and (max-width: 991.20px) {
+  .img-width {
+    width:100%
+  }
+}
 @media screen and (max-width: 970px) {
   .tool-grid {
     grid-template-columns: repeat(1, 1fr);
     max-width:600px
 
 }
+
+
 .grid-item {
   width:100%
 }
@@ -154,3 +164,4 @@
   margin: 0 auto;
   text-align: center;
 }
+

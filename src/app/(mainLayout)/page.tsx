@@ -62,7 +62,7 @@ export default function Home() {
         <p className="fw-light">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
       <section style={{ padding: "6rem 0"}} className="fw-light">{mapObjectToComponent(sections.slice(0, -1), HeaderWithImageAndParagraph)}</section>
-      <section id="howitworks" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-5 px-xl-0 ${styles["section-container-style-lighter"]}`}>
+      <section id="howitworks" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
           <div className={`col-10 mb-5 ${styles["steps-container"]}`}>
             <h1  className="fw-bolder mb-4">Three steps to better media management</h1>
             <p className="fs-6 fw-light">We believe great software tools unleash your creative potential while fading into the background.</p>
@@ -112,7 +112,7 @@ export default function Home() {
               </blockquote>
             </div>
       </section>
-      <section id="creativeProcess"  style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-5 px-xl-0 ${styles["section-container-style-black"]}`}>
+      <section id="creativeProcess"  style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-black"]}`}>
           <div style={{ maxWidth:"35rem" }} className={`text-center mx-auto col-10 my-5`}>
             <h1 className="fw-bold mb-4">Simplify your creative process</h1>
             <p className="fs-6 fw-light">Tame the chaos of scattered content and focus on your stories.</p>
@@ -129,7 +129,7 @@ export default function Home() {
               ))}
             </div>
               <div style={{flex:"1 1 auto"}} className="align-self-center text-lg-end text-center ">
-              <Image src={example.src}  width="0" height="0" sizes="100vw" style={{width:"90%"}} className="rounded h-100" alt="example" priority={true} quality={100} /> 
+              <Image src={example.src}  width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example" priority={true} quality={100} /> 
               </div>
           </div>
         <div style={{paddingTop:"6rem"}} className={`${styles["stats-grid"]}`}>
@@ -156,7 +156,7 @@ export default function Home() {
               ))}
           </div>
       </section>
-      <section id="Faq" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-5 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
+      <section id="Faq" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
         <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4">
           <h1>Frequently Asked Questions</h1>
           <p className="fw-light">We&apos;ve Compiled Answers to Frequently Asked Questions!</p>
