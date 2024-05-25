@@ -4,10 +4,6 @@
   --page-background-color: #222629;
 }
 
-button, [type=button], [type=reset], [type=submit] {
-  -webkit-appearance: button !important;
-}
-
 * {
   margin: 0;
   padding: 0;
