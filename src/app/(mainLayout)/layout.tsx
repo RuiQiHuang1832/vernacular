@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
 import classNames from "classnames";
+import Head from "next/head";
 
 //allows painless use of bootstrap without worrying about client/server components
 //doesn't require useEffect/dynamic
@@ -27,6 +28,9 @@ export default function RootLayout({
 }) { 
   return (
     <html lang="en">
+           <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <body className={`${lexendDeca.className} ${body}`}>
         <Navigation />
         {children}

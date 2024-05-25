@@ -28,7 +28,7 @@ export default function Home() {
           <div className={`col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center`}>
             <div className="text col-10 col-lg-12 col-xl-10">
               <h1 className={`${styles["header"]} responsiveHeader`}>
-                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:</span>
+                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:&nbsp;</span>
                 <span className="d-none d-xl-inline">
                   <br />
                 </span>Your <span className="text-success">Playlist</span> Playground
@@ -41,7 +41,7 @@ export default function Home() {
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
-              <Button bootstrapStyle="mt-3" buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
+              <Button  buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
                 GET STARTED
               </Button>
             </div>
