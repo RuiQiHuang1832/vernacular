@@ -1,8 +1,6 @@
 import image_1 from "@/assets/images/home/illustration-data-1.png";
 import image_2 from "@/assets/images/home/illustration-data-2.png";
 import image_3 from "@/assets/images/home/illustration-data-3.png";
-import image_avocado from "@/assets/images/home/illustration-avocado.png";
-import Button from "@/components/Button";
 import styles from "@/styles/HeaderWithImageAndParagraph.module.css"
 export interface SectionType {
     id: string;
@@ -74,25 +72,5 @@ export const sections: SectionType[] = [
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about Vernacular's solutions",
       sectionContainerClass:styles["section-container-style-black"]
-    },
-    {
-      id: "anchor-4",
-      header: (
-        <>
-          Ready to upgrade your <span className={highlightColor}>multimedia management?</span>
-        </>
-      ),
-      paragraph: (
-        <div className="d-flex ">
-                        <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login"width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button">SIGN UP FOR FREE</Button>
-                        <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" width={"16em"} radius="10px" padding="20px" type="button">LEARN MORE</Button>
-        </div>
-      ),
-      imageSrc: image_avocado.src,
-      imageWidth: 400,
-      imageHeight: 380,
-      direction: "flex-md-row" as const,
-      learnMore: "",
-      sectionContainerClass:styles["section-container-style-black"]
-    },
+    }
   ];

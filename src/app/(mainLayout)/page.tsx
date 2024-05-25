@@ -61,7 +61,7 @@ export default function Home() {
         <hr></hr>
         <p className="fw-light">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-      <section style={{ padding: "6rem 0"}} className="fw-light">{mapObjectToComponent(sections.slice(0, -1), HeaderWithImageAndParagraph)}</section>
+      <section style={{ padding: "6rem 0"}} className="fw-light">{mapObjectToComponent(sections, HeaderWithImageAndParagraph)}</section>
       <section id="howitworks" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
           <div className={`col-10 mb-5 ${styles["steps-container"]}`}>
             <h1  className="fw-bolder mb-4">Three steps to better media management</h1>
@@ -176,7 +176,21 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section  style={{ padding: "6rem 0"}}>{mapObjectToComponent([sections[sections.length - 1]], HeaderWithImageAndParagraph)}</section>
+      <section  className={styles["bg-image"]} style={{ padding: "6rem 0"}}>
+      <div  className={`text-center mx-auto col-10 my-5`}>
+            <h1 style={{fontSize:"2.5rem"}} className="fw-bold mb-5">Ready to upgrade your multimedia management?</h1>
+            <div style={{fontSize:"2.5rem"}} className="fw-light mb-5">Try Vernacular for free</div>
+            <p style={{fontSize:"1.5rem"}} className="fw-light mb-5">Jumpstart your creative journey in minutes.<br></br>
+Load up an Example Project in one click for inspiration.</p>
+<p className="mb-5">Free for 14 days and you keep anything you make.</p>
+     <div className="d-flex justify-content-center">
+      <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login" width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button">SIGN UP FOR FREE</Button>
+       <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" width={"16em"} radius="10px" padding="20px" type="button">LEARN MORE</Button>
+       </div>
+          </div>
+       </section>
     </div>
   );
 }
+
+

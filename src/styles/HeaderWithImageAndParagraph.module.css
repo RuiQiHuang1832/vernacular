@@ -14,9 +14,3 @@
   padding-right: 2em;
 }
 /* so Learn More is stacked */
-@media only screen and (max-width: 931px) and (min-width: 768px),
-       only screen and (max-width: 505px) {
-  .wordSpacing {
-    word-spacing: 100vw;
-  }
-}
