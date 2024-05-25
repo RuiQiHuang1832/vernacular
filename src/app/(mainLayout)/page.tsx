@@ -41,7 +41,7 @@ export default function Home() {
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
-              <Button  buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
+              <Button bootstrapStyle="mt-3"  buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
                 GET STARTED
               </Button>
             </div>
