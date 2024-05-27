@@ -7,9 +7,9 @@ import { SectionType as HeaderProps }  from "@/global/sectionsData";
 
 export default function HeaderWithImageAndParagraph({ header, paragraph, imageSrc, imageWidth, imageHeight, direction, learnMore, id, sectionContainerClass }: HeaderProps) {
   
-  const imageContainer: string = classNames("col-md-6 col d-flex justify-content-center");
+  const imageContainer: string = classNames("col-md-6 col my-4 d-flex justify-content-center");
   const learnMoreLink: string = classNames("text-decoration-none d-block mt-3");
-  const textContainer: string = classNames("col-md-6 col d-flex align-items-center", direction == "flex-md-row" ? "justify-md-content-end" : "justify-md-content-start", "order-1 order-md-0", "justify-content-center");
+  const textContainer: string = classNames("col-md-6  col d-flex align-items-center", direction == "flex-md-row" ? "justify-md-content-end" : "justify-md-content-start", "order-1 order-md-0", "justify-content-center");
   const headerText: string = classNames(styles["default-font-size"], "fw-bold");
 
   return (

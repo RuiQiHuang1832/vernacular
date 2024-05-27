@@ -54,21 +54,21 @@ export default function Home() {
         </div>
         <ScrollableArrow></ScrollableArrow>
       </div>
-      <section id="approach" className={`text-center mx-auto col-xl-6 col-10 col-lg-8 `}>
-        <h1 className="fw-bolder">
+      <section id="approach" className={` mx-auto col-xl-6 col-10 col-lg-8 `}>
+        <h1 className="fw-bolder text-center">
           Our <span className="text-success">Approach</span>
         </h1>
         <hr></hr>
-        <p className="fw-light">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
+        <p className="fw-light mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
       <section style={{ padding: "6rem 0"}} className="fw-light">{mapObjectToComponent(sections, HeaderWithImageAndParagraph)}</section>
       <section id="howitworks" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
-          <div className={`col-10 mb-5 ${styles["steps-container"]}`}>
-            <h1  className="fw-bolder mb-4">Three steps to better media management</h1>
+          <div className={`col-md-10 col mb-5 ${styles["steps-container"]} text-wrap-balance`}>
+            <h1 className="fw-bolder mb-4 ">3 steps to better media management</h1>
             <p className="fs-6 fw-light">We believe great software tools unleash your creative potential while fading into the background.</p>
 
           </div>
-          <div className={`${styles["step-grid"]} text-center col-10 mx-auto`}>
+          <div  className={`${styles["step-grid"]} text-center col-md-10 col mx-auto text-wrap-balance`}>
             {stepData.map((data) => (
               <div key={data.id} className="mt-3 col-10">
                 <Image src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4`}></Image>
@@ -87,7 +87,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div style={{ paddingTop: "6rem", maxWidth:"35rem" }} className={`text-center mx-auto col-10 my-5`}>
+          <div  style={{ paddingTop: "6rem", maxWidth:"35rem" }} className={`text-wrap-balance text-center mx-auto col-md-10 col my-5`}>
             <h1 className="fw-bold mb-4">Power tools for the discerning reviewers</h1>
             <p className="fs-6 fw-light">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
           </div>
@@ -103,7 +103,7 @@ export default function Home() {
           <div className="text-center mt-5">
             <p className="text-decoration-underline text-success fs-4 mb-5 fw-light">See our complete list of features</p>
             <blockquote style={{rowGap:"3em", maxWidth:"50em"}} className="d-flex flex-column align-items-center mx-auto">
-              <div  className="fst-italic fs-4 fw-light">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
+              <div className="fst-italic fs-4 fw-light">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
               <div className="d-flex ">
                 <div style={{letterSpacing:".1em"}}>BEN</div>
                 <span className="mx-2">/</span> 
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
       </section>
       <section id="creativeProcess"  style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-black"]}`}>
-          <div style={{ maxWidth:"35rem" }} className={`text-center mx-auto col-10 my-5`}>
+          <div style={{ maxWidth:"35rem" }} className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
             <h1 className="fw-bold mb-4">Simplify your creative process</h1>
             <p className="fs-6 fw-light">Tame the chaos of scattered content and focus on your stories.</p>
           </div>
@@ -140,7 +140,7 @@ export default function Home() {
                </div>
             ))}
         </div>
-        <div style={{ paddingTop: "6rem", maxWidth:"35rem" }} className={`text-center mx-auto col-10 my-5`}>
+        <div style={{ paddingTop: "6rem", maxWidth:"35rem" }} className={`text-center mx-auto col-md-10 col my-5`}>
             <h1 className="fw-bold mb-4">Supporting thousands of games, streams, and creative communities</h1>
           </div>
           <div className={`${styles["quote-grid"]}`}>
@@ -177,15 +177,15 @@ export default function Home() {
         </div>
       </section>
       <section  className={styles["bg-image"]} style={{ padding: "6rem 0"}}>
-      <div  className={`text-center mx-auto col-10 my-5`}>
-            <h1 style={{fontSize:"2.5rem"}} className="fw-bold mb-5">Ready to upgrade your multimedia management?</h1>
-            <div style={{fontSize:"2.5rem"}} className="fw-light mb-5">Try Vernacular for free</div>
-            <p style={{fontSize:"1.5rem"}} className="fw-light mb-5">Jumpstart your creative journey in minutes.<br></br>
+      <div  className={`text-center mx-auto col-md-10 col my-5 px-4`}>
+            <h1 className={ `fw-bold mb-5 ${styles["fs-header"]} text-wrap-balance`}>Ready to upgrade your multimedia management?</h1>
+            <div  className={ `fw-light mb-5 ${styles["fs-header"]}`}>Try Vernacular for free</div>
+            <p  className={ `fw-light mb-5 ${styles["fs-para"]}`}>Jumpstart your creative journey in minutes.<br></br>
 Load up an Example Project in one click for inspiration.</p>
 <p className="mb-5">Free for 14 days and you keep anything you make.</p>
-     <div className="d-flex justify-content-center">
-      <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login" width={"16em"} radius="10px" padding="20px" bootstrapStyle="me-3"  type="button">SIGN UP FOR FREE</Button>
-       <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} styleClass={styles["wordSpacing"]}  href="/login" width={"16em"} radius="10px" padding="20px" type="button">LEARN MORE</Button>
+     <div className={`d-flex justify-content-center ${styles["btn-container"]}`}>
+      <Button buttonColor={{bootstrapColor:"btn btn-success"}} href="/login" width={"16em"} radius="10px" padding="20px"   type="button">SIGN UP FOR FREE</Button>
+       <Button buttonColor={{bootstrapColor:"btn btn-outline-success"}} href="/login" width={"16em"} radius="10px" padding="20px" type="button">LEARN MORE</Button>
        </div>
           </div>
        </section>

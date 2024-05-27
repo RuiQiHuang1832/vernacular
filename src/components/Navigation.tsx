@@ -68,7 +68,7 @@ export default function Navigation({ hidden = false }: NavigationProps) {
           </div>
         )}
 
-        <a className={`navbar-brand fw-bold ms-xxl-3 ps-2 pt-2`} href="/">
+        <a className={`navbar-brand fw-bold ms-xxl-3 ps-0 ps-md-2 pt-2`} href="/">
           <span className="brand">vernacular</span>
         </a>
         {!hidden && (

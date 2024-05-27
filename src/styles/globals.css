@@ -315,9 +315,12 @@ textarea {
   font-size:30px
 }
 
-@media screen and (max-width: 350px) {  
+@media screen and (max-width: 389px) {  
   .brand {
-    font-size:25px
+    font-size:23px
   }
 }
 
+.text-wrap-balance {
+  text-wrap: balance;
+}
