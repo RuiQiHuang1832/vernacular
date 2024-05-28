@@ -11,6 +11,7 @@ import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
 import { stepData, toolData, statsData,quoteData,accordionData, arrowData, featuresData } from "@/global/homeData";
 import example from "@/assets/images/home/example.png";
 import { FaCheck } from "react-icons/fa";
+import Newsletter from "@/components/Newsletter";
 
 
 
@@ -61,7 +62,10 @@ export default function Home() {
         <hr></hr>
         <p className="fw-light mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-      <section style={{ padding: "6rem 0"}} className="fw-light">{mapObjectToComponent(sections, HeaderWithImageAndParagraph)}</section>
+      <section style={{ padding: "6rem 0"}} className="fw-light">
+        {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
+      <Newsletter></Newsletter>
+        </section>
       <section id="howitworks" style={{ padding: "6rem 0"}} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
           <div className={`col-md-10 col mb-5 ${styles["steps-container"]} text-wrap-balance`}>
             <h1 className="fw-bolder mb-4 ">3 steps to better media management</h1>
@@ -175,6 +179,7 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <Newsletter></Newsletter>
       </section>
       <section  className={styles["bg-image"]} style={{ padding: "6rem 0"}}>
       <div  className={`text-center mx-auto col-md-10 col my-5 px-4`}>

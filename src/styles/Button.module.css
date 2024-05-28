@@ -11,10 +11,3 @@
     opacity: 90%;
 }
 
-
-
-@media (max-width: 1199px) {
-    .button {
-        font-size: 12px; 
-    }
-}
