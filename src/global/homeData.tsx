@@ -6,6 +6,9 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { PiBook } from "react-icons/pi";
 import { IconType } from "react-icons";
+import review from "@/assets/images/home/review.png";
+import discover from "@/assets/images/home/discover.png";
+import collaborate from "@/assets/images/home/collaborate.png";
 
 export type stepDataType = {
     id: string;
@@ -41,6 +44,12 @@ export type stepDataType = {
     path:string;
     left: string
  
+  };
+
+  export type imageDataType = {
+    title: string;
+    description: string;
+    source:StaticImageData
   };
 export const stepData:stepDataType[] = [
     {
@@ -79,6 +88,24 @@ export const toolData:toolDataType[] = [
         description:"Explore curated collections created by experts and enthusiasts, perfect for finding hidden gems.",
         source:PiBook
     },
+]
+
+export const imageData:imageDataType[] = [
+    {
+        title:"REVIEWS",
+        description:"Effortlessly write content without distractions or limitations.",
+        source:review
+    },  
+    {
+        title:"DISCOVER",
+        description:"Explore new media recommendations tailored to your interests, seamlessly linking to reviews and ratings.",
+        source:discover
+    },  
+    {
+        title:"COLLABORATE",
+        description:"Easily connect with other users to discuss and recommend media using versatile forums and chat features.",
+        source:collaborate
+    }
 ]
 
 export const statsData:statsDataType[] = [

@@ -78,8 +78,8 @@
   gap: 2em;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  padding-right:8em;
-  padding-left:8em;
+  padding-right:5em;
+  padding-left:5em;
 
 }
 .quote-grid {
