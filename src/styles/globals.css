@@ -328,3 +328,49 @@ textarea {
 .text-wrap-pretty {
   text-wrap: pretty;
 }
+
+/* Fade in animation for home page */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* fade in for items */
+
+.fade-in-section .item {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible .item-0 {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition-delay: 0.0s;
+}
+
+.fade-in-section.is-visible .item-1 {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition-delay: 0.3s;
+}
+
+.fade-in-section.is-visible .item-2 {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition-delay: 0.6s;
+}

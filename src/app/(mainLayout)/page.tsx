@@ -1,5 +1,6 @@
 "use client";
 import image_4 from "@/assets/images/home/illustration-data-4.png";
+import settings from "@/assets/images/home/settings.png";
 import HeaderWithImageAndParagraph from "@/components/HeaderWithImageAndParagraph";
 import Image from "next/image";
 import styles from "@/styles/HomePage.module.css";
@@ -12,6 +13,7 @@ import { stepData, toolData, statsData, quoteData, accordionData, arrowData, fea
 import example from "@/assets/images/home/example.png";
 import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
+import FadeInElement from "@/components/FadeInElement";
 
 // used for scrollProgressBar
 // const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
@@ -132,9 +134,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ flex: "1 1 auto" }} className="align-self-center text-lg-end text-center ">
-            <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example" priority={true} quality={100} />
+          <FadeInElement>
+          <div style={{ flex: "1 1 auto" }} className={`align-self-center text-lg-end text-center`}>
+            <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example img" priority={true} quality={100} />
           </div>
+          </FadeInElement>
         </div>
         <div style={{ paddingTop: "6rem" }} className={`${styles["stats-grid"]}`}>
           {statsData.map((e, i) => (
@@ -160,23 +164,34 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className={styles["bg-image-2"]} style={{ padding: "6rem 0" }}>
+        <div className={`text-center mx-auto col-md-10 col px-4 mb-5`}>
+            <h1 className="fw-bold mb-4">Customizable Settings</h1>
+            <p className="fs-6 fw-light">Vernacular streamlines the way you create and share your worlds.</p>
+        </div>
+        <FadeInElement>
+        <div className={`text-center px-4`}>
+        <Image src={settings.src} alt="Home page logo" width="0" height="0" sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`}  quality={100} />
+        </div>
+        </FadeInElement>
+      </section>
       <section id="pin" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
         <div style={{ paddingBottom: "6rem" }}>
           <div className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
             <h1 className="fw-bold mb-4">Drop a pin and start writing</h1>
             <p className="fs-6 fw-light">Vernacular streamlines the way you create and share your worlds.</p>
           </div>
+          <FadeInElement>
           <div className={`${styles["tool-grid"]} text-center mx-auto`}>
           {imageData.map((data, i) => (
-            <div  key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3`}>      
-           <div style={{height:"15rem"}}  className="position-relative">
-            <Image src={data.source.src} fill objectFit="cover" objectPosition="50% 50%" alt={data.title}></Image>
-          </div> 
+            <div  key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i}`}>      
+            <Image src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
           <h6 style={{letterSpacing:"0.1rem"}} className="my-4 px-3">{data.title}</h6>
             <p className="fw-light px-3 ">{data.description}</p>
             </div>
           ))}
         </div>
+        </FadeInElement>
         </div>
         
         <div style={{padding:"0 5rem"}}>

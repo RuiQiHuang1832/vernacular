@@ -108,6 +108,11 @@
 .img-width {
   width:90%
 }
+
+.img-width-2 {
+  width:70%
+}
+
 @media screen and (max-width: 1200px) {
   .tool-grid {
   padding-right:0em;
@@ -144,9 +149,11 @@
 }
 
 @media screen and (max-width: 991.20px) {
-  .img-width {
+  .img-width,.img-width-2 {
     width:100%
   }
+  
+
 }
 @media screen and (max-width: 970px) {
   .tool-grid {
@@ -170,8 +177,14 @@
 .bg-image {
   background: url('../assets/images/home/bg.png') no-repeat;
   background-size:cover;
-}
+  background-position: center;
 
+}
+.bg-image-2 {
+  background: url('../assets/images/home/bg-2.png') no-repeat;
+  background-size:cover;
+  background-position: center;
+}
 /* so Learn More is stacked */
 /* @media only screen and (max-width: 483.20px) {
   .wordSpacing {
@@ -229,4 +242,9 @@
 .btn-inspiration {
   letter-spacing: 0.3px;
   flex: 1 1 0%
+}
+
+.object-fit {
+  max-width:100%;
+  height:auto;
 }
