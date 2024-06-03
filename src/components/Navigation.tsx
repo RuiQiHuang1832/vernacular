@@ -94,7 +94,7 @@ export default function Navigation({ hidden = false }: NavigationProps) {
                       ) : (
                         <li  className={`nav-item ${index == 3 ? "ms-auto" : ""} pt-2`} key={index}>
                           <div className={`nav-link fs-5`}>
-                            <Link   className="text-decoration-none text-reset text-nowrap" href={link.href}>
+                            <Link  className="text-decoration-none text-reset text-nowrap" href={link.href}>
                               <div className={`${styles["highlight-nav"]} ${classNames({ [styles["link-active"]]: pathname === link.href })}`}>{link.text}</div>
                             </Link>
                           </div>
