@@ -36,3 +36,4 @@ next-env.d.ts
 /.eslintrc.json
 /.env
 /notes
+/.vscode

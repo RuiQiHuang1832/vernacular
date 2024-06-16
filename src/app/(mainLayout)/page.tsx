@@ -15,6 +15,7 @@ import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
 import FadeInElement from "@/components/FadeInElement";
 
+
 // used for scrollProgressBar
 // const icons: IconType[] = [BsFill0CircleFill, BsFill1CircleFill, BsFill2CircleFill, BsFill3CircleFill, BsFill4CircleFill];
 //  <span className="d-none d-xxl-inline">
@@ -22,6 +23,9 @@ import FadeInElement from "@/components/FadeInElement";
 //       </span>
 
 export default function Home() {
+
+
+
   return (
     <div className="text-white">
       <div className="container-lg mt-5 mb-5 ">
@@ -75,7 +79,7 @@ export default function Home() {
         <div className={`${styles["step-grid"]} text-center col-md-10 col mx-auto text-wrap-balance`}>
           {stepData.map((data) => (
             <div key={data.id} className="mt-3 col-10">
-              <Image src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4`}></Image>
+              <Image priority src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4`}></Image>
               <h4>{data.title}</h4>
               <p className="fw-light">{data.description}</p>
             </div>
@@ -149,7 +153,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ paddingTop: "6rem", maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5`}>
-          <h1 className="fw-bold mb-4">Supporting thousands of creators, streams, and creative communities</h1>
+          <h1  className="fw-bold mb-4">Supporting thousands of creators, streams, and creative communities</h1>
         </div>
         <div className={`${styles["quote-grid"]}`}>
           {quoteData.map((e, i) => (
@@ -171,21 +175,21 @@ export default function Home() {
         </div>
         <FadeInElement>
         <div className={`text-center px-4`}>
-        <Image src={settings.src} alt="Home page logo" width="0" height="0" sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`}  quality={100} />
+        <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`} priority={true}  quality={100} />
         </div>
         </FadeInElement>
       </section>
       <section id="pin" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
         <div style={{ paddingBottom: "6rem" }}>
           <div className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
-            <h1 className="fw-bold mb-4">Drop a pin and start writing</h1>
+            <h1  className="fw-bold mb-4">Drop a pin and start writing</h1>
             <p className="fs-6 fw-light">Vernacular streamlines the way you create and share your worlds.</p>
           </div>
           <FadeInElement>
           <div className={`${styles["tool-grid"]} text-center mx-auto`}>
           {imageData.map((data, i) => (
             <div  key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i}`}>      
-            <Image src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
+            <Image priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
           <h6 style={{letterSpacing:"0.1rem"}} className="my-4 px-3">{data.title}</h6>
             <p className="fw-light px-3 ">{data.description}</p>
             </div>
@@ -200,7 +204,7 @@ export default function Home() {
 <div className="fw-light">Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃</div>
           </div>
           <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4 mx-auto">
-            <h1 id="Faq">Frequently Asked Questions</h1>
+            <h1 id="Faq" >Frequently Asked Questions</h1>
             <p className="fw-light">We&apos;ve also Compiled Answers to Frequently Asked Questions!</p>
           </div>
           <div className="home-page-accordion accordion col-lg-8 col  col-md-9 mx-auto fw-light">

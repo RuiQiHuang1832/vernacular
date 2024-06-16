@@ -2,6 +2,15 @@
 
 
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/settings',
+        destination: '/settings/general',
+        permanent: true, // or false depending on your requirement
+      },
+    ]
+  },
     swcMinify: false,
     images: {
         remotePatterns: [

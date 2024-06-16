@@ -49,6 +49,7 @@
     background-color:black !important;
     border-color:#333333 ;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-right:none
 }
 
 
@@ -56,3 +57,17 @@
     border-color:rgb(119 116 116) !important;
 }
 
+.results {
+    text-decoration: none;
+    color: inherit;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.results:hover {
+    opacity:100% !important;
+}
