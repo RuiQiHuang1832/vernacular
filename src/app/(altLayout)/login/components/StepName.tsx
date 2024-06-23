@@ -12,10 +12,10 @@ export default function StepName(props: StepName) {
         Let us know how to properly address you
       </p>
       <div className="input-group  mb-3">
-        <input type="text" className={`form-control step-input`} placeholder="Enter first name" />
+        <input type="text" className={`form-control light-border-input p-3`} placeholder="Enter first name" />
       </div>
       <div className="input-group  mb-3">
-        <input type="text" className={`form-control step-input`} placeholder="Enter last name" />
+        <input type="text" className={`form-control light-border-input p-3`} placeholder="Enter last name" />
       </div>
       <div className="d-flex justify-content-between mt-5">
       <Button buttonColor={{ cssColor: "black" }} eventOnClick={props.handleBack} styleClass={`mb-3 ${styles["button"]}`} radius="10px" padding="13px 17px" type="button">

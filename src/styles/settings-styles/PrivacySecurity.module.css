@@ -22,18 +22,7 @@
     color: hsla( 0,0%,63% ,1)
 }
 
-.light-border-input {
-    background-color:black !important;
-    color:white !important;
-     border-color:#333333 ;
-     outline: none !important;
 
-}
-
-.light-border-input:focus {
-    border-color:rgb(119 116 116) !important;
-
-}
 
 .description {
     margin-top: 0.75rem;

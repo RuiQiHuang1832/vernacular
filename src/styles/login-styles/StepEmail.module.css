@@ -1,18 +1,4 @@
-.email-input {
-    background-color: black !important;
-    color: white !important;
-    border-color: #333333;
-    padding:15px
-}
 
-.email-input:focus {
-    background-color: black;
-    border-color:white;
-}
-
-.email-input::placeholder {
-    color:rgba(255, 255, 255, 0.208)
-}
 
 
 
@@ -37,7 +23,6 @@
 
 .button {
     display:flex;
-    padding:12px;
     background-color:#95959529;
     border-radius:8px; 
     border:none;

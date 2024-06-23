@@ -49,7 +49,7 @@ const Head = (props: HeadProps) => {
       <p className={`${styles["description"]}`}>
         {props.description}
       </p>
-      {props.showInput ? <input type="text" className={`form-control ${styles["light-border-input"]}`} /> : props.specialInput}
+      {props.showInput ? <input type="text" className={`form-control light-border-input`} /> : props.specialInput}
     </div>
   );
 };
@@ -119,7 +119,7 @@ export default function General() {
           dropdownClass={styles["phone-dropdown"]}
           onChange={setValue}
           searchClass={styles["search-class"]}
-          inputClass={`form-control ${styles["light-border-input"]}`}
+          inputClass={`form-control light-border-input`}
         />
       ),
     },
@@ -132,7 +132,7 @@ export default function General() {
       footerClass: styles["default-footer"],
       buttonClass: "btn btn-sm btn-light",
       unitClass: styles["default-unit"],
-      specialInput: <textarea className={`form-control ${styles["light-border-input"]}`} maxLength={100} cols={50} rows={4}></textarea>,
+      specialInput: <textarea className={`form-control light-border-input`} maxLength={100} cols={50} rows={4}></textarea>,
     },
     {
       title: "Password",
@@ -145,9 +145,9 @@ export default function General() {
       unitClass: styles["default-unit"],
       specialInput: (
         <div>
-          <input placeholder="Old Password" className={`form-control ph-color-white ${styles["light-border-input"]} mb-3`}></input>
-          <input placeholder="New Password" className={`form-control ph-color-white ${styles["light-border-input"]} mb-3`}></input>
-          <input placeholder="Confirm New Password" className={`form-control ph-color-white ${styles["light-border-input"]}`}></input>
+          <input placeholder="Old Password" className={`form-control ph-color-white light-border-input mb-3`}></input>
+          <input placeholder="New Password" className={`form-control ph-color-white light-border-input mb-3`}></input>
+          <input placeholder="Confirm New Password" className={`form-control ph-color-white light-border-input`}></input>
         </div>
       ),
     },

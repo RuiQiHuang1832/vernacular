@@ -147,7 +147,9 @@
 
   }
 }
-
+.img-width {
+  width:90%
+}
 @media screen and (max-width: 991.20px) {
   .img-width,.img-width-2 {
     width:100%
@@ -225,19 +227,6 @@
 }
 
 
-.light-border-input {
-  background-color:black !important;
-  color:white !important;
-   border-color:#333333 ;
-   outline: none !important;
-   border-radius:0
-
-}
-
-.light-border-input:focus {
-  border-color:rgb(119 116 116) !important;
-
-}
 
 .btn-inspiration {
   letter-spacing: 0.3px;

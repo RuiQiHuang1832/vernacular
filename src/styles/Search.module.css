@@ -38,7 +38,7 @@
 }
 
 .placeholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(251, 251, 251);
+
     opacity:0.9; /* Firefox */
     font-weight: 300;
 
@@ -67,7 +67,23 @@
     text-align: left;
     display: flex;
     align-items: center;
+    background-color:#373737;
+    column-gap:8px;
+     opacity:70%;
 }
 .results:hover {
     opacity:100% !important;
 }
+
+.subtext {
+    text-align: center;
+    font-weight:300;
+    font-size:1.5em;
+}
+    .results-icon {
+        border:2px solid black;
+        background:black; 
+        padding:4px; 
+        line-height:0;
+        border-radius:10px
+    }

@@ -54,7 +54,7 @@ const Head = (props: HeadProps) => {
     <div className="p-4">
       <h5>{props.title}</h5>
       <p className={`${styles["description"]}`}>{props.description}</p>
-      {props.showInput ? <input type="text" className={`form-control ${styles["light-border-input"]}`} /> : props.specialInput}
+      {props.showInput ? <input type="text" className={`form-control light-border-input`} /> : props.specialInput}
     </div>
   );
 };

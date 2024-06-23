@@ -34,8 +34,8 @@ export default function StepPassword(props:StepPassword) {
       </p>
       
       <div className="input-group  mb-3">
-        <input type={hiddenStatus ? "password" : "text"} onChange={handleOnChange} className={`form-control fw-light ${styles["password-input"]}`} placeholder="Enter your password" />
-        <span onClick={handleEyeChange} className={`input-group-text ${styles["password-eye"]}`}>
+        <input type={hiddenStatus ? "password" : "text"} onChange={handleOnChange} className={`form-control light-border-input ${styles["password-input"]}`} placeholder="Enter your password" />
+        <span onClick={handleEyeChange} className={`input-group-text ${styles["password-eye"]} py-3 pe-4`}>
           {hiddenStatus ? <FaEye/> : <FaEyeSlash />}
         </span>
       </div>

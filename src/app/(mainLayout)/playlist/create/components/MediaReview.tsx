@@ -32,9 +32,20 @@ export default function MediaReview(props: MediaReviewProps) {
 
   return (
     <div className={`container mt-5 ${props.currentPage <= 2 ? "d-none" : ""}`}>
+      <div>
+      <div className="form-floating">
+      <input type="email" required  className={`form-control light-border-input`} id="floatingInput" placeholder="name@example.com"/>
+      <label className="bg-transparent">Title</label>
+      </div>
+      <br></br>
+      <div className="form-floating">
+  <textarea style={{height:"200px",resize:"block"}} className={`form-control light-border-input`} required placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <label className="bg-transparent">Description</label>
+</div>
+</div>
       <div className="row justify-content-center">
         {props.selectedTitles.map((title,i) => (
-          <div className={`${styles["breakpoint-width"]} pb-5 ${containerClassName} `}  key={title.id}>
+          <div className={`pb-5 ${containerClassName} `}  key={title.id}>
           <div  className={`d-flex mt-5 ${styles["review-container"]} justify-content-sm-between justify-content-start ${containerClassName}`}>
             <div className={`${styles["poster-container"]} col-xl-3 col-lg-4 col text-center`}>
               <Image className={`rounded ${styles["box-shadow"]}`} alt="movie pic" width="280" height="400" src={`https://image.tmdb.org/t/p/original/${title.mediaPoster}`}></Image>

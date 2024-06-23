@@ -26,9 +26,9 @@ export default function Search() {
 
   const renderContent = () => {
     if (query.length == 0 && input == "") {
-      return <p style={{ fontWeight: "300" }} className="fs-5 text-center">Find anything about our product, search our links, and more. Enter a query in the search input above, and results will be displayed as you type.</p>
+      return <p className={styles["subtext"]}>Find anything about our product, search our links, and more. Enter a query in the search input above, and results will be displayed as you type.</p>
     } else if (query.length == 0 && input != "") {
-      return <div style={{ fontWeight: "300" }} className="fs-5 text-center">
+      return <div className={styles["subtext"]}>
         <p>Oops! We could not find any result for <span><em>{input}</em></span>.</p>
         <p><small>Try queries such as <strong className="text-success">general</strong>, <strong className="text-success">pricing</strong>, or <strong className="text-success">rules</strong> in the search bar, and explore a world of opportunities for your website.</small>    
         </p>
@@ -40,9 +40,8 @@ export default function Search() {
           <a  
           href={`/${e.link}`} 
           key={i} 
-          style={{backgroundColor:"#373737",columnGap:"8px", opacity:"70%"}} 
           className={`${styles["results"]}`}> 
-          <div className="rounded" style={{border:"2px solid black", background:"black", padding:"4px", lineHeight:"0"}}>{e.icon}</div>
+          <div className={styles["results-icon"]}>{e.icon}</div>
          <div >{e.section} <PiArrowBendUpRightFill></PiArrowBendUpRightFill> {e.location}</div>
          </a>))}
          </div>

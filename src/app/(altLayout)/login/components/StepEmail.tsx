@@ -6,10 +6,10 @@ import { BsApple, BsQrCode } from "react-icons/bs";
 
 const altLogin = [
   { provider: "break" }, 
-  { provider: "Continue with Google", icon: FcGoogle, color: "none", size: "1.5em" }, 
-  { provider: "Continue with Apple", icon: BsApple, color: "black", size: "1.5em" }, 
+  { provider: "Continue with Google", icon:<FcGoogle color="none" size="1.5em" />, size: "1.5em" }, 
+  { provider: "Continue with Apple", icon:<BsApple color="black" size="1.5em" />, size: "1.5em" }, 
   { provider: "break" }, 
-  { provider: "Log in with QR code", icon: BsQrCode, color: "black", size: "1em" }
+  { provider: "Log in with QR code", icon: <BsQrCode color="black" size="1.5em" />, size: "1em" }
 ];
 
 interface StepEmailProps {
@@ -21,7 +21,7 @@ export default function StepEmail(props:StepEmailProps) {
  
   return (
     <div>
-      <input type="email" className={`form-control fw-light mb-3 step-input`} placeholder="Enter phone number or email" />
+      <input type="email" className={`form-control mb-3 light-border-input p-3`} placeholder="Enter phone number or email" />
       <Button buttonColor={{ cssColor: "black" }} eventOnClick={props.handleContinue} styleClass={`mb-3`} radius="10px" padding="12px" type="button">Continue</Button>
       {altLogin.map((e, i) => {
         if (e.provider === "break") {
@@ -32,9 +32,9 @@ export default function StepEmail(props:StepEmailProps) {
           );
         } else {
           return (
-            <button key={i} className={`${styles["button"]} mb-3`}>
+            <button key={i} className={`${styles["button"]} mb-3 p-3`}>
               <div className={`${styles["button-icon"]}`}>
-                <e.icon color={e.color} size="1.5em" />
+              {e.icon}
               </div>
               <span className={`${styles["button-text"]}`}>{e.provider}</span>
             </button>

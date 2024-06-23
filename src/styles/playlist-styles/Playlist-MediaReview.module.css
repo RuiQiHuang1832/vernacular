@@ -70,13 +70,13 @@
 
 .review-container {
     height: 30em;
-     background: #13161F;
+     background: #00000080;
      border-radius: 10px 10px 0 0;
     }
 
 
 .review-container-accordion {
-   background: #13161F;
+   background: #00000080;
 }
 
 .poster-container { 
@@ -137,8 +137,17 @@
   border: 2px solid #666;
 }
 
-@media screen and (max-width: 767px) {
-  .breakpoint-width { 
-    width:400px
- }
+
+.light-border-input {
+  background-color:black !important;
+  color:white !important;
+   border-color:#333333 ;
+   outline: none !important;
+
 }
+
+.light-border-input:focus {
+  border-color:rgb(119 116 116) !important;
+
+}
+ 

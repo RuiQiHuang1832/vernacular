@@ -232,7 +232,8 @@ textarea {
   background-color:black !important;
   color:white !important;
    border-color:#333333 ;
-   outline: none !important
+   outline: none !important;
+   font-weight:300
 }
 
 .light-border-input:focus {
@@ -374,4 +375,19 @@ textarea {
   visibility: visible;
   transition-delay: 0.6s;
 }
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-control:focus ~ label::after {
+  background-color: rgba(255, 255, 255, 0) !important;
 
+} 
+.form-floating > .form-control:not(:placeholder-shown) ~ label, 
+.form-floating > .form-control:focus ~ label {
+  color:white !important
+}
+
+
+.form-floating > .form-control:not(:placeholder-shown):not(input)
+ {
+  padding-top:2rem !important;
+  padding-bottom:2rem !important;
+}
