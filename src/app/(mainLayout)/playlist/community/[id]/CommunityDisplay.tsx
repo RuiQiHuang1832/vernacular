@@ -12,7 +12,7 @@ type DataItem = {
 
 function displayData(data: DataItem[]) {
   return (
-    <section className={styles["grid"]}>
+    <section className={`${styles["grid"]} my-2`}>
       {data &&
         data.map((e: DataItem) => {
           return (
@@ -20,7 +20,7 @@ function displayData(data: DataItem[]) {
               <figure>
               <Image priority={true} src={horizon.src} width={500} height={560} quality={100} alt="iag" className={`${styles["object-fit"]}`} ></Image>
             </figure>
-            <div  className="card-body">
+            <div style={{fontSize:"13px"}} className="card-body fw-light">
                 <h5 className="card-title">{e.title}</h5>
                 <div className="info py-3">
                 <div className="text-danger">Movies</div>
