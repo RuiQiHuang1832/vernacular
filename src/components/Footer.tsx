@@ -25,10 +25,10 @@ export default function Footer() {
     <footer style={{backgroundColor:"black", color:'#929191'}} className={` ${styles["footer"]}`}>
       <section  className="container-lg py-5">
         <div style={{columnGap:"50px"}} className="d-flex justify-content-center mb-2 flex-wrap">
-        <Link href="playlist/community/1" className="p-2 text-decoration-none text-reset">Community</Link>
+        <Link href="/playlist/community/1" className="p-2 text-decoration-none text-reset">Community</Link>
         <Link href="https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" className="p-2 text-decoration-none text-reset">Contact</Link>
-        <Link href="" className="p-2 text-decoration-none text-reset">Team</Link>
-        <Link href="#Faq" className="p-2 text-decoration-none text-reset">FAQ</Link>
+        <Link href="/" className="p-2 text-decoration-none text-reset">Team</Link>
+        <Link href="/#Faq" className="p-2 text-decoration-none text-reset">FAQ</Link>
         <Link href="/login" className="p-2 text-decoration-none text-reset">Login</Link>
 
         </div>

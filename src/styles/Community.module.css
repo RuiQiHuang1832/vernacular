@@ -10,3 +10,7 @@
     max-width:100%;
     height:auto;
   }
+
+  .community-banner {
+    background: linear-gradient(to right, #040404, 70%, transparent), url("../assets/images/communityBanner.png") right / 60% no-repeat, #040404;
+  }

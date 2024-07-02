@@ -84,14 +84,16 @@ export default function PaginatedItems<T>({itemsPerPage, currentPage, displayFun
          marginPagesDisplayed={5}
          onPageChange={handlePageClick}
          containerClassName="pagination justify-content-center fs-4 mt-5 "
-         pageLinkClassName="page-link border-0 shadow-none text-success"
-         previousClassName="page-item"
-         previousLinkClassName="page-link border-0 text-success"
-         nextClassName="page-item"
-         nextLinkClassName="page-link border-0 text-success"
+         pageLinkClassName="page-link shadow-none paginatedLink paginatedItems "
+         previousClassName="page-item mx-1 "
+         previousLinkClassName="page-link paginatedLink paginatedItems shadow-none"
+         nextClassName="page-item mx-1"
+         nextLinkClassName="page-link paginatedLink paginatedItems shadow-none"
          activeClassName="page-item active"
-         activeLinkClassName="page-item text-white bg-success"
+         activeLinkClassName="page-item bg-white text-dark"
          initialPage={currentPage - 1}
+         pageClassName="mx-1"
+         disabledClassName=""
         />
       </>
     );

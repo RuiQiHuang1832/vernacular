@@ -391,3 +391,29 @@ textarea {
   padding-top:2rem !important;
   padding-bottom:2rem !important;
 }
+
+
+.paginatedLink {
+  background-color:black ;
+  color:white ;
+}
+
+
+.page-link:hover {
+  color:black
+}
+
+.paginatedItems {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: white !important;
+  background-color:#1B1E21 !important;  
+  border-bottom-color:transparent !important;
+}
