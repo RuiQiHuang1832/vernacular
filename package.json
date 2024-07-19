@@ -22,6 +22,7 @@
     "eslint-config-next": "^13.5.4",
     "eslint-config-recommended": "^4.1.0",
     "eslint-plugin-react": "^7.33.1",
+    "framer-motion": "^11.3.2",
     "fuzzy-search": "^3.2.1",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
