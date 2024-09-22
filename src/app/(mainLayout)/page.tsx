@@ -5,7 +5,7 @@ import HeaderWithImageAndParagraph from "@/components/HeaderWithImageAndParagrap
 import Image from "next/image";
 import styles from "@/styles/HomePage.module.css";
 import { sections } from "@/global/sectionsData";
-import Arrows, { ScrollableArrow } from "@/components/Arrows";
+import  { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
 import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
@@ -33,7 +33,8 @@ export default function Home() {
           <div className={`col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center`}>
             <div className="text col-10 col-lg-12 col-xl-10">
               <h1 className={`${styles["header"]} responsiveHeader`}>
-                <Arrows></Arrows>Elevate <span className="text-success">Entertainment:&nbsp;</span>
+                {/* <Arrows></Arrows> */}
+                Elevate <span className="text-success">Entertainment:&nbsp;</span>
                 <span className="d-none d-xl-inline">
                   <br />
                 </span>

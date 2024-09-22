@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export type Tab = { label: string; id: string;};
+export type Tab = { id: string, slug:string, title:string, hasBadge:boolean};
 //returns info on tabs
 //sets tab
 export function useTabs({

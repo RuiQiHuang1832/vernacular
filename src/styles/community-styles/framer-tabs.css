@@ -1,4 +1,4 @@
-.custom-class-1 {
+.nav-container {
     display: flex; /* flex */
     flex-shrink: 0; /* flex-shrink-0 */
     justify-content: center; /* justify-center */
@@ -9,7 +9,7 @@
     padding-bottom: 0.5rem; /* py-2 (0.5rem bottom padding) */
 }
 
-.custom-class-2 {
+.tab {
     font-size: 1rem; /* text-md */
     position: relative; /* relative */
     border-radius: 0.375rem; /* rounded-md */
@@ -21,7 +21,7 @@
     z-index: 20; /* z-20 */
     background-color: transparent; /* bg-transparent */
     font-size: 1rem; /* text-sm */
-    color: white; /* text-slate-700 */
+    color: #ffffff5d; /* text-slate-700 */
     cursor: pointer; /* cursor-pointer */
     user-select: none; /* select-none */
     transition-property: color; /* transition-colors */
@@ -29,40 +29,26 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* default easing for Tailwind */
 }
 
-
-.custom-class-3 {
-    color: #006aff; /* text-slate-700 */
+.active-tab {
+    color: #f5f5f5; /* text-slate-700 */
 }
 
 
-.custom-class-4 {
+.tab-slider {
     position: absolute; /* absolute */
     z-index: 10; /* z-10 */
     top: 0; /* top-0 */
     left: 0; /* left-0 */
     border-radius: 0.375rem; /* rounded-md */
-    background-color: #000000; /* bg-gray-200 */
+    background-color: #000000b2; /* bg-gray-200 */
 }
 
 
-.custom-class-5 {
+.underline {
     position: absolute; /* absolute */
     z-index: 10; /* z-10 */
     bottom: 0; /* bottom-0 */
     left: 0; /* left-0 */
     height: 2px; /* h-[2px] */
-    background-color: #32ee38; /* bg-slate-500 */
+    background-color: rgb(255, 255, 255); /* bg-slate-500 */
 }
-
-.custom-class-6 {
-    width: 100%; /* w-full */
-    display: flex; /* flex */
-    flex-direction: column; /* flex-col */
-    gap: 6rem; /* space-y-24 (24 * 0.25rem = 6rem) */
-    align-items: center; /* items-center */
-    justify-content: center; /* justify-center */
-}
-.custom-class-7 {
-    max-width: 72rem; /* max-w-6xl */
-}
-

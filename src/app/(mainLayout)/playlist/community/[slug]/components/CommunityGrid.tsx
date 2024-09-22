@@ -1,10 +1,11 @@
-"use client";
-import styles from "@/styles/Community.module.css";
+import styles from "@/styles/community-styles/Community.module.css";
 import PaginatedItems from "@/components/PaginatedItems";
 import horizon from "@/assets/images/horizon.png"
 import Image from "next/image";
 import { FaDatabase,FaDownload  } from "react-icons/fa";
 import { BsHandThumbsUpFill } from "react-icons/bs";
+import { useSearchParams } from "next/navigation";
+import { Tab } from "../hooks/useTabs";
 type DataItem = {
   userId: number;
   id: number;
@@ -17,14 +18,14 @@ function displayData(data: DataItem[]) {
   return (
     <section className={`${styles["grid"]} my-2`}>
       {data &&
-        data.map((e: DataItem) => {
+        data.map((e: DataItem,i) => {
           return (
-            <div key={e.id} style={{borderRadius:0}} className="card bg-transparent text-white border border-white mt-3">
+            <div key={i} style={{borderRadius:0}} className="card bg-transparent text-white border border-white mt-3">
               <figure className="mb-0">
               <Image priority={true} src={horizon.src} width={500} height={560} quality={100} alt="iag" className={`${styles["object-fit"]}`}  ></Image>
             </figure>
             <div style={{fontSize:"13px", maxHeight:"250px", minHeight:"250px"}} className="card-body mb-2 fw-light overflow-hidden ">
-                <h5 style={{fontSize:"16px"}} className="card-title">{e.title}</h5>
+                <h5 style={{fontSize:"16px"}} className="card-title mt-3">{e.title}</h5>
                 <div className="info">
                 <div className="text-danger">Movies</div>
                 <div>Uploaded: 01 Apr 2024 |</div>
@@ -47,11 +48,18 @@ function displayData(data: DataItem[]) {
   );
 }
 
-export default function CommunityDisplay(props: { params: { id: number } }) {
-  return <PaginatedItems<DataItem> 
-  url={"https://jsonplaceholder.typicode.com/posts"} 
-  itemsPerPage={20} 
-  currentPage={props.params.id} 
+export default function CommunityGrid(props: { 
+  tab: Tab, 
+  pagination:boolean, 
+  setLoadState:React.Dispatch<React.SetStateAction<boolean>>  }) {
+  const pageParams = useSearchParams();
+  const pageNumber = parseInt(pageParams.get('page') ?? '1') 
+  return <PaginatedItems 
+  url={`http://localhost:3001/${props.tab.id}`} 
+  itemsPerPage={10}
+  setLoad={props.setLoadState}
+  showPages={props.pagination} 
+  currentPage={pageNumber} 
   displayFunction={displayData}></PaginatedItems>;
 }
 

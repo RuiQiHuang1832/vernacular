@@ -13,8 +13,8 @@ import Search from "./Search";
 const navLinks = [
   // { text: "VIEW", href: "/playlist/view" },
   { text: "CREATE", href: "/playlist/create" },
-  { text: "COMMUNITY", href: "/playlist/community/1" },
-  { text: "CONTACT", href: "https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" },
+  { text: "COMMUNITY", href: "/playlist/community" },
+  { text: "SUPPORT", href: "https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" },
   { text: "LOG IN", href: "/login" },
 ];
 

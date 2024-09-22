@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import classNames from "classnames";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Tab } from "./useTabs";
+import { Tab } from "../hooks/useTabs";
+import Link from "next/link";
 
 const transition = {
   type: "tween",
@@ -14,9 +14,10 @@ type Props = {
   selectedTabIndex: number;
   tabs: Tab[];
   setSelectedTab: (input: [number, number]) => void;
+  onTabClick: (label:string) => void;
 };
 
-const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, }: Props): JSX.Element => {
+const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, onTabClick }: Props): JSX.Element => {
   const [buttonRefs, setButtonRefs] = useState<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
@@ -34,15 +35,16 @@ const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, }: Props): JSX.Element =
   return (
     <nav
       ref={navRef}
-      className="custom-class-1"
-      onPointerLeave={(e) => setHoveredTabIndex(null)}
+      className="nav-container"
+      onPointerLeave={() => setHoveredTabIndex(null)}
     >
       {tabs.map((item, i) => {
         return (
+          <Link scroll={false} key={i} href={`?tab=${encodeURIComponent(item.id.toLowerCase()).replace(/%20/g, '+')}`} style={{color:"white"}} className="text-decoration-none">
           <motion.button
             key={i}
             className={classNames(
-              "custom-class-2 btn ", { "custom-class-3": hoveredTabIndex === i || selectedTabIndex === i, }
+              "tab btn", { "active-tab": hoveredTabIndex === i || selectedTabIndex === i, } 
             )}
             ref={(el) => (buttonRefs[i] = el)}
             onPointerEnter={() => {
@@ -53,17 +55,19 @@ const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, }: Props): JSX.Element =
             }}
             onClick={() => {
               setSelectedTab([i, i > selectedTabIndex ? 1 : -1]);
+              onTabClick(item.id);
             }}
           >
-            {item.label}
+            {item.id} {item.hasBadge && <span className="badge text-bg-primary ms-2">{i}</span>}
           </motion.button>
+          </Link>
         );
       })}
       <AnimatePresence>
         {hoveredRect && navRect && (
           <motion.div
-            key={"hover"}
-            className="custom-class-4"
+            key="hover"
+            className="tab-slider"
             initial={{
               x: hoveredRect.left - navRect.left,
               y: hoveredRect.top - navRect.top,
@@ -83,7 +87,7 @@ const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, }: Props): JSX.Element =
               y: hoveredRect.top - navRect.top,
               width: hoveredRect.width,
               height: hoveredRect.height,
-              opacity: 0,
+              
             }}
             transition={transition}
           />
@@ -91,11 +95,11 @@ const Tabs = ({ tabs, selectedTabIndex, setSelectedTab, }: Props): JSX.Element =
       </AnimatePresence>
       {selectedRect && navRect && (
         <motion.div
-          className={"custom-class-5"}
+          className="underline"
           initial={false}
           animate={{
-            width: selectedRect.width * 0.8,
-            x: `calc(${selectedRect.left - navRect.left}px + 10%)`,
+            width: selectedRect.width * 0.85,
+            x: `calc(${selectedRect.left - navRect.left}px + 9%)`,
             opacity: 1,
           }}
           transition={transition}

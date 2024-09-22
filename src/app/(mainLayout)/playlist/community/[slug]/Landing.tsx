@@ -1,74 +1,39 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-// import { communityMetadata } from "@/global/metadata";
-// import { Metadata } from "next";
-import CommunityDisplay from "./CommunityDisplay";
+
+import CommunityGrid from "./components/CommunityGrid";
 import horizon from "@/assets/images/horizon.png";
 import Image from "next/image";
-import styles from "@/styles/Community.module.css";
+import styles from "@/styles/community-styles/Community.module.css";
 import Link from "next/link";
 import { FaDatabase, FaDownload } from "react-icons/fa";
 import { BsHandThumbsUpFill } from "react-icons/bs";
-import "@/styles/community.css"
 import { useState } from "react";
-// export const metadata: Metadata = communityMetadata;
-import { Framer } from "./framer";
-import { useTabs } from "./useTabs";
-import "@/styles/a.css"
-
-const tabs = [
-  {name:"NEW TODAY", badge:true},
-  {name:"NEW THIS WEEK", badge:true},
-  {name:"LATEST", badge:false},
-  {name:"POPULAR (30 DAYS)", badge:false},
-  {name:"POPULAR (ALL TIME)", badge:false},
-  {name:"MORE TRENDING", badge:false},
-  {name:"UPDATED", badge:false},
-]
-
-export default function Community({ params }: { params: { id: number } }) {
+import { Framer } from "./components/framer";
+import { useTabs } from "./hooks/useTabs";
+import "@/styles/community-styles/framer-tabs.css"
+import "@/styles/community-styles/community.css"
+import { dataTabs } from "@/global/tabs";
+ type CommunityProps = {
+  params: { slug:string }
+  pagination: boolean
+}
+// /community
+export default function Landing(props:CommunityProps) {
+  const [hookProps] = useState(dataTabs);
   //params {id: 1} is being passed in from the navigation component
-  const [active, setActive] = useState(1)
-  const handleClick = (e:number) => {
-    setActive(e);
+  const [active, setActive] = useState("Latest");
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [matchingObject, setMatchingObject] = useState(hookProps.tabs[2]);
+  const handleTabClick  = (id:string) => {
+    setActive(id);
+    setMatchingObject(hookProps.tabs.find(tab => tab.id === id) ?? hookProps.tabs[2])
   }
-  const [hookProps] = useState({
-    tabs: [
-      {
-        label: "NEW TODAY",
-        id: "NEW TODAY",
-      },
-      {
-        label: "NEW THIS WEEK",
-        id: "NEW THIS WEEK",
-      },
-      {
-        label: "LATEST",
-        id: "LATEST",
-      },
-      {
-        label: "POPULAR (30 DAYS)",
-        id: "POPULAR (30 DAYS)",
-      },   {
-        label: "POPULAR (ALL TIME)",
-        id: "POPULAR (ALL TIME)",
-      },   
-      {
-        label: "MORE TRENDING",
-        id: "MORE TRENDING",
-      },{
-        label: "UPDATED",
-        id: "UPDATED",
-      },
-    ],
-    initialTabId: "LATEST",
-  });
   const framer = useTabs(hookProps);
-  console.log(framer)
   return (
-    <div className="text-white my-5 mx-auto container">
+    <div style={{padding:0}} className="text-white my-5 mx-auto container">
       <div className="">
-        <h1 className="fw-lighter">Community Reviews</h1>
+        <h1 className="fw-normal">Community Reviews</h1>
         <div style={{ columnGap: "16px" }} className="d-flex flex-wrap">
           {Array.from({ length: 2 }).map((e, i) => (
             <div key={i} style={{ flex: "1 0 calc(50% - 8px)" }} className="my-2 position-relative ">
@@ -120,23 +85,17 @@ export default function Community({ params }: { params: { id: number } }) {
         </div>
       </section>
       <div className="d-flex justify-content-between align-items-center mb-2">    
-       <h3 className="fw-lighter">More Reviews</h3>
+       <h3 className="fw-normal">More Reviews</h3>
       <div style={{fontSize:"16px", alignSelf:"end"}}>Explore All Reviews</div></div>
-      {/* <ul className={`nav nav-tabs ${styles["tab-container"]}`}>
-        {tabs.map((e,i) => ( 
-          <li key={i} onClick={() => handleClick(i)} className={`nav-item ${styles["nav-tab"]} `}>
-          <a className={`nav-link ${styles["nav-tab-item"]} ${active == i && `active`}`}>
-            {e.name} {e.badge && <span className="badge text-bg-primary ms-1">{i}</span>}
-          </a>
-        </li>)
-      )}
-      </ul> */}
       <div className={`nav nav-tabs ${styles["tab-container"]}`}>
-      <div className="custom-class-7">
-        <Framer.Tabs {...framer.tabProps} />
-      </div>
+        <Framer.Tabs {...framer.tabProps} onTabClick={handleTabClick} />
     </div>
-      <CommunityDisplay params={params}></CommunityDisplay>
+      <CommunityGrid tab={matchingObject} pagination={props.pagination} setLoadState={setIsLoading}></CommunityGrid>
+      <div className="mt-5 text-center">
+        <Link className="bg-success p-2 text-decoration-none text-white" 
+        href={`/playlist/community/${matchingObject.slug}/?page=1`}><span style={{fontSize:"14px"}}>View More - {active}</span></Link>
+      </div>
+
     </div>
   );
 }

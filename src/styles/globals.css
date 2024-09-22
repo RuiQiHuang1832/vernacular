@@ -114,15 +114,24 @@ a.navbar-brand {
 
 
 select option {
-  background:#222629;
+  color:black;
+  font-weight: 300;
+
 }
+
 
 select.break option {
   background:white;
 }
 
 .form-select {
-  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  box-shadow: none !important;
+  border-color:transparent !important;
+  border-radius: 0;
+  font-weight:500;
+  padding:0.375rem 5.25rem 0.375rem 0.75rem;
+  font-size:15px;
 }
 
 
@@ -231,7 +240,7 @@ textarea {
 .light-border-input {
   background-color:black !important;
   color:white !important;
-   border-color:#333333 ;
+   border-color:#333333 !important ;
    outline: none !important;
    font-weight:300
 }
@@ -398,9 +407,29 @@ textarea {
   color:white ;
 }
 
+.page-link-break {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color:white;
+  background-color:black;
+  
+}
 
 .page-link:hover {
   color:black
+}
+
+.general-nav:hover {
+  background:white !important;
+  color:black !important
+}
+
+.general-nav.page-link:focus  {
+  background-color: black;
+  color:white;
 }
 
 .paginatedItems {
@@ -410,4 +439,23 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+
+.paginate-disabled {
+  display:none;
+}
+
+
+.show {
+  display:block;
+}
+
+.hide {
+  display:none;
+}
+
+.dropdown-item:hover {
+  background-color: #1967D2;
+  color:white
+}
+
 
