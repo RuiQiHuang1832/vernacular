@@ -14,3 +14,13 @@
   font-weight:300;
   color:rgb(208, 208, 208);
 }
+
+.back-to-top {
+  background:rgb(22 22 22);
+  cursor:pointer;
+
+}
+
+.back-to-top:hover {
+  opacity:80%
+}

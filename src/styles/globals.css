@@ -459,3 +459,33 @@ textarea {
 }
 
 
+.heart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.spark {
+  transform-origin: 27px 27px; 
+  transition: opacity 1s ease-in-out;
+}
+
+.heart-icon:hover .spark {
+  animation: spark-animation 1.5s ease-in-out forwards;
+}
+
+
+
+@keyframes spark-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

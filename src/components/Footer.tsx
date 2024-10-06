@@ -1,3 +1,4 @@
+'use client'
 import { BsFacebook, BsGithub, BsGoogle, BsInstagram, BsLinkedin } from "react-icons/bs";
 import styles from "@/styles/Footer.module.css";
 import { IconType } from "react-icons";
@@ -21,11 +22,21 @@ const socialIconLinks: string[] = [
 
 export default function Footer() {
 
+  const scrollToTop = () => {
+      window.scrollTo({
+        top:0,
+        behavior: 'smooth'
+      })
+  }
+
   return (
     <footer style={{backgroundColor:"black", color:'#929191'}} className={` ${styles["footer"]}`}>
+      <div className={`${styles["back-to-top"]}`} onClick={scrollToTop}>
+        <div style={{fontSize:"13px"}} className="text-center p-3 text-white">Back to top</div>
+      </div>
       <section  className="container-lg py-5">
         <div style={{columnGap:"50px"}} className="d-flex justify-content-center mb-2 flex-wrap">
-        <Link href="/playlist/community/1" className="p-2 text-decoration-none text-reset">Community</Link>
+        <Link href="/playlist/community" className="p-2 text-decoration-none text-reset">Community</Link>
         <Link href="https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" className="p-2 text-decoration-none text-reset">Contact</Link>
         <Link href="/" className="p-2 text-decoration-none text-reset">Team</Link>
         <Link href="/#Faq" className="p-2 text-decoration-none text-reset">FAQ</Link>

@@ -12,6 +12,7 @@
 
 .community-banner {
   background: linear-gradient(to right, #040404, 70%, transparent), url("../../assets/images/communityBanner.png") right / 60% no-repeat, #040404;
+  height:200px
 }
 
 .multiline-ellipsis {
@@ -31,9 +32,10 @@
   height: 60px;
   position: absolute;
   left: 0;
-  top: -61px;
-  background: -webkit-linear-gradient(top, #00000000 0, rgba(0, 0, 0, 0.984) 100%);
-  background: linear-gradient(to bottom, #00000000 0, rgba(0, 0, 0, 0.984) 100%);
+  top: -60px;
+  background: -webkit-linear-gradient(top, #00000000 0, rgba(0, 0, 0, 0.74) 100%);
+  background: linear-gradient(to bottom, #00000000 0, rgba(0, 0, 0, 0.74) 100%);
+  z-index:1
 }
 
 .nav-tab {
@@ -54,3 +56,27 @@
 .tab-container {
   background: rgba(219, 213, 213, 0);
 }
+
+.card-review-container {
+  cursor:pointer;
+}
+
+.title {
+  transition: color 0.3s ease-in-out;
+
+}
+.figure {
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.card-review-container:hover .title {
+  color:rgb(255, 0, 0)
+}
+
+
+.card-review-container:hover .figure {
+  transform: translateY(-1rem);
+}
+
+
