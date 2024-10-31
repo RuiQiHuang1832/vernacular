@@ -127,7 +127,7 @@ export default function PaginatedItems({ itemsPerPage, currentPage, displayFunct
           {pageCount > 1 && (
             <div className="ms-3 jump ">
               <div className="dropdown">
-                <button className={`btn btn-dark dropdown-toggle border border-white`} type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ height: "40px" }}>
+                <button className={`btn dropdown-toggle border border-white text-white`} type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ height: "40px",backgroundColor:"black" }}>
                   Jump
                 </button>
                 <ul onClick={(e) => handleJump(e)} style={{ maxHeight: "250px", overflow: "scroll", overflowX: "hidden", maxWidth: "100px", borderRadius: 0 }} className="dropdown-menu border-0">
@@ -159,7 +159,7 @@ export default function PaginatedItems({ itemsPerPage, currentPage, displayFunct
     <>
       {showPages && <Pagination></Pagination>}
       {showPages && ( <div>
-<div style={{background:"rgb(14 15 16)"}} className="p-2">
+<div style={{background:"rgb(14 15 16)"}} className="py-2 ps-3 rounded ">
   Found {totalDataLength} results.
 </div>
 </div>) }

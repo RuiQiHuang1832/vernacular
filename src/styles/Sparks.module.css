@@ -1,0 +1,41 @@
+/* heart & sparks animation */
+.heart-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .spark {
+    transform-origin: 27px 27px;
+    stroke-dasharray: 0 100%; /* Initially invisible */
+    stroke-dashoffset: 0;
+    transition: stroke-dasharray 0.5s ease-in-out;
+  }
+  
+  .heart-icon:hover .spark {
+    animation: extend 0.5s ease-in-out forwards, retract 0.5s ease-in-out 0.5s forwards; /* Two animations */
+  }
+  /* Extend animation - Sparks grow from left to right */
+  
+  @keyframes extend {
+    0% {
+      stroke-dasharray: 0 100%; /* Invisible */
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dasharray: 100% 0; /* Fully visible */
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Retract animation - Sparks shrink from the center */
+  @keyframes retract {
+    0% {
+      stroke-dasharray: 100% 0; /* Fully visible */
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dasharray: 0 100%; /* Invisible */
+      stroke-dashoffset: -50%; /* Retract from center */
+    }
+  }
+  

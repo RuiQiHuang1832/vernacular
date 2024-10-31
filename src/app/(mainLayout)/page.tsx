@@ -14,6 +14,7 @@ import example from "@/assets/images/home/example.png";
 import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
 import FadeInElement from "@/components/FadeInElement";
+import { useEffect, useState } from "react";
 
 
 // used for scrollProgressBar
@@ -24,7 +25,12 @@ import FadeInElement from "@/components/FadeInElement";
 
 export default function Home() {
 
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    // Set isVisible to true when the component mounts (page load)
+    setIsVisible(true);
+  }, []);
 
   return (
     <div className="text-white">
@@ -41,7 +47,7 @@ export default function Home() {
                 Your <span className="text-success">Playlist</span> Playground
               </h1>
               <hr />
-              <p className="fw-light">
+              <p className="">
                 Craft and curate your ultimate media collection.&nbsp;
                 <span className="d-none d-xl-inline">
                   <br />
@@ -55,7 +61,7 @@ export default function Home() {
           </div>
           <div className={`col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1`}>
             <div className="image">
-              <Image src={image_4.src} alt="Home page logo" width={660} height={460} priority={true} className={styles["objectFit"]} quality={100} />
+              <Image src={image_4.src} alt="Home page logo" width={660} height={460} priority={true} className={`${styles["objectFit"]} fade-in-image ${isVisible ? 'animate' : ''}`} quality={100} />
             </div>
           </div>
         </div>
@@ -66,23 +72,23 @@ export default function Home() {
           Our <span className="text-success">Approach</span>
         </h1>
         <hr></hr>
-        <p className="fw-light mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
+        <p className=" mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-      <section style={{ padding: "6rem 0" }} className="fw-light">
+      <section style={{ padding: "6rem 0" }} className="">
         {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
         <Newsletter></Newsletter>
       </section>
       <section id="howitworks" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
         <div className={`col-md-10 col mb-5 ${styles["steps-container"]} text-wrap-balance`}>
           <h1 className="fw-bolder mb-4 ">3 steps to better media management</h1>
-          <p className="fs-6 fw-light">We believe great software tools unleash your creative potential while fading into the background.</p>
+          <p className="fs-6 ">We believe great software tools unleash your creative potential while fading into the background.</p>
         </div>
         <div className={`${styles["step-grid"]} text-center col-md-10 col mx-auto text-wrap-balance`}>
           {stepData.map((data) => (
             <div key={data.id} className="mt-3 col-10">
               <Image priority src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4`}></Image>
               <h4>{data.title}</h4>
-              <p className="fw-light">{data.description}</p>
+              <p className="">{data.description}</p>
             </div>
           ))}
         </div>
@@ -98,21 +104,21 @@ export default function Home() {
 
         <div style={{ paddingTop: "6rem", maxWidth: "35rem" }} className={`text-wrap-balance text-center mx-auto col-md-10 col my-5`}>
           <h1 className="fw-bold mb-4">Power tools for the discerning reviewers</h1>
-          <p className="fs-6 fw-light">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
+          <p className="fs-6 ">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
         </div>
         <div className={`${styles["tool-grid"]} text-center mx-auto`}>
           {toolData.map((data, i) => (
             <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 px-3 py-5`}>
               <data.source size="3em" color="green" className="mb-3"></data.source>
               <h6 className="my-4">{data.title}</h6>
-              <p className="fw-light">{data.description}</p>
+              <p className="">{data.description}</p>
             </div>
           ))}
         </div>
         <div className="text-center mt-5">
-          <p className="text-decoration-underline text-success fs-4 mb-5 fw-light">See our complete list of features</p>
+          <p className="text-decoration-underline text-success fs-4 mb-5 ">See our complete list of features</p>
           <blockquote style={{ rowGap: "3em", maxWidth: "50em" }} className="d-flex flex-column align-items-center mx-auto">
-            <div className="fst-italic fs-4 fw-light">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
+            <div className="fst-italic fs-4 ">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
             <div className="d-flex ">
               <div style={{ letterSpacing: ".1em" }}>BEN</div>
               <span className="mx-2">/</span>
@@ -124,18 +130,18 @@ export default function Home() {
       <section id="creativeProcess" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-black"]}`}>
         <div style={{ maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
           <h1 className="fw-bold mb-4">Simplify your creative process</h1>
-          <p className="fs-6 fw-light">Tame the chaos of scattered content and focus on your stories.</p>
+          <p className="fs-6 ">Tame the chaos of scattered content and focus on your stories.</p>
         </div>
         <div className={`d-flex  flex-lg-row flex-column mx-auto ${styles["creative-process-container"]}`}>
           <div style={{ flex: "1 0 auto" }} className="d-flex flex-column col-lg-3 col">
-            <blockquote className="fst-italic fw-light">“I switched to Vernacular because everything was intuitive and fast! Nothing interrupting your flow.”</blockquote>
+            <blockquote className="fst-italic ">“I switched to Vernacular because everything was intuitive and fast! Nothing interrupting your flow.”</blockquote>
             <p className="fst-italic">— Ben</p>
             {featuresData.map((e, i) => (
               <div key={i} className="my-3">
                 <h6 className="mb-3">
                   <FaCheck></FaCheck>&#9;{e.name}
                 </h6>
-                <p className="fw-light">{e.description}</p>
+                <p className="">{e.description}</p>
               </div>
             ))}
           </div>
@@ -159,7 +165,7 @@ export default function Home() {
         <div className={`${styles["quote-grid"]}`}>
           {quoteData.map((e, i) => (
             <blockquote key={i} style={{ rowGap: "3em", maxWidth: "50em" }} className="d-flex flex-column">
-              <div className="fst-italic fs-5 fw-light">&ldquo;{e.description}.&rdquo;</div>
+              <div className="fst-italic fs-5 ">&ldquo;{e.description}.&rdquo;</div>
               <div className="d-flex ">
                 <div style={{ letterSpacing: ".1em" }}>{e.name}</div>
                 <span className="mx-2">/</span>
@@ -172,7 +178,7 @@ export default function Home() {
       <section className={styles["bg-image-2"]} style={{ padding: "6rem 0" }}>
         <div className={`text-center mx-auto col-md-10 col px-4 mb-5`}>
             <h1 className="fw-bold mb-4">Customizable Settings</h1>
-            <p className="fs-6 fw-light">Vernacular streamlines the way you create and share your worlds.</p>
+            <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
         </div>
         <FadeInElement>
         <div className={`text-center px-4`}>
@@ -184,7 +190,7 @@ export default function Home() {
         <div style={{ paddingBottom: "6rem" }}>
           <div className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
             <h1  className="fw-bold mb-4">Drop a pin and start writing</h1>
-            <p className="fs-6 fw-light">Vernacular streamlines the way you create and share your worlds.</p>
+            <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
           </div>
           <FadeInElement>
           <div className={`${styles["tool-grid"]} text-center mx-auto`}>
@@ -192,7 +198,7 @@ export default function Home() {
             <div  key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i}`}>      
             <Image priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
           <h6 style={{letterSpacing:"0.1rem"}} className="my-4 px-3">{data.title}</h6>
-            <p className="fw-light px-3 ">{data.description}</p>
+            <p className=" px-3 ">{data.description}</p>
             </div>
           ))}
         </div>
@@ -202,13 +208,13 @@ export default function Home() {
         <div style={{padding:"0 5rem"}}>
           <div style={{ marginBottom: "12rem",  fontSize:"30px", backgroundColor:"rgb(0, 0, 0, 0.27)",padding:"2rem" }} className='text-center'>
           <div className="fw-bold">Have a question?</div>
-<div className="fw-light">Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃</div>
+<div className="">Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃</div>
           </div>
           <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4 mx-auto">
             <h1 id="Faq" >Frequently Asked Questions</h1>
-            <p className="fw-light">We&apos;ve also Compiled Answers to Frequently Asked Questions!</p>
+            <p className="">We&apos;ve also Compiled Answers to Frequently Asked Questions!</p>
           </div>
-          <div className="home-page-accordion accordion col-lg-8 col  col-md-9 mx-auto fw-light">
+          <div className="home-page-accordion accordion col-lg-8 col  col-md-9 mx-auto ">
             {accordionData.map((accordion, i) => (
               <div key={accordion.id} className={`accordion-item py-4 ${styles["accordion-item-home"]} ${classNames({ ["border-bottom"]: i != accordionData.length - 1 })}`}>
                 <h2 className="accordion-header">
@@ -228,8 +234,8 @@ export default function Home() {
       <section className={styles["bg-image"]} style={{ padding: "6rem 0" }}>
         <div className={`text-center mx-auto col-md-10 col my-5 px-4`}>
           <h1 className={`fw-bold mb-5 ${styles["fs-header"]} text-wrap-balance`}>Ready to upgrade your multimedia management?</h1>
-          <div className={`fw-light mb-5 ${styles["fs-header"]}`}>Try Vernacular for free</div>
-          <p className={`fw-light mb-5 ${styles["fs-para"]}`}>
+          <div className={` mb-5 ${styles["fs-header"]}`}>Try Vernacular for free</div>
+          <p className={` mb-5 ${styles["fs-para"]}`}>
             Jumpstart your creative journey in minutes.<br></br>
             Load up an Example Project in one click for inspiration.
           </p>

@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer style={{backgroundColor:"black", color:'#929191'}} className={` ${styles["footer"]}`}>
       <div className={`${styles["back-to-top"]}`} onClick={scrollToTop}>
-        <div style={{fontSize:"13px"}} className="text-center p-3 text-white">Back to top</div>
+        <div style={{fontSize:"13px"}} className="text-center p-2 text-white">Back to top</div>
       </div>
       <section  className="container-lg py-5">
         <div style={{columnGap:"50px"}} className="d-flex justify-content-center mb-2 flex-wrap">

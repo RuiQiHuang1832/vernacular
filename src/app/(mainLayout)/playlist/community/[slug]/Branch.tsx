@@ -7,6 +7,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { Tab } from "./hooks/useTabs";
+import styles from "@/styles/community-styles/Community.module.css";
+
 // import styles from "@/styles/community-styles/Branch.module.css"
 
 type CommunityProps = {
@@ -35,11 +37,13 @@ export default function Branch(props: CommunityProps) {
 
   return (
     <div className="text-white my-5 mx-auto container position-relative">
+     <section className={`d-flex ${styles["community-banner"]} align-items-center rounded`}>
+</section>
     {!isLoading && <> <h1>{props.tab.title}</h1>
       <div style={{columnGap:"1em", position:"absolute", right:"12px", transform: "translateY(calc(50% + 6px))"}} className="d-flex justify-content-end">
         <div>
         <label className="mb-2">Time</label>
-        <select  className="form-select" value={selectItems}  onChange={(e) => handleChange(e,"time")}>
+        <select  className="form-select rounded" value={selectItems}  onChange={(e) => handleChange(e,"time")}>
           <option value="0">All time</option>
           <option value="1">24 hrs</option>
           <option value="7">7 days</option>
@@ -50,7 +54,7 @@ export default function Branch(props: CommunityProps) {
         </div>
         <div>
         <label className="mb-2">Items</label>
-        <select className="form-select" value={selectItems} onChange={(e) => handleChange(e,"items")}>
+        <select className="form-select rounded" value={selectItems} onChange={(e) => handleChange(e,"items")}>
           <option  value="4">4 items</option>
           <option value="8">8 items</option>
           <option value="16">16 items</option>
@@ -59,7 +63,7 @@ export default function Branch(props: CommunityProps) {
         </div>
         <div>
         <label className="mb-2">Display</label>
-        <select className="form-select" value={selectItems} onChange={(e) => handleChange(e,"display")}>
+        <select className="form-select rounded" value={selectItems} onChange={(e) => handleChange(e,"display")}>
           <option  value="tiles">Tiles</option>
           <option value="list">List</option>
         </select>

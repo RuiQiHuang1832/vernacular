@@ -7,7 +7,8 @@
   }
 
   div.link-active {
-    border-bottom: 2px solid #86C232;
+    border-bottom: 2px solid white;
+    color:white;
   }
 /* 
   @media screen and (max-width: 576px) {
@@ -117,3 +118,41 @@
 .try-button:hover {
   opacity: 90%;
 }
+
+.rotating-circle-container {
+  position: absolute;
+  top: -8px;
+  left: -10px;
+}
+
+
+
+.rotating-circle {
+  animation: rotate 15s linear infinite;
+}
+
+.rotating-circle:active {
+  animation: fast-rotate 0.2s linear infinite;
+
+}
+
+
+@keyframes fast-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
