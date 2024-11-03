@@ -486,3 +486,31 @@ textarea {
   opacity: 1;                    /* Fade to fully opaque */
   transform: scale(1);           /* Scale back to normal */
 }
+
+
+/* Define the keyframes for the animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px); /* Start 20px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Apply the animation to your element */
+.fade-in-from-bottom {
+  opacity: 0; /* Start invisible */
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Individual delays for each element */
+.fade-in-from-bottom.fade-in-delay-1 {
+  animation-delay: 0.3s;
+}
+
+.fade-in-from-bottom.fade-in-delay-2 {
+  animation-delay: 0.6s;
+}

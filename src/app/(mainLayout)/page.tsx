@@ -38,7 +38,7 @@ export default function Home() {
         <div className={`row gx-0 mb-5`}>
           <div className={`col-xxl-6 col-xl-7 col d-flex align-items-center order-xl-1 order-2 justify-content-lg-start justify-content-center`}>
             <div className="text col-10 col-lg-12 col-xl-10">
-              <h1 className={`${styles["header"]} responsiveHeader`}>
+              <h1 className={`${styles["header"]} responsiveHeader fade-in-from-bottom`}>
                 {/* <Arrows></Arrows> */}
                 Elevate <span className="text-success">Entertainment:&nbsp;</span>
                 <span className="d-none d-xl-inline">
@@ -46,17 +46,19 @@ export default function Home() {
                 </span>
                 Your <span className="text-success">Playlist</span> Playground
               </h1>
-              <hr />
-              <p className="">
+              <hr style={{color:"rgba(255, 255, 255, 0.25)"}} className="fade-in-from-bottom"></hr>
+              <p className="fade-in-from-bottom fade-in-delay-1">
                 Craft and curate your ultimate media collection.&nbsp;
                 <span className="d-none d-xl-inline">
                   <br />
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
+              <div className="fade-in-from-bottom fade-in-delay-2">
               <Button bootstrapStyle="mt-3" buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
                 GET STARTED
               </Button>
+              </div>
             </div>
           </div>
           <div className={`col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1`}>
