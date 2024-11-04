@@ -126,14 +126,8 @@
 }
 
 
-
-.rotating-circle {
-  animation: rotate 15s linear infinite;
-}
-
 .rotating-circle:active {
   animation: fast-rotate 0.2s linear infinite;
-
 }
 
 
@@ -143,16 +137,6 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
   }
 }
 
