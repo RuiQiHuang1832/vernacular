@@ -10,9 +10,8 @@
   box-sizing: border-box;
 }
 
-
 .default-bg-color {
-  background:var(--page-background-color);
+  background: var(--page-background-color);
 }
 
 body {
@@ -20,19 +19,19 @@ body {
 }
 html {
   scroll-behavior: smooth;
-} 
+}
 .navbar-expand-lg .navbar-nav a.nav-link {
   padding: 15px 0px 0px 0px;
   line-height: 1.2em;
 }
 
 .table {
-  --bs-table-bg:transparent;
-  --bs-table-color:white;
+  --bs-table-bg: transparent;
+  --bs-table-color: white;
 }
 
 .table > :not(caption) > * > * {
-  border-color:#6c757d;
+  border-color: #6c757d;
   padding: 1rem 0.5rem;
 }
 
@@ -41,14 +40,13 @@ html {
     color: var(--nav-item-color);
     font-weight: 500;
     display: inline-block;
- 
+
     &.show,
     &:focus {
       color: var(--nav-item-color) !important;
     }
   }
 }
-
 
 a.navbar-brand {
   color: var(--nav-brand-color);
@@ -102,82 +100,73 @@ a.navbar-brand {
 
 .section-heading {
   border-bottom: 1px solid #d0d7deb3;
-
 }
 
-
-
-.form-control:focus { 
+.form-control:focus {
   box-shadow: none !important;
-
 }
-
 
 select option {
-  color:black;
+  color: black;
   font-weight: 300;
-
 }
 
-
 select.break option {
-  background:white;
+  background: white;
 }
 
 .form-select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   box-shadow: none !important;
-  border-color:transparent !important;
+  border-color: transparent !important;
   border-radius: 0;
-  font-weight:500;
-  padding:0.375rem 5.25rem 0.375rem 0.75rem;
-  font-size:15px;
+  font-weight: 500;
+  padding: 0.375rem 5.25rem 0.375rem 0.75rem;
+  font-size: 15px;
 }
 
-
 .text-wrap-balance {
-  text-wrap:balance !important;
+  text-wrap: balance !important;
 }
 
 .default-button-size {
   --bs-btn-padding-y: 1.15rem;
   --bs-btn-padding-x: 1.2rem;
-  border-radius:10px;
-  letter-spacing:2px;
+  border-radius: 10px;
+  letter-spacing: 2px;
 }
 
 .text-bright-green {
-  color:#3DD1BF !important
+  color: #3dd1bf !important;
 }
 
-
-.react-tel-input .form-control, .react-tel-input .flag-dropdown {
- border: 1px solid hsla(0,0%,25%,1) !important;
- transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
+.react-tel-input .form-control,
+.react-tel-input .flag-dropdown {
+  border: 1px solid hsla(0, 0%, 25%, 1) !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.react-tel-input .form-control:focus + .flag-dropdown{
-  border-color:rgb(119 116 116) !important;
+.react-tel-input .form-control:focus + .flag-dropdown {
+  border-color: rgb(119 116 116) !important;
 }
-
 
 .react-tel-input .form-control + .flag-dropdown.open,
 .react-tel-input .form-control:has(+ .flag-dropdown.open) {
-  border-color:rgb(119 116 116) !important;
+  border-color: rgb(119 116 116) !important;
 }
 
-.react-tel-input .flag-dropdown.open .selected-flag, .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
-  background:black !important;
+.react-tel-input .flag-dropdown.open .selected-flag,
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background: black !important;
 }
 
 .react-tel-input .country-list .country.highlight {
-  background:hsla(0,0%,25%,1) !important
+  background: hsla(0, 0%, 25%, 1) !important;
 }
 
 .react-tel-input .country-list .country:hover {
-  background:hsla(0,0%,25%,1) !important
-
+  background: hsla(0, 0%, 25%, 1) !important;
 }
 
 textarea {
@@ -185,11 +174,11 @@ textarea {
 }
 
 .ph-color-white::placeholder {
-  color:rgba(106, 106, 106, 0.489);
+  color: rgba(106, 106, 106, 0.489);
 }
 
 .mySwiper {
-  text-align:center;
+  text-align: center;
 }
 
 /* Helpful answer, however it would be nice if you explained what is happening here instead of just showing a bunch of code. The only things required to hide slides that aren't completely visible are to set watchSlidesVisibility: true, .swiper-slide opacity to 0 and .swiper-slide-visible  opacity to 1 */
@@ -208,17 +197,19 @@ textarea {
   pointer-events: none;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-  content:"" !important;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: "" !important;
 }
-.swiper-button-prev, .swiper-button-next {
-  width:auto !important
+.swiper-button-prev,
+.swiper-button-next {
+  width: auto !important;
 }
 .swiper-button-prev {
-  left:17px !important
+  left: 17px !important;
 }
 .swiper-button-next {
-  right:17px !important
+  right: 17px !important;
 }
 
 .react-datepicker__year-wrapper {
@@ -226,11 +217,11 @@ textarea {
 }
 
 .react-datepicker__tab-loop {
-  margin-left:0 !important
+  margin-left: 0 !important;
 }
 
-.input-group:has(.movieTitleInput:focus) .input-group-text{
-  border-color:rgb(119 116 116) !important;
+.input-group:has(.movieTitleInput:focus) .input-group-text {
+  border-color: rgb(119 116 116) !important;
 }
 
 .border-radius-infinite {
@@ -238,36 +229,35 @@ textarea {
 }
 
 .light-border-input {
-  background-color:black !important;
-  color:white !important;
-   border-color:#333333 !important ;
-   outline: none !important;
-   font-weight:300
+  background-color: black !important;
+  color: white !important;
+  border-color: #333333 !important ;
+  outline: none !important;
+  font-weight: 300;
 }
 
 .light-border-input:focus {
-  border-color:rgb(119 116 116) !important
+  border-color: rgb(119 116 116) !important;
 }
 
 .home-page-accordion.accordion {
-  --bs-accordion-bg:transparent;
-  --bs-accordion-btn-color:white;
-  --bs-accordion-border-width:0;
-  --bs-accordion-color:white;
-  --bs-accordion-active-bg:transparent;
+  --bs-accordion-bg: transparent;
+  --bs-accordion-btn-color: white;
+  --bs-accordion-border-width: 0;
+  --bs-accordion-color: white;
+  --bs-accordion-active-bg: transparent;
   --bs-accordion-active-color: rgb(252, 238, 177);
-  --bs-accordion-btn-focus-border-color:transparent;
-  --bs-accordion-btn-focus-box-shadow:none;
+  --bs-accordion-btn-focus-border-color: transparent;
+  --bs-accordion-btn-focus-box-shadow: none;
 }
 
 .accordion-button {
-  padding:0px
+  padding: 0px;
 }
 
 .accordion-button:after {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
-
 
 /* custom checkbox */
 
@@ -282,39 +272,38 @@ textarea {
   white-space: pre;
 } */
 
-
-@media (min-width: 1090px){
+@media (min-width: 1090px) {
   .navbar-expand-custom {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
   .navbar-expand-custom .navbar-nav {
-      flex-direction: row;
+    flex-direction: row;
   }
   .navbar-expand-custom .dropdown-menu {
-      position: absolute;
+    position: absolute;
   }
   .navbar-expand-custom .nav-link {
-      padding-right: .5rem;
-      padding-left: .5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
   .navbar-expand-custom > .container {
-      flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .navbar-expand-custom .navbar-collapse {
-      display: flex!important;
-      flex-basis: auto;
+    display: flex !important;
+    flex-basis: auto;
   }
   .navbar-expand-custom .navbar-toggler {
-      display: none;
+    display: none;
   }
 }
 
 /* handles navbar brand so it doesn't wrap */
 
 .navbar {
-  min-width:300px
+  min-width: 300px;
 }
 
 .navbar-brand {
@@ -322,12 +311,12 @@ textarea {
 }
 
 .brand {
-  font-size:30px
+  font-size: 30px;
 }
 
-@media screen and (max-width: 389px) {  
+@media screen and (max-width: 389px) {
   .brand {
-    font-size:23px
+    font-size: 23px;
   }
 }
 
@@ -339,72 +328,75 @@ textarea {
   text-wrap: pretty;
 }
 
-/* Fade in animation for home page */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20vh);
-  visibility: hidden;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, visibility, transform;
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
 /* fade in for items */
-
+/*  3 specificity*/
+.fade-in-section:not(:has(.item.slow)),
 .fade-in-section .item {
   opacity: 0;
   transform: translateY(20vh);
   visibility: hidden;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, visibility, transform;
+
 }
 
+.fade-in-section .item.slow {
+  transform: translateY(20px);
+
+}
+/*  4 specificity*/
+.fade-in-section.is-visible:not(:has(.item.slow)),
+.fade-in-section.is-visible .item {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+
+}
+
+.fade-in-from-z .item {
+  opacity: 0;
+  transform: scale(1.3);
+  visibility: hidden;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-from-z.is-visible .item {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+.fade-in-from-z.is-visible .item-0,
 .fade-in-section.is-visible .item-0 {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition-delay: 0.0s;
+  transition-delay:0s
 }
-
+.fade-in-from-z.is-visible .item-1,
 .fade-in-section.is-visible .item-1 {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition-delay: 0.3s;
+  transition-delay:0.3s
+
+}
+.fade-in-from-z.is-visible .item-2,
+.fade-in-section.is-visible .item-2 {
+    transition-delay:0.6s
+
 }
 
-.fade-in-section.is-visible .item-2 {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition-delay: 0.6s;
-}
 .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
 .form-floating > .form-control:focus ~ label::after {
   background-color: rgba(255, 255, 255, 0) !important;
-
-} 
-.form-floating > .form-control:not(:placeholder-shown) ~ label, 
+}
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-control:focus ~ label {
-  color:white !important
+  color: white !important;
 }
 
-
-.form-floating > .form-control:not(:placeholder-shown):not(input)
- {
-  padding-top:2rem !important;
-  padding-bottom:2rem !important;
+.form-floating > .form-control:not(:placeholder-shown):not(input) {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
-
 
 .paginatedLink {
-  background-color:black ;
-  color:white ;
+  background-color: black;
+  color: white;
 }
 
 .page-link-break {
@@ -413,23 +405,22 @@ textarea {
   display: flex;
   justify-content: center;
   text-decoration: none;
-  color:white;
-  background-color:black;
-  
+  color: white;
+  background-color: black;
 }
 
 .page-link:hover {
-  color:black
+  color: black;
 }
 
 .general-nav:hover {
-  background:white !important;
-  color:black !important
+  background: white !important;
+  color: black !important;
 }
 
-.general-nav.page-link:focus  {
+.general-nav.page-link:focus {
   background-color: black;
-  color:white;
+  color: white;
 }
 
 .paginatedItems {
@@ -441,33 +432,31 @@ textarea {
 }
 
 .paginate-disabled {
-  display:none;
+  display: none;
 }
 
-
 .show {
-  display:block;
+  display: block;
 }
 
 .hide {
-  display:none;
+  display: none;
 }
 
 .dropdown-item:hover {
-  background-color: #1967D2;
-  color:white
+  background-color: #1967d2;
+  color: white;
 }
 
 /*for community review 2 big images effect */
 .card-effect {
-  transition:transform .5s ease 0s;
+  transition: transform 0.5s ease 0s;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   will-change: transform;
-
 }
 
 .card-effect:hover {
@@ -475,18 +464,16 @@ textarea {
 }
 
 .fade-in-image {
-  opacity: 0;                    /* Start fully transparent */
-  transform: scale(1.3);        /* Slightly scale down the image */
+  opacity: 0; /* Start fully transparent */
+  transform: scale(1.3); /* Slightly scale down the image */
   transition: opacity 0.6s ease, transform 0.6s ease;
   position: relative;
 }
 
-
 .fade-in-image.animate {
-  opacity: 1;                    /* Fade to fully opaque */
-  transform: scale(1);           /* Scale back to normal */
+  opacity: 1; /* Fade to fully opaque */
+  transform: scale(1); /* Scale back to normal */
 }
-
 
 /* Define the keyframes for the animation */
 @keyframes fadeInUp {

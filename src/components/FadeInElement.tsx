@@ -1,5 +1,5 @@
 import  { useEffect, useRef, useState,ReactNode } from 'react';
-const FadeInElement = ({ children }: {children:ReactNode}) => {
+const FadeInElement = ({ children, value }: {children:ReactNode, value:string}) => {
     const [isVisible, setVisible] = useState(false);
     const domRef = useRef(null);
   
@@ -22,7 +22,7 @@ const FadeInElement = ({ children }: {children:ReactNode}) => {
   
     return (
       <div
-        className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+        className={`${value} ${isVisible ? 'is-visible' : ''}`}
         ref={domRef}
       >
         {children}

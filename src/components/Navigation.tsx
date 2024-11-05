@@ -44,7 +44,7 @@ export default function Navigation({ hidden = false }: NavigationProps) {
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [isHovered]);
 
-  const searchOverlay = () => {
+  const searchOverlay = (): void => {
     setSearchOpen(!isSearchOpen);
     document.body.classList.toggle("overflow-hidden");
   };
