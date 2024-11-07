@@ -15,6 +15,7 @@ import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
 import FadeInElement from "@/components/FadeInElement";
 import { useEffect, useState } from "react";
+import { BsArrowRight } from "react-icons/bs";
 
 
 // used for scrollProgressBar
@@ -46,24 +47,33 @@ export default function Home() {
                 </span>
                 Your <span className="text-success">Playlist</span> Playground
               </h1>
-              <hr style={{color:"rgba(255, 255, 255, 0.25)"}} className="fade-in-from-bottom"></hr>
-              <p className="fade-in-from-bottom fade-in-delay-1">
+              <hr style={{ color: "rgba(255, 255, 255, 0.25)" }} className="fade-in-from-bottom"></hr>
+              <p className="fade-in-from-bottom fade-in-delay-1 mb-5">
                 Craft and curate your ultimate media collection.&nbsp;
                 <span className="d-none d-xl-inline">
                   <br />
                 </span>
                 Explore, rate, and design playlists tailored to your tastes.
               </p>
-              <div className="fade-in-from-bottom fade-in-delay-2">
-              <Button bootstrapStyle="mt-3" buttonColor={{ cssColor: "#1D8754" }} href="/login" radius="10px" padding="20px" width="auto" type="button">
-                GET STARTED
-              </Button>
+              <div className="fade-in-from-bottom fade-in-delay-2 ">
+                <a href="" className={`${styles["get-started"]} d-inline-flex text-decoration-none text-white align-items-center learn-more-hover-circle`}>
+                  <span  className="me-4 fs-5 text-decoration-underline">Let&apos;s get started!</span>
+                  <div className="position-relative">
+                    <BsArrowRight className={`${styles["icon"]}`} size="2em"></BsArrowRight>
+                    <div className="hover-circle">
+                      <svg width="60" height="60">
+                        <circle stroke="currentColor" stroke-width="2" fill="transparent" r="28" cx="30" cy="30"></circle>
+                        <circle className="circle-animate" stroke="currentColor" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" stroke-dasharray="175.929" stroke-dashoffset="175.929" transform-origin="30px 30px"  ></circle>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
           <div className={`col-xxl-6 col-xl-5 d-flex justify-content-center order-xl-2 order-1`}>
             <div className="image">
-              <Image src={image_4.src} alt="Home page logo" width={660} height={460} priority={true} className={`${styles["objectFit"]} fade-in-image ${isVisible ? 'animate' : ''}`} quality={100} />
+              <Image src={image_4.src} alt="Home page logo" width={660} height={460} priority={true} className={`${styles["objectFit"]} fade-in-image ${isVisible ? "animate" : ""}`} quality={100} />
             </div>
           </div>
         </div>
@@ -86,17 +96,17 @@ export default function Home() {
           <p className="fs-6 ">We believe great software tools unleash your creative potential while fading into the background.</p>
         </div>
         <div className={`${styles["step-grid"]} text-center col-md-10 col mx-auto text-wrap-balance`}>
-          {stepData.map((data,i) => (
+          {stepData.map((data, i) => (
             <div key={data.id} className={`mt-3 col-10}`}>
-             <FadeInElement value="fade-in-from-z">
-              <Image priority src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4 item item-${i}`}></Image>
+              <FadeInElement value="fade-in-from-z">
+                <Image priority src={data.source.src} width={50} height={80} alt={data.id} className={`mb-4 item item-${i}`}></Image>
               </FadeInElement>
               <FadeInElement value="fade-in-section">
                 <div className={`item item-${i} slow`}>
-              <h4>{data.title}</h4>
-              <p>{data.description}</p>
-              </div>
-             </FadeInElement>
+                  <h4>{data.title}</h4>
+                  <p>{data.description}</p>
+                </div>
+              </FadeInElement>
             </div>
           ))}
         </div>
@@ -114,15 +124,17 @@ export default function Home() {
           <h1 className="fw-bold mb-4">Power tools for the discerning reviewers</h1>
           <p className="fs-6 ">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
         </div>
-        <div className={`${styles["tool-grid"]} text-center mx-auto`}>
-          {toolData.map((data, i) => (
-            <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 px-3 py-5`}>
-              <data.source size="3em" color="green" className="mb-3"></data.source>
-              <h6 className="my-4">{data.title}</h6>
-              <p className="">{data.description}</p>
-            </div>
-          ))}
-        </div>
+        <FadeInElement value="fade-in-section">
+          <div className={`${styles["tool-grid"]} text-center mx-auto`}>
+            {toolData.map((data, i) => (
+              <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i}`}>
+                <data.source size="3em" color="green" className="mb-3"></data.source>
+                <h6 className="my-4">{data.title}</h6>
+                <p className="">{data.description}</p>
+              </div>
+            ))}
+          </div>
+        </FadeInElement>
         <div className="text-center mt-5">
           <p className="text-decoration-underline text-success fs-4 mb-5 ">See our complete list of features</p>
           <blockquote style={{ rowGap: "3em", maxWidth: "50em" }} className="d-flex flex-column align-items-center mx-auto">
@@ -154,9 +166,9 @@ export default function Home() {
             ))}
           </div>
           <FadeInElement value="fade-in-section">
-          <div style={{ flex: "1 1 auto" }} className={`align-self-center text-lg-end text-center`}>
-            <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example img" priority={true} quality={100} />
-          </div>
+            <div style={{ flex: "1 1 auto" }} className={`align-self-center text-lg-end text-center`}>
+              <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example img" priority={true} quality={100} />
+            </div>
           </FadeInElement>
         </div>
         <div style={{ paddingTop: "6rem" }} className={`${styles["stats-grid"]}`}>
@@ -168,7 +180,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ paddingTop: "6rem", maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5`}>
-          <h1  className="fw-bold mb-4">Supporting thousands of creators, streams, and creative communities</h1>
+          <h1 className="fw-bold mb-4">Supporting thousands of creators, streams, and creative communities</h1>
         </div>
         <div className={`${styles["quote-grid"]}`}>
           {quoteData.map((e, i) => (
@@ -185,47 +197,45 @@ export default function Home() {
       </section>
       <section className={styles["bg-image-2"]} style={{ padding: "6rem 0" }}>
         <div className={`text-center mx-auto col-md-10 col px-4 mb-5`}>
-            <h1 className="fw-bold mb-4">Customizable Settings</h1>
-            <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
+          <h1 className="fw-bold mb-4">Customizable Settings</h1>
+          <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
         </div>
         <FadeInElement value="fade-in-section">
-        <div className={`text-center px-4`}>
-        <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`} priority={true}  quality={100} />
-        </div>
+          <div className={`text-center px-4`}>
+            <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`} priority={true} quality={100} />
+          </div>
         </FadeInElement>
       </section>
       <section id="pin" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
         <div style={{ paddingBottom: "6rem" }}>
           <div className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
-            <h1  className="fw-bold mb-4">Drop a pin and start writing</h1>
+            <h1 className="fw-bold mb-4">Drop a pin and start writing</h1>
             <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
           </div>
-
-          <div className={`${styles["tool-grid"]} text-center mx-auto`}>
-
-          {imageData.map((data, i) => (
-            <div key={i} className={`${styles["grid-item"]}`}>
-                      <FadeInElement value="fade-in-section">
-            <div style={{ border: "1px solid rgb(144 144 144)" }} className={`mt-3 pb-3 item item-${i}`}>      
-            <Image priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
-          <h6 style={{letterSpacing:"0.1rem"}} className="my-4 px-3">{data.title}</h6>
-            <p className=" px-3 ">{data.description}</p>
+          <FadeInElement value="fade-in-section">
+            <div className={`${styles["tool-grid"]} text-center mx-auto`}>
+              {imageData.map((data, i) => (
+                <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i}`}>
+                  <Image priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
+                  <h6 style={{ letterSpacing: "0.1rem" }} className="my-4 px-3">
+                    {data.title}
+                  </h6>
+                  <p className=" px-3 ">{data.description}</p>
+                </div>
+              ))}
             </div>
-            </FadeInElement>
-            </div>
-          ))}
-
+          </FadeInElement>
         </div>
 
-        </div>
-        
-        <div style={{padding:"0 5rem"}}>
-          <div style={{ marginBottom: "12rem",  fontSize:"30px", backgroundColor:"rgb(0, 0, 0, 0.27)",padding:"2rem" }} className='text-center'>
-          <div className="fw-bold">Have a question?</div>
-<div className="">Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃</div>
+        <div style={{ padding: "0 5rem" }}>
+          <div style={{ marginBottom: "12rem", fontSize: "30px", backgroundColor: "rgb(0, 0, 0, 0.27)", padding: "2rem" }} className="text-center">
+            <div className="fw-bold">Have a question?</div>
+            <div className="">
+              Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃
+            </div>
           </div>
           <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4 mx-auto">
-            <h1 id="Faq" >Frequently Asked Questions</h1>
+            <h1 id="Faq">Frequently Asked Questions</h1>
             <p className="">We&apos;ve also Compiled Answers to Frequently Asked Questions!</p>
           </div>
           <div className="home-page-accordion accordion col-lg-8 col  col-md-9 mx-auto ">

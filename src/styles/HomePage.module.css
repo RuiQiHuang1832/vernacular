@@ -227,7 +227,6 @@
 }
 
 
-
 .btn-inspiration {
   letter-spacing: 0.3px;
   flex: 1 1 0%
@@ -236,4 +235,12 @@
 .object-fit {
   max-width:100%;
   height:auto;
+}
+
+.icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.get-started:hover .icon {
+  transform: translateX(6px) translateY(0);
 }
