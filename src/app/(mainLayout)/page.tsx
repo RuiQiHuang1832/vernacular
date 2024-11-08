@@ -127,7 +127,7 @@ export default function Home() {
         <FadeInElement value="fade-in-section">
           <div className={`${styles["tool-grid"]} text-center mx-auto`}>
             {toolData.map((data, i) => (
-              <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i}`}>
+              <div key={i} style={{ border: "1px solid rgb(144 144 144)", borderRadius:"10px" }} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i} test`}>
                 <data.source size="3em" color="green" className="mb-3"></data.source>
                 <h6 className="my-4">{data.title}</h6>
                 <p className="">{data.description}</p>
