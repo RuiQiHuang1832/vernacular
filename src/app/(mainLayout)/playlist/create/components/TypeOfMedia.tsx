@@ -25,14 +25,14 @@ interface Media {
 }
 
 const media: Media[] = [
-  { type: "Anime", icon: SiMyanimelist, active:false },
+  { type: "Anime", icon: SiMyanimelist, active:true },
   { type: "Movies", icon: MdLocalMovies,active:true },
-  { type: "Shows", icon: RiSlideshow3Fill,active:false },
-  { type: "Songs", icon: BsFillMusicPlayerFill,active:false },
-  { type: "Games", icon: IoLogoGameControllerB,active:false },
-  { type: "Podcasts", icon: PiApplePodcastsLogo,active:false },
-  { type: "Books", icon: FaBook,active:false },
-  { type: "Board Games", icon: GiTabletopPlayers,active:false },
+  { type: "Shows", icon: RiSlideshow3Fill,active:true },
+  { type: "Songs", icon: BsFillMusicPlayerFill,active:true },
+  { type: "Games", icon: IoLogoGameControllerB,active:true },
+  { type: "Podcasts", icon: PiApplePodcastsLogo,active:true },
+  { type: "Books", icon: FaBook,active:true },
+  { type: "Board Games", icon: GiTabletopPlayers,active:true },
   { type: "Apps", icon: IoIosAppstore,active:false },
 ];
 
@@ -81,7 +81,7 @@ export default function TypeOfMedia(props:TypeOfMedia) {
             ) : (
               <></>
             )}
-            <div  onClick={() => handleClick(media.type)} className={`${media.active === false ? styles["disabled-media-selection"] : ""} ${styles["option"]} ${activeMedia == media.type ? styles["highlight-media"] : ""}`}>
+            <div onClick={() => handleClick(media.type)} className={`focus-ring ${media.active === false ? styles["disabled-media-selection"] : ""} ${styles["option"]} ${activeMedia == media.type ? styles["highlight-media"] : ""}`}>
               <media.icon size="3em" color={`${activeMedia == media.type ? "black" : "#95CD4D"}`} />
               <div className="mt-3">{media.type}</div>
             </div>

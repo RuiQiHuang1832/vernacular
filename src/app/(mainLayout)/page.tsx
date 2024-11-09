@@ -127,7 +127,7 @@ export default function Home() {
         <FadeInElement value="fade-in-section">
           <div className={`${styles["tool-grid"]} text-center mx-auto`}>
             {toolData.map((data, i) => (
-              <div key={i} style={{ border: "1px solid rgb(144 144 144)", borderRadius:"10px" }} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i} test`}>
+              <div key={i} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i} focus-ring`}>
                 <data.source size="3em" color="green" className="mb-3"></data.source>
                 <h6 className="my-4">{data.title}</h6>
                 <p className="">{data.description}</p>
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
           <FadeInElement value="fade-in-section">
             <div style={{ flex: "1 1 auto" }} className={`align-self-center text-lg-end text-center`}>
-              <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100`} alt="example img" priority={true} quality={100} />
+              <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100 focus-ring`} alt="example img" priority={true} quality={100} />
             </div>
           </FadeInElement>
         </div>
@@ -201,8 +201,8 @@ export default function Home() {
           <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
         </div>
         <FadeInElement value="fade-in-section">
-          <div className={`text-center px-4`}>
-            <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100`} priority={true} quality={100} />
+          <div className={`text-center px-4 `}>
+            <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100 focus-ring`} priority={true} quality={100} />
           </div>
         </FadeInElement>
       </section>
@@ -215,8 +215,8 @@ export default function Home() {
           <FadeInElement value="fade-in-section">
             <div className={`${styles["tool-grid"]} text-center mx-auto`}>
               {imageData.map((data, i) => (
-                <div key={i} style={{ border: "1px solid rgb(144 144 144)" }} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i}`}>
-                  <Image priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
+                <div key={i} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i} focus-ring`}>
+                  <Image style={{borderRadius: "10px 10px 0 0"}} priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
                   <h6 style={{ letterSpacing: "0.1rem" }} className="my-4 px-3">
                     {data.title}
                   </h6>

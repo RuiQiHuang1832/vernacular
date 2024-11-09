@@ -519,13 +519,24 @@ textarea {
   stroke-dashoffset: 0; /* Draw the circle */
 }
 
+.focus-ring {
+  transition: box-shadow 0.3s ease;
+}
 
-
-.test:hover {
-  border-color: #1D2426 !important;
+.focus-ring:hover {
+  border-color: transparent !important;
   /* Create the ring effect */
-  
-  box-shadow: 
-    0 0 0 6px #1D2426, /* White shadow to simulate the offset */
-    0 0 0 8px rgb(55, 255, 131); /* Blue ring effect */
+  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(55, 255, 131);
+}
+
+.focus-ring:has(.ring-red:hover)  {
+  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(255, 0, 0); 
+}
+
+.focus-ring:is(.item-1):hover {
+  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(0, 187, 255); 
+}
+
+.focus-ring:is(.item-2):hover {
+  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(246, 255, 0); 
 }

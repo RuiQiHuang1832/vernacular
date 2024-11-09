@@ -193,7 +193,7 @@ export default function MediaSelection(props: MediaSelectionProps) {
           </div>
         ) : (
           <>
-            <Image className="rounded" alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${titleData.mediaPoster}`}></Image>
+            <Image className="rounded focus-ring" alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${titleData.mediaPoster}`}></Image>
             <h5 className="mt-3">
               {titleData.mediaName} ({titleData.mediaYear})
             </h5>
@@ -204,10 +204,10 @@ export default function MediaSelection(props: MediaSelectionProps) {
         {props.selectedTitles.map((media, i) =>
           media.mediaPoster === undefined ? <></> : (
             <div key={i}>
-              <div className={`${styles["poster-container"]} position-relative d-inline-block`} >
-                <Image className={`${styles["poster-image"]} rounded`} key={i} alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${media.mediaPoster}`}></Image>
+              <div className={`${styles["poster-container"]} position-relative d-inline-block focus-ring rounded`} >
+                <Image className={`${styles["poster-image"]} rounded `} key={i} alt="movie pic" width="250" height="350" src={`https://image.tmdb.org/t/p/original/${media.mediaPoster}`}></Image>
                 <div className={` ${styles["poster-delete"]}`}>
-                  <button onClick={(e) => handleDelete(e, media.id)} type="button" className="btn btn-danger d-flex align-items-center text-center p-2">
+                  <button onClick={(e) => handleDelete(e, media.id)} type="button" className="btn btn-danger d-flex align-items-center text-center p-2 ring-red">
                     <RiDeleteBinFill />
                   </button>
                 </div>

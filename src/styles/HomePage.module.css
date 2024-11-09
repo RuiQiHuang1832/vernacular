@@ -157,6 +157,11 @@
   
 
 }
+.grid-item {
+  border: 1px solid rgb(144 144 144);
+  border-radius:10px ;
+}
+
 @media screen and (max-width: 970px) {
   .tool-grid {
     grid-template-columns: repeat(1, 1fr);
@@ -166,9 +171,10 @@
 
 
 .grid-item {
-  width:100%
+  width:100%;
 }
 }
+
 
 .steps-container {
   max-width:42rem;
