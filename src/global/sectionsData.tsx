@@ -33,7 +33,7 @@ export const sections: SectionType[] = [
       imageHeight: 280,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about seamless multimedia management",
-      sectionContainerClass:styles["section-container-style-black"]
+      sectionContainerClass:styles[""]
     },
     {
       id: "anchor-2",
@@ -52,7 +52,7 @@ export const sections: SectionType[] = [
       imageHeight: 350,
       direction: "flex-md-row" as const,
       learnMore: "Learn more about our customizable playlist",
-      sectionContainerClass:styles["section-container-style-black"]
+      sectionContainerClass:styles[""]
     },
     {
       id: "anchor-3",
@@ -71,6 +71,6 @@ export const sections: SectionType[] = [
       imageHeight: 250,
       direction: "flex-md-row-reverse" as const,
       learnMore: "Learn more about Vernacular's solutions",
-      sectionContainerClass:styles["section-container-style-black"]
+      sectionContainerClass:styles[""]
     }
   ];

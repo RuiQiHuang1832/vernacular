@@ -41,11 +41,11 @@ export default function Home() {
             <div className="text col-10 col-lg-12 col-xl-10">
               <h1 className={`${styles["header"]} responsiveHeader fade-in-from-bottom`}>
                 {/* <Arrows></Arrows> */}
-                Elevate <span className="text-success">Entertainment:&nbsp;</span>
+                <span style={{color:"rgb(90,90,90)"}}>Elevate Entertainment&nbsp;</span>
                 <span className="d-none d-xl-inline">
                   <br />
                 </span>
-                Your <span className="text-success">Playlist</span> Playground
+                Your Playlist Playground.
               </h1>
               <hr style={{ color: "rgba(255, 255, 255, 0.25)" }} className="fade-in-from-bottom"></hr>
               <p className="fade-in-from-bottom fade-in-delay-1 mb-5">
@@ -57,7 +57,7 @@ export default function Home() {
               </p>
               <div className="fade-in-from-bottom fade-in-delay-2 ">
                 <a href="" className={`${styles["get-started"]} d-inline-flex text-decoration-none text-white align-items-center learn-more-hover-circle`}>
-                  <span  className="me-4 fs-5 text-decoration-underline">Let&apos;s get started!</span>
+                  <span  className="me-4 fs-5 ">Let&apos;s get started!</span>
                   <div className="position-relative">
                     <BsArrowRight className={`${styles["icon"]}`} size="2em"></BsArrowRight>
                     <div className="hover-circle">
@@ -80,15 +80,14 @@ export default function Home() {
         <ScrollableArrow></ScrollableArrow>
       </div>
       <section id="approach" className={` mx-auto col-xl-6 col-10 col-lg-8 `}>
-        <h1 className="fw-bolder text-center">
-          Our <span className="text-success">Approach</span>
+        <h1 style={{fontSize:"85px"}} className="fw-bolder text-center">
+          Our Approach
         </h1>
         <hr></hr>
-        <p className=" mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
+        <p  className=" mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
       <section style={{ padding: "6rem 0" }} className="">
         {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
-        <Newsletter></Newsletter>
       </section>
       <section id="howitworks" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
         <div className={`col-md-10 col mb-5 ${styles["steps-container"]} text-wrap-balance`}>

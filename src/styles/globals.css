@@ -1,7 +1,7 @@
 :root {
-  --nav-item-color: #a9adc1;
+  --nav-item-color: #ffffff8c;
   --nav-brand-color: #ffffff;
-  --page-background-color: #222629;
+  --page-background-color: rgb(18,18,18);
 }
 
 * {
@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #1F2028 !important;
+  background-color: var(--page-background-color) !important;
 }
 html {
   scroll-behavior: smooth;
@@ -34,6 +34,7 @@ html {
   border-color: #6c757d;
   padding: 1rem 0.5rem;
 }
+
 
 .nav-item {
   .nav-link {
