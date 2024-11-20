@@ -247,9 +247,18 @@ textarea {
   --bs-accordion-border-width: 0;
   --bs-accordion-color: white;
   --bs-accordion-active-bg: transparent;
-  --bs-accordion-active-color: rgb(252, 238, 177);
+  --bs-accordion-active-color: rgb(255, 255, 255);
   --bs-accordion-btn-focus-border-color: transparent;
   --bs-accordion-btn-focus-box-shadow: none;
+
+}
+
+.accordion-button[aria-expanded="false"] .accordion-question {
+  color:#848484
+}
+
+.accordion-button[aria-expanded="true"] .accordion-question {
+  color: white; 
 }
 
 .accordion-button {
@@ -511,7 +520,8 @@ textarea {
 
 .circle-animate {
   transition: stroke-dashoffset 0.5s ease,;
-  stroke:white
+  stroke:white;
+  transform-origin:30px 30px;
 }
 
 /* On hover, animate the second circle */
@@ -527,17 +537,17 @@ textarea {
 .focus-ring:hover {
   border-color: transparent !important;
   /* Create the ring effect */
-  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(55, 255, 131);
+  box-shadow: 0 0 0 6px #26262E, 0 0 0 8px rgb(55, 255, 131);
 }
 
 .focus-ring:has(.ring-red:hover)  {
   box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(255, 0, 0); 
 }
 
-.focus-ring:is(.item-1):hover {
-  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(0, 187, 255); 
+.focus-ring:is(.ring-blue):hover {
+  box-shadow: 0 0 0 6px #23272C, 0 0 0 8px rgb(0, 187, 255); 
 }
 
-.focus-ring:is(.item-2):hover {
-  box-shadow: 0 0 0 6px #1D2426, 0 0 0 8px rgb(246, 255, 0); 
+.focus-ring:is(.ring-yellow):hover {
+  box-shadow: 0 0 0 6px var(--page-background-color), 0 0 0 8px rgb(246, 255, 0); 
 }

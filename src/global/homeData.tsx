@@ -179,28 +179,77 @@ export const arrowData:arrowDataType[] = [
 
 export const accordionData:accordionDataType[] = [
     {
-        id:"questionOne",
-        question: "Is there a cost associated with using vernacular?",
-        answer: (<>  No, <strong>absolutely not!</strong> Using <em>vernacular</em> is <strong>completely free</strong> and will <strong>always be free</strong>! We believe in providing access to valuable resources without any financial barriers. Enjoy exploring and reviewing your favorite media titles without worrying about subscription fees or hidden charges.</>)
+        id: "questionOne",
+        question: "Is there a cost associated with using vern?",
+        answer: (
+            <>
+                <p><strong>No, absolutely not!</strong> Using <em>vern</em> is completely free and will <strong>always be free!</strong></p>
+                <ul>
+                    <li className="mb-2"><mark>No subscription fees</mark></li>
+                    <li className="mb-2"><mark>No hidden charges</mark></li>
+                    <li className="mb-2"><mark>Enjoy access to valuable resources without financial barriers</mark></li>
+                </ul>
+                <p>Feel free to explore, review, and share your thoughts on your favorite media titles with zero cost involved!</p>
+            </>
+        )
     },
     {
-        id:"questionTwo",
-        question: "Can I customize my user experience on vernacular?",
-        answer: (<> Yes, <strong>definitely!</strong> We offer a range of customization options to tailor your experience according to your preferences. Personalize your profile, set notification preferences, and adjust viewing settings to make your time on the site truly your own. Your satisfaction and comfort are important to us, so feel free to customize away!</>)
+        id: "questionTwo",
+        question: "Can I customize my user experience on vern?",
+        answer: (
+            <>
+                <p><strong>Yes, definitely!</strong> We offer a range of customization options to make your experience truly your own:</p>
+                <ul>
+                    <li><strong>Personalize your profile:</strong> Choose an avatar, write a bio, and stand out!</li>
+                    <li><strong>Set notification preferences:</strong> Decide what updates matter most to you.</li>
+                    <li><strong>Adjust viewing settings:</strong> Create the perfect browsing environment.</li>
+                </ul>
+                <p>Your comfort and satisfaction are our top priorities. Customize away and enjoy a tailored experience!</p>
+            </>
+        )
     },
     {
-        id:"questionThree",
-        question: "How can I provide feedback on a specific title? ",
-        answer: (<>It&apos;s easy! Simply select the type of media, then choose the specific title you want to review, and share your feedback, including a <strong>rating</strong> and <strong>review description</strong>. Your input helps other users make informed decisions about what to watch or listen to next. Join the conversation, contribute your insights, and become part of a vibrant community passionate about media exploration and discussion.</>)
+        id: "questionThree",
+        question: "How can I provide feedback on a specific title?",
+        answer: (
+            <>
+                <p><strong>It’s easy and fun!</strong> Share your thoughts and ratings with just a few steps:</p>
+                <ol>
+                    <li>Select the type of media (e.g., movie, TV show, or music).</li>
+                    <li>Choose the specific title you want to review.</li>
+                    <li>Provide your feedback, including a <strong>rating</strong> and <strong>review description</strong>.</li>
+                </ol>
+                <p>Your insights help others discover amazing media. Join the community and make your voice heard!</p>
+            </>
+        )
     },
     {
-        id:"questionFour",
-        question: "Are there any restrictions on the types of media I can review?",
-        answer: (<><strong>Not at all!</strong> You&apos;re free to review any movies, TV shows, or music titles of your choice. Whether it&apos;s the <em>latest blockbuster</em>, a <em>classic TV series</em>, or an <em>underground indie album</em>, we welcome all kinds of reviews. Express your thoughts and opinions on the media that resonates with you, and join a diverse community of reviewers sharing their experiences.</>)
+        id: "questionFour",
+        question: "Are there any restrictions on what I can review?",
+        answer: (
+            <>
+                <p><strong>Not at all!</strong> Feel free to review:</p>
+                <ul>
+                    <li>The <em>latest blockbusters</em></li>
+                    <li>Timeless <em>classic TV shows</em></li>
+                    <li>Hidden gems like an <em>underground indie album</em></li>
+                </ul>
+                <p>We welcome all kinds of reviews—express your thoughts on the media that resonates with you and connect with a diverse community of reviewers.</p>
+            </>
+        )
     },
     {
-        id:"questionFive",
-        question: "Can I talk to a real person to get my questions answered?",
-        answer: (<>Absolutely! We are here to answer any questions you have both before and after you get started with vernacular. Our friendly, responsive Success Team is here to not only help you get the most out of vernacular but to offer helpful tips on how to optimize your spending process. Email us at email hello@vernacular.com to chat with one of our friendly team members. We’re happy to help in French, English, Spanish or German.</>)
+        id: "questionFive",
+        question: "Can I talk to a real person?",
+        answer: (
+            <>
+                <p><strong>Absolutely!</strong> Our Success Team is here for you:</p>
+                <ul>
+                    <li>Have questions? We’re happy to help before and after you get started.</li>
+                    <li>Need tips? We’ll help you optimize your experience.</li>
+                </ul>
+                <p>Email us at <a href="mailto:hello@vern.com">hello@vern.com</a> to connect with our friendly team. We’re happy to assist you in <strong>French</strong>, <strong>English</strong>, <strong>Spanish</strong>, or <strong>German</strong>.</p>
+            </>
+        )
     },
-]
+];

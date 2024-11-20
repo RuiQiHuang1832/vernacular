@@ -14,7 +14,7 @@ import Script from "next/script";
 const lexendDeca = Lexend_Deca({ subsets: ["latin"], display:'swap' });
 //Defaults
 export const metadata: Metadata = {
-  title: "Vernacular - Your Playlist Playground",
+  title: "Vern - Playlist Playground",
   description: "Personal Media Catalog & Reviews Hub",
 };
 

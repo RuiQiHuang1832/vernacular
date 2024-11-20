@@ -50,7 +50,7 @@ export const searchable = [{
   {
     section:"Appearance",
     link:"settings/appearance",
-    desc:"Choose how Vernacular looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.",
+    desc:"Choose how vern looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.",
     keywords:["Emoji skin tone", "Preference", "Accent color", "Dark", "Light"],
     icon:<FaPaintbrush color="lightgreen"></FaPaintbrush>,
     location:"Settings"

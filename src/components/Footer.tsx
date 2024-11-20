@@ -3,6 +3,7 @@ import { BsFacebook, BsGithub, BsGoogle, BsInstagram, BsLinkedin } from "react-i
 import styles from "@/styles/Footer.module.css";
 import { IconType } from "react-icons";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 const socialIcons: IconType[] = [
   BsFacebook,
@@ -21,7 +22,7 @@ const socialIconLinks: string[] = [
 ]
 
 export default function Footer() {
-
+  const pathname = usePathname();
   const scrollToTop = () => {
       window.scrollTo({
         top:0,
@@ -31,9 +32,10 @@ export default function Footer() {
 
   return (
     <footer style={{backgroundColor:"black", color:'#929191'}} className={` ${styles["footer"]}`}>
-      <div className={`${styles["back-to-top"]}`} onClick={scrollToTop}>
+      {pathname.includes('playlist/community') && <div className={`${styles["back-to-top"]}`} onClick={scrollToTop}>
         <div style={{fontSize:"13px"}} className="text-center p-2 text-white">Back to top</div>
-      </div>
+      </div> }
+    
       <section  className="container-lg py-5">
         <div style={{columnGap:"50px"}} className="d-flex justify-content-center mb-2 flex-wrap">
         <Link href="/playlist/community" className="p-2 text-decoration-none text-reset">Community</Link>
@@ -52,9 +54,9 @@ export default function Footer() {
         </div>
         <hr></hr>
         <div style={{fontSize:"30px", color:"#9E9D9D"}}  className="text-center fw-bold mb-2">
-          Vernacular
+          Vern
         </div>
-        <div style={{opacity:"0.8"}} className={styles["text"]}>© 2023-2024 Vernacular. All Rights Reserved.</div>
+        <div style={{opacity:"0.8"}} className={styles["text"]}>© 2023-2024 Vern. All Rights Reserved.</div>
       </section>
     </footer>
   );

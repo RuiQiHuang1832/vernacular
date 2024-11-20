@@ -1,1 +1,1 @@
-export const NAME = "vernacular";
+export const NAME = "vern";

@@ -7,15 +7,27 @@ import styles from "@/styles/HomePage.module.css";
 import { sections } from "@/global/sectionsData";
 import  { ScrollableArrow } from "@/components/Arrows";
 import Button from "@/components/Button";
-import classNames from "classnames";
 import { mapObjectToComponent } from "@/helpers/mapObjectToComponent";
-import { stepData, toolData, statsData, quoteData, accordionData, arrowData, featuresData, imageData } from "@/global/homeData";
+import classNames from "classnames";
+import { stepData, toolData, statsData, quoteData, arrowData, featuresData, imageData, accordionData } from "@/global/homeData";
 import example from "@/assets/images/home/example.png";
 import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
 import FadeInElement from "@/components/FadeInElement";
 import { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import bbdo from "@/assets/svg/bbdo.svg"
+import discord from "@/assets/svg/discord.svg"
+import dropbox from "@/assets/svg/dropbox.svg"
+import greenhouse from "@/assets/svg/greenhouse.svg"
+import ideo from "@/assets/svg/ideo.svg"
+import monday from "@/assets/svg/monday.svg"
+import ncr from "@/assets/svg/ncr.svg"
+import nyt from "@/assets/svg/nyt.svg"
+import orange from "@/assets/svg/orange.svg"
+import philips from "@/assets/svg/philips.svg"
+import ted from "@/assets/svg/ted.svg"
+import upwork from "@/assets/svg/upwork.svg"
 
 
 // used for scrollProgressBar
@@ -57,13 +69,13 @@ export default function Home() {
               </p>
               <div className="fade-in-from-bottom fade-in-delay-2 ">
                 <a href="" className={`${styles["get-started"]} d-inline-flex text-decoration-none text-white align-items-center learn-more-hover-circle`}>
-                  <span  className="me-4 fs-5 ">Let&apos;s get started!</span>
+                  <span className="me-5 fs-5 ">Get started — it&apos;s free!</span>
                   <div className="position-relative">
                     <BsArrowRight className={`${styles["icon"]}`} size="2em"></BsArrowRight>
                     <div className="hover-circle">
                       <svg width="60" height="60">
-                        <circle stroke="currentColor" stroke-width="2" fill="transparent" r="28" cx="30" cy="30"></circle>
-                        <circle className="circle-animate" stroke="currentColor" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" stroke-dasharray="175.929" stroke-dashoffset="175.929" transform-origin="30px 30px"  ></circle>
+                        <circle stroke="currentColor" strokeWidth="2" fill="transparent" r="28" cx="30" cy="30"></circle>
+                        <circle className="circle-animate" stroke="currentColor" strokeWidth="2" fill="transparent" r="28" cx="30" cy="30" strokeDasharray="175.929" strokeDashoffset="175.929"   ></circle>
                       </svg>
                     </div>
                   </div>
@@ -81,18 +93,18 @@ export default function Home() {
       </div>
       <section id="approach" className={` mx-auto col-xl-6 col-10 col-lg-8 `}>
         <h1 style={{fontSize:"85px"}} className="fw-bolder text-center">
-          Our Approach
+          Our <span style={{}}>Approach</span>
         </h1>
         <hr></hr>
         <p  className=" mb-0">Explore a new dimension of media cataloging. Our intuitive web app lets you effortlessly create, curate, and explore personalized playlists, transforming how you organize and enjoy your favorite content.</p>
       </section>
-      <section style={{ padding: "6rem 0" }} className="">
+      <section style={{ padding: "6rem 0" }} >
         {mapObjectToComponent(sections, HeaderWithImageAndParagraph)}
       </section>
       <section id="howitworks" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]}`}>
         <div className={`col-md-10 col mb-5 ${styles["steps-container"]} text-wrap-balance`}>
           <h1 className="fw-bolder mb-4 ">3 steps to better media management</h1>
-          <p className="fs-6 ">We believe great software tools unleash your creative potential while fading into the background.</p>
+          <p className="fs-6 fw-light ">We believe great software tools unleash your creative potential while fading into the background.</p>
         </div>
         <div className={`${styles["step-grid"]} text-center col-md-10 col mx-auto text-wrap-balance`}>
           {stepData.map((data, i) => (
@@ -119,41 +131,15 @@ export default function Home() {
           ))}
         </div>
 
-        <div style={{ paddingTop: "6rem", maxWidth: "35rem" }} className={`text-wrap-balance text-center mx-auto col-md-10 col my-5`}>
-          <h1 className="fw-bold mb-4">Power tools for the discerning reviewers</h1>
-          <p className="fs-6 ">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
-        </div>
-        <FadeInElement value="fade-in-section">
-          <div className={`${styles["tool-grid"]} text-center mx-auto`}>
-            {toolData.map((data, i) => (
-              <div key={i} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i} focus-ring`}>
-                <data.source size="3em" color="green" className="mb-3"></data.source>
-                <h6 className="my-4">{data.title}</h6>
-                <p className="">{data.description}</p>
-              </div>
-            ))}
-          </div>
-        </FadeInElement>
-        <div className="text-center mt-5">
-          <p className="text-decoration-underline text-success fs-4 mb-5 ">See our complete list of features</p>
-          <blockquote style={{ rowGap: "3em", maxWidth: "50em" }} className="d-flex flex-column align-items-center mx-auto">
-            <div className="fst-italic fs-4 ">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
-            <div className="d-flex ">
-              <div style={{ letterSpacing: ".1em" }}>BEN</div>
-              <span className="mx-2">/</span>
-              <div style={{ color: "#627280" }}>Vernacular Community Member</div>
-            </div>
-          </blockquote>
-        </div>
       </section>
-      <section id="creativeProcess" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-black"]}`}>
+      <section id="creativeProcess" className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-black"]}`}>
         <div style={{ maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
           <h1 className="fw-bold mb-4">Simplify your creative process</h1>
-          <p className="fs-6 ">Tame the chaos of scattered content and focus on your stories.</p>
+          <p className="fs-6 fw-light ">Tame the chaos of scattered content and focus on your stories.</p>
         </div>
         <div className={`d-flex  flex-lg-row flex-column mx-auto ${styles["creative-process-container"]}`}>
           <div style={{ flex: "1 0 auto" }} className="d-flex flex-column col-lg-3 col">
-            <blockquote className="fst-italic ">“I switched to Vernacular because everything was intuitive and fast! Nothing interrupting your flow.”</blockquote>
+            <blockquote className="fst-italic ">“I switched to vern because everything was intuitive and fast! Nothing interrupting your flow.”</blockquote>
             <p className="fst-italic">— Ben</p>
             {featuresData.map((e, i) => (
               <div key={i} className="my-3">
@@ -166,19 +152,12 @@ export default function Home() {
           </div>
           <FadeInElement value="fade-in-section">
             <div style={{ flex: "1 1 auto" }} className={`align-self-center text-lg-end text-center`}>
-              <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100 focus-ring`} alt="example img" priority={true} quality={100} />
+              <Image src={example.src} width="0" height="0" sizes="100vw" className={`${styles["img-width"]} rounded h-100 focus-ring ring-yellow`} alt="example img" priority={true} quality={100} />
             </div>
           </FadeInElement>
         </div>
-        <div style={{ paddingTop: "6rem" }} className={`${styles["stats-grid"]}`}>
-          {statsData.map((e, i) => (
-            <div key={i} className={`${styles["stats"]}`}>
-              <h1 style={{ fontSize: "48px" }}>{e.number}</h1>
-              <p className="fs-5">{e.description}</p>
-            </div>
-          ))}
-        </div>
-        <div style={{ paddingTop: "6rem", maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5`}>
+        <div style={{ background:"#404c44", borderRadius:"24px", margin:"2rem 4rem"}}>
+        <div style={{ maxWidth: "35rem" }} className={`text-center mx-auto col-md-10 col my-5`}>
           <h1 className="fw-bold mb-4">Supporting thousands of creators, streams, and creative communities</h1>
         </div>
         <div className={`${styles["quote-grid"]}`}>
@@ -188,33 +167,67 @@ export default function Home() {
               <div className="d-flex ">
                 <div style={{ letterSpacing: ".1em" }}>{e.name}</div>
                 <span className="mx-2">/</span>
-                <div style={{ color: "#627280" }}>{e.role}</div>
+                <div style={{ color: "#f5a0a0" }}>{e.role}</div>
               </div>
             </blockquote>
           ))}
         </div>
-      </section>
-      <section className={styles["bg-image-2"]} style={{ padding: "6rem 0" }}>
-        <div className={`text-center mx-auto col-md-10 col px-4 mb-5`}>
-          <h1 className="fw-bold mb-4">Customizable Settings</h1>
-          <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
+        <div style={{ paddingTop: "6rem" }} className={`${styles["stats-grid"]} pb-5`}>
+          {statsData.map((e, i) => (
+            <div key={i} className={`${styles["stats"]}`}>
+              <h1 style={{ fontSize: "48px" }}>{e.number}</h1>
+              <p className="fs-5">{e.description}</p>
+            </div>
+          ))}
         </div>
+        </div>
+        <div style={{ background:"#23272c", borderRadius:"24px", margin:"2rem 4rem"}}>
+        <div style={{ maxWidth: "35rem" }} className={`text-wrap-balance text-center mx-auto col-md-10 col py-5`}>
+          <h1 className="fw-bold mb-4">Power tools for the discerning reviewers</h1>
+          <p className="fs-6 fw-light ">We prefer a quality workflow over a quantity of features, but we have plenty of those too.</p>
+        </div>
+      
         <FadeInElement value="fade-in-section">
-          <div className={`text-center px-4 `}>
-            <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100 focus-ring`} priority={true} quality={100} />
+          <div className={`${styles["tool-grid"]} text-center mx-auto`}>
+            {toolData.map((data, i) => (
+              <div key={i} className={`${styles["grid-item"]} mt-3 px-3 py-5 item item-${i} focus-ring`}>
+                <data.source size="3em" color="green" className="mb-3"></data.source>
+                <h6 className="my-4">{data.title}</h6>
+                <p className="">{data.description}</p>
+              </div>
+            ))}
           </div>
         </FadeInElement>
+        <div className="text-center mt-5">
+          <p className="text-decoration-underline text-success fs-4 ">See our complete list of features</p>
+          <blockquote style={{ rowGap: "3em", maxWidth: "50em" }} className="d-flex flex-column align-items-center mx-auto">
+            <div className="fst-italic fs-4 ">&ldquo;Thanks to the intuitive design, I was able to dive right into reviewing and exploring new media. It’s easy to connect with other users and discover great recommendations at my own pace.&rdquo;</div>
+            <div className="d-flex pb-3">
+              <div style={{ letterSpacing: ".1em" }}>BEN</div>
+              <span className="mx-2">/</span>
+              <div style={{ color: "#627280" }}>vern Community Member</div>
+            </div>
+          </blockquote>
+        </div>
+        </div>
       </section>
-      <section id="pin" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
-        <div style={{ paddingBottom: "6rem" }}>
-          <div className={`text-center mx-auto col-md-10 col my-5 text-wrap-balance`}>
-            <h1 className="fw-bold mb-4">Drop a pin and start writing</h1>
-            <p className="fs-6 ">Vernacular streamlines the way you create and share your worlds.</p>
+      <section style={{  background:"#a5a0da24", borderRadius:"24px", margin:"2rem 4rem" }}>
+        <div style={{maxWidth: "35rem"}}  className={`text-center mx-auto col-md-10 col px-4 py-5`}>
+          <h1 className="fw-bold mb-4">Customizable Settings</h1>
+          <p className="fs-6 fw-light ">vern streamlines the way you create and share your worlds, offering fully customizable settings to reflect your unique identity and preferences.</p>
+        </div>
+        <FadeInElement value="fade-in-section">
+          <div className={`text-center`}>
+            <Image src={settings.src} alt="Home page logo" width={0} height={0} sizes="100vw" className={`${styles["img-width-2"]} rounded h-100 focus-ring ring-blue`} priority={true} quality={100} />
           </div>
-          <FadeInElement value="fade-in-section">
-            <div className={`${styles["tool-grid"]} text-center mx-auto`}>
+        </FadeInElement>
+        <div className={`text-wrap-balance mx-auto col-md-10 col py-5`}>
+          <div className="fs-2 fw-light ">Whether you’re sharing your insights, discovering new favorites, or engaging with a vibrant community, we make it effortless to connect with the media and people you ❤️.</div>
+        </div>
+        <FadeInElement value="fade-in-section">
+            <div  className={`${styles["tool-grid"]} text-center mx-auto pb-5`}>
               {imageData.map((data, i) => (
-                <div key={i} className={`${styles["grid-item"]} mt-3 pb-3 item item-${i} focus-ring`}>
+                <div  key={i} className={`${styles["grid-item"]} pb-3 item item-${i} ring-blue focus-ring`}>
                   <Image style={{borderRadius: "10px 10px 0 0"}} priority={true} src={data.source.src} width={1000} height={260} quality={100} className={`${styles["object-fit"]}`} alt={data.title}></Image>
                   <h6 style={{ letterSpacing: "0.1rem" }} className="my-4 px-3">
                     {data.title}
@@ -224,46 +237,46 @@ export default function Home() {
               ))}
             </div>
           </FadeInElement>
-        </div>
-
-        <div style={{ padding: "0 5rem" }}>
-          <div style={{ marginBottom: "12rem", fontSize: "30px", backgroundColor: "rgb(0, 0, 0, 0.27)", padding: "2rem" }} className="text-center">
-            <div className="fw-bold">Have a question?</div>
-            <div className="">
-              Come say hi in our <span className="text-decoration-underline text-success">Discord!</span> Everyone is welcome 😃
-            </div>
+      </section>
+      <section id="pin" style={{ padding: "6rem 0" }} className={`d-flex flex-column justify-content-center px-4 px-xl-0 ${styles["section-container-style-lighter"]} ${styles["view-height-alternative"]}`}>
+      <div className="home-page-accordion accordion col-6 ms-auto">
+          <div className=" mb-4">
+            <h1 style={{fontSize:"60px"}} className="fw-light" id="Faq">FAQ</h1>
           </div>
-          <div className="col-lg-7 col-md-9 col text-center align-self-center mb-4 mx-auto">
-            <h1 id="Faq">Frequently Asked Questions</h1>
-            <p className="">We&apos;ve also Compiled Answers to Frequently Asked Questions!</p>
-          </div>
-          <div className="home-page-accordion accordion col-lg-8 col  col-md-9 mx-auto ">
-            {accordionData.map((accordion, i) => (
-              <div key={accordion.id} className={`accordion-item py-4 ${styles["accordion-item-home"]} ${classNames({ ["border-bottom"]: i != accordionData.length - 1 })}`}>
+            {accordionData.map((accordion) => (
+              <div key={accordion.id} style={{width:"90%"}} className={`accordion-item py-4 ${styles["accordion-item-home"]} `}>
                 <h2 className="accordion-header">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${accordion.id}`} aria-expanded="true" aria-controls={accordion.id}>
-                    {accordion.question}
+                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${accordion.id}`} aria-expanded="false" aria-controls={accordion.id}>
+                    <h4 className="fw-light accordion-question">{accordion.question}</h4>
                   </button>
                 </h2>
                 <div id={accordion.id} className="accordion-collapse collapse">
-                  <div className="accordion-body">{accordion.answer}</div>
+                  <h5 style={{color:"#848484"}} className="accordion-body fw-light">{accordion.answer}</h5>
                 </div>
               </div>
             ))}
           </div>
+
+        <div style={{ padding: "5rem 5rem" }}>
+          <div style={{ marginBottom: "12rem", borderRadius:"10px", fontSize: "30px", backgroundColor: "#1A1A1A", padding: "4rem" }} className="">
+            <div className="mb-3" style={{fontSize:"12px", color:"#949494"}}>CONTACT US</div>
+            <div className="d-flex justify-content-between">
+           <h1>Psst! Our team is here to help! 😃</h1>
+            <div className="align-self-end"><Button buttonColor={{ cssColor: "#3C3C3C" }} href="https://airtable.com/appZ6rwp0wgPvNpjJ/pagfrOydoyfmz8qJe/form" width="10em" radius="10px" padding="11px" type="button" styleClass={`${styles["support-button"]}`}>Contact support</Button></div>
+            </div>
+          </div>
+          <div style={{backgroundColor: "rgb(0, 0, 0, 0.27)"}}>
+              
+          </div>
         </div>
         <Newsletter></Newsletter>
       </section>
-      <section className={styles["bg-image"]} style={{ padding: "6rem 0" }}>
-        <div className={`text-center mx-auto col-md-10 col my-5 px-4`}>
-          <h1 className={`fw-bold mb-5 ${styles["fs-header"]} text-wrap-balance`}>Ready to upgrade your multimedia management?</h1>
-          <div className={` mb-5 ${styles["fs-header"]}`}>Try Vernacular for free</div>
-          <p className={` mb-5 ${styles["fs-para"]}`}>
-            Jumpstart your creative journey in minutes.<br></br>
-            Load up an Example Project in one click for inspiration.
-          </p>
-          <p className="mb-5">*Free for 14 days and you keep anything you make.</p>
-          <div className={`d-flex justify-content-center ${styles["btn-container"]}`}>
+      <section style={{ padding: "6rem 0" }}>
+          <div style={{gap:"50px"}} className="d-flex justify-content-center my-5">
+          <div className="col-5">
+          <h1 style={{fontSize:"88px"}} className={`fw-bold text-wrap-balance  mb-4 lh-1`}>Get started for free!</h1>
+          <p  style={{fontSize:"24px", color:"#d8d8d8"}} className={`text-wrap-pretty mb-5`}>Experience Vern for free—submit reviews, rate media, and join a community of enthusiasts with no costs or subscriptions.</p>
+          <div className={`d-flex justify-content-start  ${styles["btn-container"]}`}>
             <Button buttonColor={{ bootstrapColor: "btn btn-success" }} href="/login" width={"16em"} radius="10px" padding="20px" type="button">
               SIGN UP FOR FREE
             </Button>
@@ -271,7 +284,26 @@ export default function Home() {
               LEARN MORE
             </Button>
           </div>
-        </div>
+          </div>
+          <div className="">
+            <h6 style={{color:"#8d8a8a"}}>EMPOWERING A COMMUNITY OF PASSIONATE REVIEWERS AT</h6>
+            <div style={{opacity:"0.5"}} className={`${styles["logo-grid"]} position-relative mt-5`}>
+              <Image src={upwork} alt="upwork"></Image>
+              <Image src={ideo}  alt="ideo"></Image>
+              <Image src={discord}  alt="discord"></Image>
+              <Image src={dropbox}  alt="dropbox"></Image>
+              <Image src={greenhouse}  alt="greenhouse"></Image>
+              <Image src={bbdo}  alt="bbdo"></Image>
+              <Image src={monday}  alt="monday"></Image>
+              <Image src={ncr}  alt="ncr"></Image>
+              <Image src={nyt} width="160" alt="nyt"></Image>
+              <Image src={orange} width="130"  alt="orange"></Image>
+              <Image src={philips}  alt="philips"></Image>
+              <Image src={ted}  alt="ted"></Image>
+
+            </div>
+          </div>
+          </div>
       </section>
     </div>
   );
