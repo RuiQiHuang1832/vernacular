@@ -1,5 +1,5 @@
 :root {
-  --nav-item-color: #ffffff8c;
+  --nav-item-color: #767676;
   --nav-brand-color: #ffffff;
   --page-background-color: rgb(18,18,18);
 }
@@ -177,6 +177,26 @@ textarea {
 .ph-color-white::placeholder {
   color: rgba(106, 106, 106, 0.489);
 }
+
+/* Fade and downward animation for the slide content */
+.slide-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2s ease, transform 1s ease;
+}
+
+.swiper-slide.swiper-slide-active .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.6s; /* Add a delay before the new text appears */
+
+}
+
+.swiper-slide:not(.swiper-slide-active) .slide-content {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
 
 .mySwiper {
   text-align: center;

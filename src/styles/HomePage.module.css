@@ -179,7 +179,7 @@
   text-align: center;
 }
 
-.bg-image {
+/* .bg-image {
   background: url('../assets/images/home/bg.png') no-repeat;
   background-size:cover;
   background-position: center;
@@ -189,7 +189,7 @@
   background: url('../assets/images/home/bg-2.png') no-repeat;
   background-size:cover;
   background-position: center;
-}
+} */
 /* so Learn More is stacked */
 /* @media only screen and (max-width: 483.20px) {
   .wordSpacing {
@@ -259,6 +259,38 @@
 }
 
 .support-button {
+  display:flex;
   font-size: 15px;
-  height:45px
+  height:45px;
+  align-items:center;
+  text-wrap:nowrap;
+}
+
+.support-button:hover .support-arrow {
+  width:20px;
+
+}
+
+.support-arrow {
+  width:0;
+  transition: width 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Spring effect on initial state */
+  transform: translateX(5px); /* Use transform to simulate margin-left */
+
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: "" !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  cursor:pointer;
+  height: 66px;
+  width:66px;
+  background:#1f1f1f;
+  border-radius:9999px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
 }

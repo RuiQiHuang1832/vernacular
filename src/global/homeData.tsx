@@ -9,6 +9,10 @@ import { IconType } from "react-icons";
 import review from "@/assets/images/home/review.png";
 import discover from "@/assets/images/home/discover.png";
 import collaborate from "@/assets/images/home/collaborate.png";
+import alex_johnson from "@/assets/images/alex_johnson.jpg";
+import sam_kim from "@/assets/images/sam_kim.jpg";
+import taylor_reed from "@/assets/images/taylor_reed.jpg";
+import jordan_parker from "@/assets/images/jordan_parker.jpg";
 
 export type stepDataType = {
     id: string;
@@ -34,6 +38,8 @@ export type stepDataType = {
     name: string;
     role:string
     description: string;
+    source:StaticImageData;
+
   };
   export type accordionDataType = {
     id: string;
@@ -128,27 +134,29 @@ export const statsData:statsDataType[] = [
 ]
 export const quoteData:quoteDataType[] = [
     {
-        name:"ALEX JOHNSON",
-        role:"Media Enthusiast",
+        name:"Alex Johnson",
+        role:"Advisor at Synergy Studios",
         description:"This platform has transformed how I discover and share media. The recommendations are spot on and the community is incredibly supportive.",
+        source: alex_johnson,
       
     },
     {
-        name:"TAYLOR REED",
-        role:"Content Creator",
-        description:"I love how easy it is to find new content and share my reviews with others. It is like having a personal media curator at my fingertips.",
+        name:"Taylor Reed",
+        role:"Chief Content Strategist at Inspire Media",
+        description:"I love how easy it is to find new content and share my reviews with others. It is like having a personal media curator at my fingertips!",
+        source: taylor_reed,
     },
     {
-        name:"JORDAN PARKER",
-        role:"Freelance Writer",
+        name:"Jordan Parker",
+        role:"Senior Editor at WriteWorks Inc.",
         description:"The user interface is so intuitive. I was able to jump right into exploring and reviewing media without any hassle.",
-
+        source: jordan_parker
     },
     {
-        name:"SAM KIM",
-        role:"Digital Marketer",
-        description:"Being part of this community has enhanced my media experience. The insights and recommendations are invaluable.",
-
+        name:"Sam Kim",
+        role:"Marketing Director at BrandFlow Solutions",
+        description:"Being part of this community has enhanced my media experience. The insights and recommendations are invaluable!",
+        source: sam_kim
     }
 ]
 

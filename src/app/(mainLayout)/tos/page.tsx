@@ -4,7 +4,7 @@ import { getCurrentDate } from "@/helpers/date";
 export default function Tos() {
     const headerColorStyle = classNames("text-success")
   return (
-    <div className="text-white container py-5">
+    <div className="text-white container py-5 fw-light">
       <h2 className={`${headerColorStyle} text-center`}>
         <strong>Terms and Conditions</strong>
         <div className="fs-6 text-white pt-3">Last Updated: {getCurrentDate()}</div>

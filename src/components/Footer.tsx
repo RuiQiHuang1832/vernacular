@@ -31,7 +31,7 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{backgroundColor:"black", color:'#929191'}} className={` ${styles["footer"]}`}>
+    <footer style={{backgroundColor:"black", color:'#767676'}} className={` ${styles["footer"]}`}>
       {pathname.includes('playlist/community') && <div className={`${styles["back-to-top"]}`} onClick={scrollToTop}>
         <div style={{fontSize:"13px"}} className="text-center p-2 text-white">Back to top</div>
       </div> }
@@ -53,10 +53,14 @@ export default function Footer() {
           ))}
         </div>
         <hr></hr>
-        <div style={{fontSize:"30px", color:"#9E9D9D"}}  className="text-center fw-bold mb-2">
-          Vern
+
+        <div className={`${styles["text"]} d-flex align-items-center`} >
+          <Link href="/tos" style={{color:"#fafafccc", fontSize:"12px"}} className="p-2 me-2 text-decoration-none text-reset">Terms and Conditions</Link>
+          <Link href="/tos" style={{color:"#fafafccc", fontSize:"12px"}} className="p-2 me-2 text-decoration-none text-reset">Privacy Policy</Link>
+          <Link href="/tos" style={{color:"#fafafccc", fontSize:"12px"}} className="p-2 me-2 text-decoration-none text-reset">Responsible Disclosure</Link>
+          <Link href="/tos" style={{color:"#fafafccc", fontSize:"12px"}} className="p-2 me-2 text-decoration-none text-reset">Trust Center</Link>
+          <div  style={{opacity:"0.8", fontSize:"12px"}} className="ms-auto">© 2024-2025 Vern Technologies Inc. All rights reserved.</div>
         </div>
-        <div style={{opacity:"0.8"}} className={styles["text"]}>© 2023-2024 Vern. All Rights Reserved.</div>
       </section>
     </footer>
   );
