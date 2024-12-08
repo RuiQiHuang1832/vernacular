@@ -294,3 +294,32 @@
   justify-content: center;
   color:white;
 }
+
+/* Container for the progress bar */
+.progress-bar {
+  height:2px;
+  overflow: hidden; /* Ensure the progress stays within bounds */
+  position: relative;
+}
+
+/* Progress fill */
+.progress {
+  height: 100%;
+  background-color: white; /* Color of the progress */
+  width: 0; /* Start with 0 width */
+  animation: fill 12s linear infinite; /* Animation duration includes delay */
+
+}
+
+/* Animation keyframes */
+@keyframes fill {
+  0% {
+    width: 0;
+  }
+  80% {
+    width:100%
+  }
+  100% {
+    width: 100%; /* Maintain the final state during delay */
+  }
+}

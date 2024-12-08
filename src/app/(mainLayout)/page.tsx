@@ -13,7 +13,7 @@ import example from "@/assets/images/home/example.png";
 import { FaCheck } from "react-icons/fa";
 import Newsletter from "@/components/Newsletter";
 import FadeInElement from "@/components/FadeInElement";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import bbdo from "@/assets/svg/bbdo.svg"
 import discord from "@/assets/svg/discord.svg"
@@ -52,12 +52,42 @@ import { MdOutlineKeyboardArrowRight,MdOutlineKeyboardArrowLeft } from "react-ic
 export default function Home() {
 
   const [isVisible, setIsVisible] = useState(false);
+  const swiperRef = useRef(null);
+
+  const [isComplete, setIsComplete] = useState(false);
+
+
 
   useEffect(() => {
     // Set isVisible to true when the component mounts (page load)
     setIsVisible(true);
   }, []);
 
+  useEffect(() => {
+    const progressElement = document.querySelector('.progress-ref');
+  
+    const handleAnimationEnd = () => {
+      setIsComplete(true); // Set to true when animation ends
+    };
+  
+    if (progressElement) {
+      progressElement.addEventListener('animationiteration', handleAnimationEnd);
+    }
+  
+    return () => {
+      if (progressElement) {
+        progressElement.removeEventListener('animationiteration', handleAnimationEnd);
+      }
+    };
+  }, []); // Only set up the event listener once
+
+useEffect(() => {
+  if (swiperRef.current && isComplete) {
+    console.log("fired");
+    swiperRef.current.slideNext(); // Change to the next slide
+    setIsComplete(false); // Optionally reset state if needed for repeated usage
+  }
+}, [isComplete]);
   return (
     <div className="text-white">
       <div className="container-lg mt-5 mb-5 ">
@@ -224,12 +254,18 @@ export default function Home() {
         </FadeInElement>
       </section>
       <section style={{ background: "#1A1A1A", borderRadius: "24px", margin: "2rem 4rem" }}>
+
         <div style={{ paddingTop: "8rem" }} className="d-flex justify-content-around ">
           <div style={{ maxWidth: "20%" }} className={` `}>
             <h1 className="fw-light mb-4">What people are saying</h1>
           </div>
-          <div style={{ background: "rgb(17 17 17 / 51%)", borderRadius: "10px" }} className=" p-5 col-7">
+          
+          <div style={{ background: "rgb(17 17 17 / 51%)", borderRadius: "10px" }} className=" col-7">
+          <div className={`${styles["progress-bar"]}`}>
+          <div className={`${styles["progress"]} progress-ref`}></div></div>
             <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+
               navigation={{ nextEl: `.${styles["swiper-button-next"]}`, prevEl: `.${styles["swiper-button-prev"]}` }}
               breakpointsBase="container"
               pagination={false}
@@ -237,10 +273,11 @@ export default function Home() {
               effect="fade"
               speed={500}
               watchSlidesProgress={true}
+              allowTouchMove={false}
               fadeEffect={{
                 crossFade: true,
               }}
-              className={` mySwiper `}
+              className={` mySwiper p-5 `}
               loop={true}
               spaceBetween={30}
             >
@@ -249,8 +286,7 @@ export default function Home() {
                   <h2 style={{ height: "250px", textAlign: "left" }} className="fw-light slide-content">
                     &ldquo;{e.description}&rdquo;
                   </h2>
-
-                  <div style={{ gap: "15px" }} className="d-flex">
+                  <div style={{ gap: "15px",}} className="d-flex">
                     <div style={{ gap: "20px",textAlign:'left' }} className="slide-content d-flex me-auto align-items-center">
                       <Image style={{ borderRadius: "9999px" }} priority={true} src={e.source.src} width={64} height={1000} quality={100} className={`${styles["object-fit"]}`} alt={e.name}></Image>
                       <div style={{fontSize:"20px"}} className="fw-light">
@@ -258,10 +294,10 @@ export default function Home() {
                         <div style={{color:"#6B7280"}}><BiSolidBriefcaseAlt2 style={{transform:"translateY(-2px)"}}></BiSolidBriefcaseAlt2>&nbsp;{e.role}</div>
                       </div>
                     </div>
-                    <div className={`${styles["swiper-button-prev"]}`}>
+                    <div style={{flexShrink:"0" }} className={`${styles["swiper-button-prev"]}`}>
                       <MdOutlineKeyboardArrowLeft size="1.5em" />
                     </div>
-                    <div className={`${styles["swiper-button-next"]} me-3`}>
+                    <div style={{flexShrink:"0" }} className={`${styles["swiper-button-next"]} me-3`}>
                       <MdOutlineKeyboardArrowRight size="1.5em" />
                     </div>
                   </div>
